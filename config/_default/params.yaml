@@ -97,7 +97,6 @@ hugoblox:
     block: navbar # navbar | navbar-simple
     # Stick to top on scroll
     sticky: true
-    align: center
     # Show logo in navbar
     # show_logo: false
     # Show site title text in navbar
