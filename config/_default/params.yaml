@@ -123,7 +123,8 @@ hugoblox:
   footer:
     # Footer style variant
     style: minimal # minimal | columns | centered
-    show_logo: false
+    show_logo: true
+    logo: "hyulion.png"
     show_title: false
     show_tagline: false
     # Override footer title (defaults to identity.name)
