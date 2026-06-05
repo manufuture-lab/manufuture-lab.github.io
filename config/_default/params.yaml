@@ -13,30 +13,29 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   identity:
     # Site name - shown in navbar, footer, copyright, and browser title by default
-    name: "Beacon"
+    name: ""
+    logo: "media/logo.png"
     # Legal entity for copyright notices (defaults to name if not set)
-    organization: ""
+    organization: "ManuFuture Laboratory"
     # Schema.org type for structured data
     type: organization # person | organization | local_business
     # Short tagline displayed on your site
-    tagline: "The customer feedback platform for product teams."
+    tagline: ""
     # Site meta description for search engines and social sharing
-    description: "Beacon captures customer feedback from every channel — Slack,
-      email, support, in-app — and uses AI to surface what matters. Turn customer
-      noise into your roadmap."
+    description: "Manufuture Laboratory at HYU"
     # Social accounts (used for meta tags like Twitter Cards)
     social:
-      twitter: "GoOwnable" # Twitter/X handle for Twitter Cards (without @)
+      twitter: "" # Twitter/X handle for Twitter Cards (without @)
       # Site-wide social links (rendered in footer, etc.)
-      links:
-        - icon: brands/x
-          url: https://x.com/GoOwnable
-        - icon: brands/github
-          url: https://github.com/HugoBlox/kit
-        - icon: brands/discord
-          url: https://discord.gg/z8wNYzb
-        - icon: brands/linkedin
-          url: https://linkedin.com/company/example
+    #  links:
+    #    - icon: brands/x
+    #      url: https://x.com/GoOwnable
+    #    - icon: brands/github
+    #      url: https://github.com/HugoBlox/kit
+    #    - icon: brands/discord
+    #      url: https://discord.gg/z8wNYzb
+    #    - icon: brands/linkedin
+    #      url: https://linkedin.com/company/example
 
   # ────────────────────────────────────────────────────────────────────────────
   # THEME
@@ -72,7 +71,8 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   typography:
     # Theme pack: name from data/fonts/
-    pack: "geometric"
+    font: "sans"
+    size: "md"
 
   # ────────────────────────────────────────────────────────────────────────────
   # LAYOUT
@@ -82,7 +82,7 @@ hugoblox:
     # Border radius: 'none', 'sm', 'md', 'lg', or 'full'
     radius: "md"
     # Spacing density: 'compact', 'comfortable', or 'spacious'
-    spacing: "spacious"
+    spacing: "comfortable"
     # Avatar shape in author profiles
     avatar_shape: circle # circle | square | rounded
 
@@ -92,12 +92,14 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   header:
     enable: true
+    logo: "media/logo.png"
     # Header style variant
     block: navbar # navbar | navbar-simple
     # Stick to top on scroll
     sticky: true
+    align: center
     # Show logo in navbar
-    show_logo: false
+    # show_logo: false
     # Show site title text in navbar
     show_title: true
     # Override navbar title (defaults to identity.name)
@@ -105,10 +107,10 @@ hugoblox:
     # Menu alignment
     align: center # left | center | right
     # Feature toggles
-    search: true
+    search: false
     theme_toggle: true
     theme_picker: false
-    language_switcher: true
+    language_switcher: false
     # Call-to-action button
     cta:
       enable: false
@@ -121,15 +123,15 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   footer:
     # Footer style variant
-    style: columns # minimal | columns | centered
-    show_logo: true
-    show_title: true
-    show_tagline: true
+    style: minimal # minimal | columns | centered
+    show_logo: false
+    show_title: false
+    show_tagline: false
     # Override footer title (defaults to identity.name)
     title: ""
-    language_switcher: true
+    language_switcher: false
     # Show social icons from identity.social.links
-    show_social: true
+    show_social: false
     # Custom footer text (HTML supported)
     text: ""
 
@@ -139,9 +141,9 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}."
+    notice: "© {year} {name}. All rights reserved."
     license:
-      type: custom # cc | custom
+      type: all_rights # cc | custom
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -196,7 +198,7 @@ hugoblox:
   # Site search
   # ────────────────────────────────────────────────────────────────────────────
   search:
-    enable: true
+    enable: false
     # Trending/suggested search terms
     suggestions: []
     # Quick action shortcuts in search modal
@@ -223,7 +225,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   analytics:
     google:
-      measurement_id: "" # Google Analytics 4: G-XXXXXXXXXX
+      measurement_id: "G-4676BRTLPE" # Google Analytics 4: G-XXXXXXXXXX
     google_tag_manager:
       container_id: "" # GTM-XXXXXXX
     plausible:
@@ -276,7 +278,7 @@ hugoblox:
     csp:
       policy: ""
       report_only: false
-    frame_options: allow # deny | sameorigin | allow - allow enables iframe embedding
+    frame_options: deny # deny | sameorigin | allow - allow enables iframe embedding
     permissions_policy: ""
 
   # ────────────────────────────────────────────────────────────────────────────
