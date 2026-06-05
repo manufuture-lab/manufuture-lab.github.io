@@ -122,6 +122,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   footer:
     # Footer style variant
+    enable: true
     style: minimal # minimal | columns | centered
     show_logo: true
     logo: "hyulion.png"
