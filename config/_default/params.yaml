@@ -100,7 +100,7 @@ hugoblox:
     # Show logo in navbar
     # show_logo: false
     # Show site title text in navbar
-    show_title: true
+    show_title: false
     # Override navbar title (defaults to identity.name)
     title: ""
     # Menu alignment
