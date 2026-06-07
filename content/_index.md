@@ -25,7 +25,7 @@ sections:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]
-      css_class: "dark whitespace-pre-line"
+      css_class: "dark whitespace-pre-line mfl-hero"
       background:
         color: "#0a0e27"
         gradient:
