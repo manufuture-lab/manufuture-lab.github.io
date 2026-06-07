@@ -1,104 +1,73 @@
 # Navigation Links
-#   To link a page section, specify the URL as a hash `/#` followed by the `id` of the section.
-#   The `weight` parameter defines the order that the links will appear in.
 
 main:
   - name: Home
-    url: /#top
+    url: /
     weight: 10
-  - name: Features
-    url: /#features
+
+  - name: Team
     weight: 20
-  - name: Compare
-    url: /#compare
-    weight: 25
-  - name: Pricing
-    url: /#pricing
+    hasChildren: true
+
+  - parent: Team
+    name: Professor
+    url: /team/professor/
+    weight: 21
+
+  - parent: Team
+    name: Researchers
+    url: /team/researchers/
+    weight: 22
+
+  - name: Research
+    url: /research/
     weight: 30
-  - name: FAQ
-    url: /#faq
-    weight: 35
-  - name: Resources
+
+  - name: Publications
     weight: 40
     hasChildren: true
-  - parent: Resources
-    name: Blog
-    url: blog/
-  - parent: Resources
-    name: Changelog
-    url: /changelog/
 
-# Footer links (4-column layout)
-#   Top-level items become column headings, children become links.
-# footer:
-#   - name: Product
-#     weight: 10
-#   - parent: Product
-#     name: Features
-#     url: /#features
-#     weight: 10
-#   - parent: Product
-#     name: Solutions
-#     url: /#solutions
-#     weight: 20
-#   - parent: Product
-#     name: Pricing
-#     url: /#pricing
-#     weight: 30
-#   - parent: Product
-#     name: Compare
-#     url: /#compare
-#     weight: 35
-#   - parent: Product
-#     name: Changelog
-#     url: /changelog/
-#     weight: 40
+  - parent: Publications
+    name: Journal
+    url: /publications/journal/
+    weight: 41
 
-#   - name: Company
-#     weight: 20
-#   - parent: Company
-#     name: About
-#     url: "#"
-#     weight: 10
-#   - parent: Company
-#     name: Blog
-#     url: /blog/
-#     weight: 20
-#   - parent: Company
-#     name: Careers
-#     url: "#"
-#     weight: 30
-#   - parent: Company
-#     name: Contact
-#     url: "#"
-#     weight: 40
+  - parent: Publications
+    name: Patent
+    url: /publications/patent/
+    weight: 42
 
-#   - name: Resources
-#     weight: 30
-#   - parent: Resources
-#     name: Documentation
-#     url: "#"
-#     weight: 10
-#   - parent: Resources
-#     name: Help Center
-#     url: "#"
-#     weight: 20
-#   - parent: Resources
-#     name: Community
-#     url: "#"
-#     weight: 30
-#   - parent: Resources
-#     name: Status
-#     url: "#"
-#     weight: 40
+  - parent: Publications
+    name: Conference
+    url: /publications/conference/
+    weight: 43
 
-#   - name: Legal
-#     weight: 40
-#   - parent: Legal
-#     name: Privacy Policy
-#     url: /privacy/
-#     weight: 10
-#   - parent: Legal
-#     name: Terms of Service
-#     url: /terms/
-#     weight: 20
+  - name: Teaching
+    url: /teaching/
+    weight: 50
+
+  - name: Sponsors
+    url: /sponsors/
+    weight: 60
+
+  - name: Board
+    weight: 70
+    hasChildren: true
+
+  - parent: Board
+    name: News
+    url: /board/news/
+    weight: 71
+
+  - parent: Board
+    name: Gallery
+    url: /board/gallery/
+    weight: 72
+
+  - name: Contact
+    url: /contact/
+    weight: 80
+
+  - name: Join MFL
+    url: /join/
+    weight: 90
