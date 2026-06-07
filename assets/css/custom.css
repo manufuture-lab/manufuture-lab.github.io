@@ -205,7 +205,7 @@
   #site-header #nav-menu .mfl-nav-underline {
     position: absolute;
     left: 0;
-    bottom: -0.75rem;
+    bottom: -0.45rem;
     height: 3px;
     width: 0;
     border-radius: 999px;
