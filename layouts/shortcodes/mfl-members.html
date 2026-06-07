@@ -1,0 +1,62 @@
+{{- $category := .Get 0 -}}
+{{- $members := where site.Data.members.members "category" $category -}}
+
+{{- if gt (len $members) 0 -}}
+<div class="mfl-member-grid">
+  {{- range sort $members "order" "asc" -}}
+    {{- $m := . -}}
+    <article class="mfl-member-card">
+      <div class="mfl-member-photo-wrap">
+        {{- if $m.photo -}}
+          {{- $img := resources.Get $m.photo -}}
+          {{- if $img -}}
+            {{- $processed := $img.Fill "480x520 Center" -}}
+            <img src="{{ $processed.RelPermalink }}" alt="{{ $m.name }}" class="mfl-member-photo">
+          {{- else -}}
+            <div class="mfl-member-photo-placeholder">{{ substr $m.name 0 1 }}</div>
+          {{- end -}}
+        {{- else -}}
+          <div class="mfl-member-photo-placeholder">{{ substr $m.name 0 1 }}</div>
+        {{- end -}}
+      </div>
+
+      <h3 class="mfl-member-name">{{ $m.name }}</h3>
+
+      {{- with $m.role -}}
+        <p class="mfl-member-role">{{ . | markdownify }}</p>
+      {{- end -}}
+
+      {{- with $m.bio -}}
+        <p class="mfl-member-bio">{{ . | markdownify }}</p>
+      {{- end -}}
+
+      {{- with $m.tags -}}
+        <div class="mfl-member-tags">
+          {{- range . -}}
+            <span>{{ . }}</span>
+          {{- end -}}
+        </div>
+      {{- end -}}
+
+      {{- with $m.links -}}
+        <div class="mfl-member-links">
+          {{- range . -}}
+            {{- if .url -}}
+              <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .label }}">
+                {{- if eq .icon "email" -}}✉
+                {{- else if eq .icon "github" -}}GH
+                {{- else if eq .icon "linkedin" -}}in
+                {{- else if eq .icon "scholar" -}}GS
+                {{- else -}}↗
+                {{- end -}}
+              </a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </article>
+  {{- end -}}
+</div>
+{{- else -}}
+<p class="mfl-empty-members">To be updated.</p>
+{{- end -}}
