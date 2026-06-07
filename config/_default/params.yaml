@@ -134,7 +134,7 @@ hugoblox:
     # Show social icons from identity.social.links
     show_social: false
     # Custom footer text (HTML supported)
-    text: "한양대학교 미래제조 연구실 (ManuFuture Laboratory)<br>Email: @hanyang.ac.kr | Tel: +82 031-000-0000<br>Address. Room 000, Bldg 000, 55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Republic of Korea"
+    text: "한양대학교 미래제조 연구실 (ManuFuture Laboratory)<br>| Email: @hanyang.ac.kr | Tel: +82 031-000-0000 |<br>Address: Room 000, Bldg 000, 55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Republic of Korea<br>"
 
   # ────────────────────────────────────────────────────────────────────────────
   # COPYRIGHT
