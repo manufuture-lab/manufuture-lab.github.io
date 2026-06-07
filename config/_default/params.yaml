@@ -125,7 +125,7 @@ hugoblox:
     enable: true
     style: minimal # minimal | columns | centered
     show_logo: true
-    logo: "footerlogo.png"
+    logo: "media/footerlogo.png"
     show_title: false
     show_tagline: false
     # Override footer title (defaults to identity.name)
