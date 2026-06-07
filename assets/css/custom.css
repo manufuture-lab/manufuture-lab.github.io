@@ -1,0 +1,16 @@
+/* Add extra right spacing after dropdown menu items in the desktop navbar */
+@media (min-width: 1024px) {
+  #nav-menu > li.nav-dropdown {
+    padding-right: 0.75rem;
+  }
+
+  #nav-menu > li.nav-dropdown > .nav-link svg {
+    margin-left: 0.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  #nav-menu > li.nav-dropdown {
+    padding-right: 1.25rem;
+  }
+}
