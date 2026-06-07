@@ -159,3 +159,63 @@
     background: #3b82f6;
   }
 }
+/* MFL navbar hover/active color and moving underline */
+:root {
+  --mfl-nav-accent: #1D2475;
+}
+
+@media (min-width: 1024px) {
+  /* Make nav menu a positioning context for the moving underline */
+  #site-header #nav-menu {
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Override HugoBlox default active underline */
+  #site-header #nav-menu .nav-link::after,
+  #site-header #nav-menu .nav-link.active::after,
+  #site-header #nav-menu .mfl-nav-active::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Default nav item transition */
+  #site-header #nav-menu > li > .nav-link {
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  /* Hover color */
+  #site-header #nav-menu > li > .nav-link:hover,
+  #site-header #nav-menu > li:hover > .nav-link,
+  #site-header #nav-menu > li.nav-dropdown:hover > .nav-link,
+  #site-header #nav-menu .nav-dropdown-link:hover {
+    color: var(--mfl-nav-accent) !important;
+  }
+
+  /* Active page color */
+  #site-header #nav-menu > li > .nav-link.active,
+  #site-header #nav-menu > li > .nav-link.mfl-nav-active,
+  #site-header #nav-menu .nav-dropdown-link.active {
+    color: var(--mfl-nav-accent) !important;
+    font-weight: 700;
+  }
+
+  /* Moving underline indicator */
+  #site-header #nav-menu .mfl-nav-underline {
+    position: absolute;
+    left: 0;
+    bottom: -0.95rem;
+    height: 3px;
+    width: 0;
+    border-radius: 999px;
+    background: var(--mfl-nav-accent);
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transition:
+      transform 0.25s ease,
+      width 0.25s ease,
+      opacity 0.2s ease;
+  }
+}
