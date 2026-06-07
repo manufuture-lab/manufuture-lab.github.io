@@ -1,0 +1,25 @@
+{{- $footer := site.Params.hugoblox.footer | default dict -}}
+{{- $show_logo := $footer.show_logo | default false -}}
+{{- $logo_path := $footer.logo | default "" -}}
+
+{{- if and $show_logo $logo_path -}}
+  {{- with resources.Get $logo_path -}}
+    <div style="text-align:center; margin-bottom:18px;">
+      <img
+        src="{{ .RelPermalink }}"
+        alt="ManuFuture Laboratory footer logo"
+        style="width:360px; max-width:85%; height:auto; margin:0 auto;"
+      >
+    </div>
+  {{- else -}}
+    {{- warnf "Footer logo not found: %s. Expected file under assets/%s" $logo_path $logo_path -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $footer.text -}}
+  <div style="text-align:center;">
+    {{ . | markdownify | emojify }}
+  </div>
+{{- end -}}
+
+{{ partial "site_footer_license" . }}
