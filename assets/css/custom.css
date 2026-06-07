@@ -14,3 +14,7 @@
     padding-right: 1.25rem;
   }
 }
+/* Home hero title line spacing */
+.mfl-hero h1 {
+  line-height: 1.15 !important;
+}
