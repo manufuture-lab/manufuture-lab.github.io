@@ -1,9 +1,9 @@
 {
-  "name": "hugo-blox-landing-page-starter",
+  "name": "manufuture-lab-website",
   "version": "1.0.0",
   "private": true,
   "packageManager": "pnpm@10.14.0",
-  "description": "Landing page starter template for Hugo Blox with Tailwind CSS v4",
+  "description": "Official website of ManuFuture Laboratory at Hanyang University",
   "scripts": {
     "dev": "hugo server --disableFastRender",
     "build": "hugo --minify && pnpm run pagefind",
