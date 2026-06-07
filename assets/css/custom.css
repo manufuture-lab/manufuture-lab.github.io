@@ -141,3 +141,21 @@
   color: #64748b;
   font-style: italic;
 }
+/* Active navbar item: blue text + underline */
+@media (min-width: 1024px) {
+  #nav-menu .mfl-nav-active {
+    color: #3b82f6 !important;
+    position: relative;
+  }
+
+  #nav-menu > li > .mfl-nav-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1.35rem;
+    height: 3px;
+    border-radius: 999px;
+    background: #3b82f6;
+  }
+}
