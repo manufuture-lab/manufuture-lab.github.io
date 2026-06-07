@@ -6,47 +6,27 @@ type: landing
 sections:
   - block: hero
     content:
-      eyebrow: Beacon for product teams
-      title: Turn customer [noise] into your roadmap
-      text: Capture feedback from every channel — Slack, email, support, in-app — and let AI surface what matters.
-      primary_action:
-        text: Start free
-        url: "#pricing"
-        icon: rocket-launch
-        style: gradient
-      secondary_action:
-        text: How it works
-        url: "#how-it-works"
-        icon: play-circle
-        style: ghost
       announcement:
         badge:
           text: NEW
           color: primary
-        text: AI roadmap pull is live.
+        text: We are recruiting students and interns.
         link:
-          text: Read more
-          url: "#features"
-      trust:
-        stars: 5
-        text: "**4.9/5** from 1,200+ product teams"
-      # To switch to a split layout with a product mockup, uncomment the media block
-      # below and set `design.layout: split-left` (or `split-right` / `stacked`):
-      # media:
-      #   type: image
-      #   src: dashboard.png
-      #   dark_src: dashboard-dark.png   # optional dark-mode variant
-      #   alt: Beacon dashboard
+          text: Apply
+          url: "/application/"
+
+      title: |-
+        ManuFuture Laboratory
+        @ Hanyang University
+
+      text: 한양대학교 미래제조 연구실
+
     design:
       spacing:
         padding: [0, 0, 0, 0]
         margin: [0, 0, 0, 0]
-      css_class: "dark"
-      section_break:
-        # Fade the hero's bottom edge into the dark logos band beneath (matches its bg-gray-900)
-        fade_bottom: "#101828"
+      css_class: "dark whitespace-pre-line"
       background:
-        # Deep navy base; radial glow paints a soft violet spotlight from above
         color: "#0a0e27"
         gradient:
           type: radial
@@ -55,7 +35,6 @@ sections:
           position: "50% -10%"
           shape: ellipse
           size: "80% 80%"
-        # Mesh orbs add depth and atmosphere on top of the radial glow
         gradient_mesh:
           enable: true
           style: orbs
@@ -65,37 +44,37 @@ sections:
           orb_count: 2
           positions: ["top-1/3 left-1/4", "bottom-1/3 right-1/4"]
           sizes: ["w-[32rem] h-[32rem]", "w-[26rem] h-[26rem]"]
-  - block: logos
-    content:
-      title: Trusted by product teams at
-      items:
-        - icon: brands/github
-          name: GitHub
-        - icon: brands/google
-          name: Google
-        - icon: brands/microsoft
-          name: Microsoft
-        - icon: brands/nvidia
-          name: NVIDIA
-        - icon: brands/openai
-          name: OpenAI
-        - icon: brands/anthropic
-          name: Anthropic
-        - icon: brands/stripe
-          name: Stripe
-        - icon: brands/vercel
-          name: Vercel
-    design:
-      layout: marquee
-      # White logos read cleanly against the dark band; both styles work — see logos block schema
-      logo_style: white
-      logo_size: md
-      marquee_speed: 35
-      # `dark` activates child components' `dark:` variants, `bg-gray-900` paints the band.
-      # Extends the dark zone from the hero, so the hero's fade-bottom no longer reveals a light strip.
-      css_class: "dark bg-gray-900"
-      spacing:
-        padding: ["2rem", 0, "2rem", 0]
+#  - block: logos
+#    content:
+#      title: Trusted by product teams at
+#      items:
+#        - icon: brands/github
+#          name: GitHub
+#        - icon: brands/google
+#          name: Google
+#        - icon: brands/microsoft
+#          name: Microsoft
+#        - icon: brands/nvidia
+#          name: NVIDIA
+#        - icon: brands/openai
+#          name: OpenAI
+#        - icon: brands/anthropic
+#          name: Anthropic
+#        - icon: brands/stripe
+#          name: Stripe
+#        - icon: brands/vercel
+#          name: Vercel
+#    design:
+#      layout: marquee
+#      # White logos read cleanly against the dark band; both styles work — see logos block schema
+#      logo_style: white
+#      logo_size: md
+#      marquee_speed: 35
+#      # `dark` activates child components' `dark:` variants, `bg-gray-900` paints the band.
+#      # Extends the dark zone from the hero, so the hero's fade-bottom no longer reveals a light strip.
+#      css_class: "dark bg-gray-900"
+#      spacing:
+#        padding: ["2rem", 0, "2rem", 0]
 
   - block: stats
     content:
