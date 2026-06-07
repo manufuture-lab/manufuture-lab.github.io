@@ -14,3 +14,48 @@
   {{ partial $footer_section_path . }}
 
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const normalize = (path) => {
+      if (!path) return "/";
+      return path.replace(/\/+$/, "") || "/";
+    };
+
+    const currentPath = normalize(window.location.pathname);
+
+    document.querySelectorAll("#nav-menu a[href]").forEach((link) => {
+      const linkPath = normalize(new URL(link.href, window.location.origin).pathname);
+
+      const isExact = currentPath === linkPath;
+      const isSection = linkPath !== "/" && currentPath.startsWith(linkPath + "/");
+
+      if (isExact || isSection) {
+        link.classList.add("mfl-nav-active");
+
+        const dropdown = link.closest("li.nav-dropdown");
+        if (dropdown) {
+          const parentTrigger = dropdown.querySelector(".nav-link");
+          if (parentTrigger) {
+            parentTrigger.classList.add("mfl-nav-active");
+          }
+        }
+      }
+    });
+
+    const sectionMap = [
+      { prefix: "/team/", label: "Team" },
+      { prefix: "/publications/", label: "Publications" },
+      { prefix: "/board/", label: "Board" }
+    ];
+
+    sectionMap.forEach((item) => {
+      if (currentPath.startsWith(item.prefix.replace(/\/+$/, ""))) {
+        document.querySelectorAll("#nav-menu .nav-link").forEach((el) => {
+          if (el.textContent.trim().startsWith(item.label)) {
+            el.classList.add("mfl-nav-active");
+          }
+        });
+      }
+    });
+  });
+</script>
