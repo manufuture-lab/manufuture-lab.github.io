@@ -142,7 +142,7 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "Copyright © ManuFuture Laboratory. All Right Reserved."
+    notice: "Copyright © ManuFuture Laboratory. All Rights Reserved."
     license:
       type: all_rights # cc | custom
       allow_derivatives: false
