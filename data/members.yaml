@@ -3,21 +3,32 @@ members:
     order: 1
     name: "Hanyang Kim (김한양)"
     role: "Graduate Research Assistant (M.S. candidate)"
-    bio: "B.S. in Mechanical Engineering, Hanyang University ERICA (2026)"
+    bio: |
+      B.S. in Mechanical Engineering, Hanyang University ERICA (2026)
+      Research interests: future manufacturing, surface engineering, and data-driven process optimization.
     photo: "media/members/Hanyang-Kim.png"
     links:
-      - icon: email
-        label: Email
-        url: "mailto:@hanyang.ac.kr"
-      - icon: linkedin
+      - pack: fab
+        icon: linkedin
         label: LinkedIn
         url: "#"
-      - icon: scholar
+
+      - pack: ai
+        icon: google-scholar
         label: Google Scholar
         url: "#"
-      - icon: researchgate
+
+      - pack: fab
+        icon: researchgate
         label: ResearchGate
         url: "#"
-      - icon: cv
+
+      - pack: fab
+        icon: orcid
+        label: ORCID
+        url: "#"
+
+      - pack: ai
+        icon: cv
         label: CV
         url: "#"
