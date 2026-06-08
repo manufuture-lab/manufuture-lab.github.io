@@ -252,3 +252,255 @@
   color: #64748b;
   font-style: italic;
 }
+/* ==========================================================================
+   Researchers page: ISL-like horizontal member rows
+   ========================================================================== */
+
+/* Section width and heading alignment */
+section#graduate-students,
+section#undergraduate-students,
+section#alumni {
+  width: 100% !important;
+}
+
+section#graduate-students .container,
+section#undergraduate-students .container,
+section#alumni .container,
+section#graduate-students .prose,
+section#undergraduate-students .prose,
+section#alumni .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+section#graduate-students > div,
+section#undergraduate-students > div,
+section#alumni > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  align-items: stretch !important;
+}
+
+/* Section titles: left aligned + divider */
+section#graduate-students h2,
+section#undergraduate-students h2,
+section#alumni h2,
+.mfl-members-section h2 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475) !important;
+  padding-bottom: 0.8rem !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Remove centered prose behavior in member sections */
+section#graduate-students .prose,
+section#undergraduate-students .prose,
+section#alumni .prose {
+  text-align: left !important;
+}
+
+/* Horizontal member list */
+.mfl-member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Horizontal member card */
+.mfl-member-row {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* Portrait photo area: semi-ID-photo style */
+.mfl-member-row-photo-wrap {
+  width: 170px;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  background: #e5e7eb;
+  align-self: start;
+}
+
+.mfl-member-row-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder when no photo exists */
+.mfl-member-row-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+.mfl-member-row-photo-placeholder span {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #64748b;
+}
+
+/* Text block */
+.mfl-member-row-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 0.15rem 0;
+}
+
+.mfl-member-row-name {
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #020617;
+  margin: 0 0 0.35rem 0;
+}
+
+.mfl-member-row-role {
+  font-size: 1.05rem;
+  color: #475569;
+  margin: 0 0 0.75rem 0;
+}
+
+.mfl-member-row-bio {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+  max-width: 860px;
+}
+
+/* Hide old tag UI if any old markup remains */
+.mfl-member-tags {
+  display: none !important;
+}
+
+/* Link icons */
+.mfl-member-row-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.1rem;
+}
+
+.mfl-member-row-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.05rem;
+  height: 2.05rem;
+  color: #4b5563;
+  text-decoration: none !important;
+  border-radius: 0.35rem;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.mfl-member-row-link:hover {
+  color: var(--mfl-nav-accent, #1D2475) !important;
+  background-color: rgba(29, 36, 117, 0.08);
+  transform: translateY(-1px);
+}
+
+.mfl-link-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+/* LinkedIn-like text icon */
+.mfl-link-linkedin {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+/* Google Scholar-like text icon */
+.mfl-link-scholar {
+  font-family: Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+/* ResearchGate-like text icon */
+.mfl-link-researchgate {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.mfl-link-researchgate sup {
+  font-size: 0.45rem;
+  margin-left: 0.02rem;
+  transform: translateY(-0.25rem);
+}
+
+/* CV icon */
+.mfl-link-cv {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Empty sections */
+.mfl-empty-members {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  section#graduate-students > div,
+  section#undergraduate-students > div,
+  section#alumni > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-member-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mfl-member-row-photo-wrap {
+    width: 180px;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mfl-member-row-body {
+    text-align: center;
+  }
+
+  .mfl-member-row-links {
+    justify-content: center;
+  }
+}
