@@ -1,3 +1,16 @@
+/* ==========================================================================
+   ManuFuture Lab custom styles
+   ========================================================================== */
+
+:root {
+  --mfl-nav-accent: #1D2475;
+}
+
+
+/* ==========================================================================
+   Navbar spacing, hover, active indicator
+   ========================================================================== */
+
 /* Add extra right spacing after dropdown menu items in the desktop navbar */
 @media (min-width: 1024px) {
   #nav-menu > li.nav-dropdown {
@@ -5,7 +18,8 @@
   }
 
   #nav-menu > li.nav-dropdown > .nav-link svg {
-    margin-left: 0.25rem;
+    flex-shrink: 0;
+    margin-left: 0.35rem;
   }
 }
 
@@ -14,16 +28,115 @@
     padding-right: 1.25rem;
   }
 }
+
+/* Stable MFL navbar hover/active UI */
+@media (min-width: 1024px) {
+  #nav-menu {
+    position: relative;
+    overflow: visible;
+  }
+
+  /*
+    Remove HugoBlox/default per-item underline.
+    We use one moving underline element instead.
+  */
+  #nav-menu .nav-link::after,
+  #nav-menu .nav-link.active::after,
+  #nav-menu .mfl-nav-active::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /*
+    Keep every top-level nav item metrically stable.
+    Do not change font-weight, margin, or padding on hover/active.
+    That prevents the tiny left/right movement.
+  */
+  #nav-menu > li > .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700 !important;
+    color: #0f172a;
+    transition:
+      color 180ms ease,
+      transform 160ms ease,
+      background-color 160ms ease;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Hover color */
+  #nav-menu > li > .nav-link:hover,
+  #nav-menu > li:hover > .nav-link,
+  #nav-menu > li.nav-dropdown:hover > .nav-link,
+  #nav-menu .nav-dropdown-link:hover {
+    color: var(--mfl-nav-accent) !important;
+  }
+
+  /* Active page color */
+  #nav-menu > li > .nav-link.active,
+  #nav-menu > li > .nav-link.mfl-nav-active,
+  #nav-menu .nav-dropdown-link.active {
+    color: var(--mfl-nav-accent) !important;
+    font-weight: 700 !important;
+  }
+
+  /*
+    Soft pressed effect.
+    This gives a clickable feeling without changing layout.
+  */
+  #nav-menu > li > .nav-link:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  /*
+    Moving underline indicator.
+    This is independent from menu item layout, so it does not push items around.
+  */
+  #nav-menu .mfl-nav-underline {
+    position: absolute;
+    left: 0;
+    bottom: -0.45rem;
+    height: 3px;
+    width: 0;
+    border-radius: 999px;
+    background: var(--mfl-nav-accent);
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transform-origin: left center;
+    transition:
+      transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+      width 260ms cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 160ms ease;
+  }
+}
+
+
+/* ==========================================================================
+   Home hero
+   ========================================================================== */
+
 /* Home hero title line spacing */
 .mfl-hero h1 {
   line-height: 1.15 !important;
 }
+
+
+/* ==========================================================================
+   Researchers page
+   ========================================================================== */
+
 /* Researchers page section headings */
 .mfl-members-section h2 {
   font-size: 2rem;
   font-weight: 800;
   color: #0f172a;
-  border-bottom: 2px solid #3b82f6;
+  border-bottom: 2px solid var(--mfl-nav-accent);
   padding-bottom: 0.8rem;
   margin-bottom: 2rem;
 }
@@ -111,8 +224,8 @@
 .mfl-member-tags span {
   display: inline-block;
   font-size: 0.8rem;
-  color: #2563eb;
-  background: #dbeafe;
+  color: #1D2475;
+  background: #eef2ff;
   padding: 0.25rem 0.5rem;
   border-radius: 0.3rem;
 }
@@ -133,89 +246,11 @@
 }
 
 .mfl-member-links a:hover {
-  color: #2563eb;
+  color: var(--mfl-nav-accent);
 }
 
 /* Empty sections */
 .mfl-empty-members {
   color: #64748b;
   font-style: italic;
-}
-/* Active navbar item: blue text + underline */
-@media (min-width: 1024px) {
-  #nav-menu .mfl-nav-active {
-    color: #3b82f6 !important;
-    position: relative;
-  }
-
-  #nav-menu > li > .mfl-nav-active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1.35rem;
-    height: 3px;
-    border-radius: 999px;
-    background: #3b82f6;
-  }
-}
-/* MFL navbar hover/active color and moving underline */
-:root {
-  --mfl-nav-accent: #1D2475;
-}
-
-@media (min-width: 1024px) {
-  /* Make nav menu a positioning context for the moving underline */
-  #site-header #nav-menu {
-    position: relative;
-    overflow: visible;
-  }
-
-  /* Override HugoBlox default active underline */
-  #site-header #nav-menu .nav-link::after,
-  #site-header #nav-menu .nav-link.active::after,
-  #site-header #nav-menu .mfl-nav-active::after {
-    content: none !important;
-    display: none !important;
-  }
-
-  /* Default nav item transition */
-  #site-header #nav-menu > li > .nav-link {
-    position: relative;
-    transition: color 0.2s ease;
-  }
-
-  /* Hover color */
-  #site-header #nav-menu > li > .nav-link:hover,
-  #site-header #nav-menu > li:hover > .nav-link,
-  #site-header #nav-menu > li.nav-dropdown:hover > .nav-link,
-  #site-header #nav-menu .nav-dropdown-link:hover {
-    color: var(--mfl-nav-accent) !important;
-  }
-
-  /* Active page color */
-  #site-header #nav-menu > li > .nav-link.active,
-  #site-header #nav-menu > li > .nav-link.mfl-nav-active,
-  #site-header #nav-menu .nav-dropdown-link.active {
-    color: var(--mfl-nav-accent) !important;
-    font-weight: 700;
-  }
-
-  /* Moving underline indicator */
-  #site-header #nav-menu .mfl-nav-underline {
-    position: absolute;
-    left: 0;
-    bottom: -0.45rem;
-    height: 3px;
-    width: 0;
-    border-radius: 999px;
-    background: var(--mfl-nav-accent);
-    pointer-events: none;
-    z-index: 20;
-    opacity: 0;
-    transition:
-      transform 0.25s ease,
-      width 0.25s ease,
-      opacity 0.2s ease;
-  }
 }
