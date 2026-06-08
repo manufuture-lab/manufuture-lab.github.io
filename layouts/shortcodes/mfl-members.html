@@ -2,58 +2,67 @@
 {{- $members := where site.Data.members.members "category" $category -}}
 
 {{- if gt (len $members) 0 -}}
-<div class="mfl-member-grid">
+<div class="mfl-member-list">
   {{- range sort $members "order" "asc" -}}
     {{- $m := . -}}
-    <article class="mfl-member-card">
-      <div class="mfl-member-photo-wrap">
+
+    <article class="mfl-member-row">
+      <div class="mfl-member-row-photo-wrap">
         {{- if $m.photo -}}
           {{- $img := resources.Get $m.photo -}}
           {{- if $img -}}
-            {{- $processed := $img.Fill "480x520 Center" -}}
-            <img src="{{ $processed.RelPermalink }}" alt="{{ $m.name }}" class="mfl-member-photo">
+            {{- $processed := $img.Fill "420x540 Center" -}}
+            <img src="{{ $processed.RelPermalink }}" alt="{{ $m.name }}" class="mfl-member-row-photo">
           {{- else -}}
-            <div class="mfl-member-photo-placeholder">{{ substr $m.name 0 1 }}</div>
+            <div class="mfl-member-row-photo-placeholder">
+              <span>{{ substr $m.name 0 1 }}</span>
+            </div>
           {{- end -}}
         {{- else -}}
-          <div class="mfl-member-photo-placeholder">{{ substr $m.name 0 1 }}</div>
+          <div class="mfl-member-row-photo-placeholder">
+            <span>{{ substr $m.name 0 1 }}</span>
+          </div>
         {{- end -}}
       </div>
 
-      <h3 class="mfl-member-name">{{ $m.name }}</h3>
+      <div class="mfl-member-row-body">
+        <div class="mfl-member-row-main">
+          <h3 class="mfl-member-row-name">{{ $m.name }}</h3>
 
-      {{- with $m.role -}}
-        <p class="mfl-member-role">{{ . | markdownify }}</p>
-      {{- end -}}
+          {{- with $m.role -}}
+            <p class="mfl-member-row-role">{{ . | markdownify }}</p>
+          {{- end -}}
 
-      {{- with $m.bio -}}
-        <p class="mfl-member-bio">{{ . | markdownify }}</p>
-      {{- end -}}
-
-      {{- with $m.tags -}}
-        <div class="mfl-member-tags">
-          {{- range . -}}
-            <span>{{ . }}</span>
+          {{- with $m.bio -}}
+            <p class="mfl-member-row-bio">{{ . | markdownify }}</p>
           {{- end -}}
         </div>
-      {{- end -}}
 
-      {{- with $m.links -}}
-        <div class="mfl-member-links">
-          {{- range . -}}
-            {{- if .url -}}
-              <a href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ .label }}">
-                {{- if eq .icon "email" -}}✉
-                {{- else if eq .icon "github" -}}GH
-                {{- else if eq .icon "linkedin" -}}in
-                {{- else if eq .icon "scholar" -}}GS
-                {{- else -}}↗
-                {{- end -}}
-              </a>
+        {{- with $m.links -}}
+          <div class="mfl-member-row-links" aria-label="{{ $m.name }} links">
+            {{- range . -}}
+              {{- $url := .url | default "" -}}
+              {{- if $url -}}
+                <a href="{{ $url }}" class="mfl-member-row-link mfl-member-link-{{ .icon }}" aria-label="{{ .label }}" title="{{ .label }}">
+                  {{- if eq .icon "email" -}}
+                    <span class="mfl-link-symbol">✉</span>
+                  {{- else if eq .icon "linkedin" -}}
+                    <span class="mfl-link-symbol mfl-link-linkedin">in</span>
+                  {{- else if eq .icon "scholar" -}}
+                    <span class="mfl-link-symbol mfl-link-scholar">g</span>
+                  {{- else if eq .icon "researchgate" -}}
+                    <span class="mfl-link-symbol mfl-link-researchgate">R<sup>G</sup></span>
+                  {{- else if eq .icon "cv" -}}
+                    <span class="mfl-link-symbol mfl-link-cv">CV</span>
+                  {{- else -}}
+                    <span class="mfl-link-symbol">↗</span>
+                  {{- end -}}
+                </a>
+              {{- end -}}
             {{- end -}}
-          {{- end -}}
-        </div>
-      {{- end -}}
+          </div>
+        {{- end -}}
+      </div>
     </article>
   {{- end -}}
 </div>
