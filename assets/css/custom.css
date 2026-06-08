@@ -8,7 +8,7 @@
 
 
 /* ==========================================================================
-   Navbar spacing, hover, active indicator
+   Navbar spacing, hover, active underline
    ========================================================================== */
 
 /* Add extra right spacing after dropdown menu items in the desktop navbar */
@@ -29,7 +29,7 @@
   }
 }
 
-/* Stable MFL navbar hover/active UI */
+/* Stable navbar underline: no moving bar, no item shifting */
 @media (min-width: 1024px) {
   #nav-menu {
     position: relative;
@@ -37,20 +37,16 @@
   }
 
   /*
-    Remove HugoBlox/default per-item underline.
-    We use one moving underline element instead.
+    Hide any old moving underline element if it remains in the DOM.
+    We do not use the moving underline system anymore.
   */
-  #nav-menu .nav-link::after,
-  #nav-menu .nav-link.active::after,
-  #nav-menu .mfl-nav-active::after {
-    content: none !important;
+  #nav-menu .mfl-nav-underline {
     display: none !important;
   }
 
   /*
-    Keep every top-level nav item metrically stable.
-    Do not change font-weight, margin, or padding on hover/active.
-    That prevents the tiny left/right movement.
+    Keep nav items stable.
+    Do not change padding, margin, or font-weight on hover/active.
   */
   #nav-menu > li > .nav-link {
     position: relative;
@@ -59,13 +55,29 @@
     justify-content: center;
     font-weight: 700 !important;
     color: #0f172a;
+    transform: none !important;
+    transition: color 180ms ease;
+  }
+
+  /*
+    Close underline under each top-level nav item.
+    This underline belongs to the item itself, so it does not move other items.
+  */
+  #nav-menu > li > .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.35rem;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--mfl-nav-accent);
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: center;
     transition:
-      color 180ms ease,
-      transform 160ms ease,
-      background-color 160ms ease;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+      transform 180ms ease,
+      opacity 180ms ease;
   }
 
   /* Hover color */
@@ -76,43 +88,29 @@
     color: var(--mfl-nav-accent) !important;
   }
 
-  /* Active page color */
+  /* Active color */
   #nav-menu > li > .nav-link.active,
   #nav-menu > li > .nav-link.mfl-nav-active,
+  #nav-menu > li > .nav-link[aria-current="page"],
   #nav-menu .nav-dropdown-link.active {
     color: var(--mfl-nav-accent) !important;
     font-weight: 700 !important;
   }
 
-  /*
-    Soft pressed effect.
-    This gives a clickable feeling without changing layout.
-  */
-  #nav-menu > li > .nav-link:active {
-    transform: translateY(1px) scale(0.985);
+  /* Show underline on hover */
+  #nav-menu > li > .nav-link:hover::after,
+  #nav-menu > li:hover > .nav-link::after,
+  #nav-menu > li.nav-dropdown:hover > .nav-link::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
-  /*
-    Moving underline indicator.
-    This is independent from menu item layout, so it does not push items around.
-  */
-  #nav-menu .mfl-nav-underline {
-    position: absolute;
-    left: 0;
-    bottom: -0.45rem;
-    height: 3px;
-    width: 0;
-    border-radius: 999px;
-    background: var(--mfl-nav-accent);
-    pointer-events: none;
-    z-index: 20;
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-    transform-origin: left center;
-    transition:
-      transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-      width 260ms cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 160ms ease;
+  /* Show underline on current/active page */
+  #nav-menu > li > .nav-link.active::after,
+  #nav-menu > li > .nav-link.mfl-nav-active::after,
+  #nav-menu > li > .nav-link[aria-current="page"]::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 }
 
