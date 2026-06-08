@@ -1,148 +1,150 @@
-<footer class="container mx-auto flex flex-col justify-items-center text-sm leading-6 mt-24 mb-4 text-slate-700 dark:text-slate-200">
+{{ partial "functions/get_hook" (dict "hook" "footer-start" "context" .) }}
 
-  {{ partial "functions/get_hook" (dict "hook" "footer-start" "context" .) }}
+{{/* Load footer block */}}
+{{- $footer_config := site.Params.hugoblox.footer | default dict -}}
+{{- $footer_section_name := partial "hbx/resolve-block-param" (dict "config" $footer_config "context" "footer") | default "minimal" -}}
+{{- $footer_section_path := printf "components/footers/%s.html" $footer_section_name -}}
 
-  {{/* Load footer block */}}
-  {{- $footer_config := site.Params.hugoblox.footer | default dict -}}
-  {{- $footer_section_name := partial "hbx/resolve-block-param" (dict "config" $footer_config "context" "footer") | default "minimal" -}}
-  {{- $footer_section_path := printf "components/footers/%s.html" $footer_section_name -}}
+{{- if not (templates.Exists (printf "_partials/%s" $footer_section_path)) -}}
+  {{- errorf "Check your `params.yaml`. Cannot find footer block at `layouts/_partials/%s`" $footer_section_path -}}
+{{- end -}}
 
-  {{- if not (templates.Exists (printf "_partials/%s" $footer_section_path)) -}}
-    {{- errorf "Check your `params.yaml`. Cannot find footer block at `layouts/_partials/%s`" $footer_section_path -}}
-  {{- end -}}
+{{ partial $footer_section_path . }}
 
-  {{ partial $footer_section_path . }}
-
-</footer>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const normalize = (path) => {
-      if (!path) return "/";
-      return path.replace(/\/+$/, "") || "/";
-    };
+  (function () {
+    function initMflNavbar() {
+      const navMenu = document.querySelector("#nav-menu");
+      if (!navMenu) return;
 
-    const currentPath = normalize(window.location.pathname);
+      const topLinks = Array.from(navMenu.children)
+        .map((item) => {
+          return Array.from(item.children).find((child) => {
+            return child.classList && child.classList.contains("nav-link");
+          });
+        })
+        .filter(Boolean);
 
-    document.querySelectorAll("#nav-menu a[href]").forEach((link) => {
-      const linkPath = normalize(new URL(link.href, window.location.origin).pathname);
+      if (!topLinks.length) return;
 
-      const isExact = currentPath === linkPath;
-      const isSection = linkPath !== "/" && currentPath.startsWith(linkPath + "/");
-
-      if (isExact || isSection) {
-        link.classList.add("mfl-nav-active");
-
-        const dropdown = link.closest("li.nav-dropdown");
-        if (dropdown) {
-          const parentTrigger = dropdown.querySelector(".nav-link");
-          if (parentTrigger) {
-            parentTrigger.classList.add("mfl-nav-active");
-          }
-        }
+      let underline = navMenu.querySelector(".mfl-nav-underline");
+      if (!underline) {
+        underline = document.createElement("span");
+        underline.className = "mfl-nav-underline";
+        navMenu.appendChild(underline);
       }
-    });
 
-    const sectionMap = [
-      { prefix: "/team/", label: "Team" },
-      { prefix: "/publications/", label: "Publications" },
-      { prefix: "/board/", label: "Board" }
-    ];
+      function normalize(path) {
+        if (!path) return "/";
+        return path.replace(/\/+$/, "") || "/";
+      }
 
-    sectionMap.forEach((item) => {
-      if (currentPath.startsWith(item.prefix.replace(/\/+$/, ""))) {
-        document.querySelectorAll("#nav-menu .nav-link").forEach((el) => {
-          if (el.textContent.trim().startsWith(item.label)) {
-            el.classList.add("mfl-nav-active");
-          }
+      function currentPath() {
+        return normalize(window.location.pathname);
+      }
+
+      function findTopLinkByLabel(label) {
+        return topLinks.find((link) => {
+          return link.textContent.trim().startsWith(label);
         });
       }
-    });
-  });
-</script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navMenu = document.querySelector("#site-header #nav-menu");
-    if (!navMenu) return;
 
-    const topLinks = Array.from(navMenu.querySelectorAll(":scope > li > .nav-link"));
-    if (!topLinks.length) return;
+      function getActiveLink() {
+        const path = currentPath();
 
-    let underline = navMenu.querySelector(".mfl-nav-underline");
-    if (!underline) {
-      underline = document.createElement("span");
-      underline.className = "mfl-nav-underline";
-      navMenu.appendChild(underline);
-    }
+        const sectionMap = [
+          { prefix: "/team", label: "Team" },
+          { prefix: "/publications", label: "Publications" },
+          { prefix: "/board", label: "Board" }
+        ];
 
-    function moveUnderlineTo(link) {
-      if (!link) {
-        underline.style.opacity = "0";
-        underline.style.width = "0px";
-        return;
-      }
-
-      const navRect = navMenu.getBoundingClientRect();
-      const linkRect = link.getBoundingClientRect();
-
-      underline.style.width = `${linkRect.width}px`;
-      underline.style.transform = `translateX(${linkRect.left - navRect.left}px)`;
-      underline.style.opacity = "1";
-    }
-
-    function getActiveLink() {
-      const active = navMenu.querySelector(":scope > li > .nav-link.active, :scope > li > .nav-link.mfl-nav-active");
-      if (active) return active;
-
-      const path = window.location.pathname.replace(/\/+$/, "") || "/";
-
-      const sectionMap = [
-        { prefix: "/team", label: "Team" },
-        { prefix: "/publications", label: "Publications" },
-        { prefix: "/board", label: "Board" }
-      ];
-
-      for (const item of sectionMap) {
-        if (path.startsWith(item.prefix)) {
-          const matched = topLinks.find((link) => link.textContent.trim().startsWith(item.label));
-          if (matched) {
-            matched.classList.add("mfl-nav-active");
-            return matched;
+        for (const item of sectionMap) {
+          if (path === item.prefix || path.startsWith(item.prefix + "/")) {
+            const matched = findTopLinkByLabel(item.label);
+            if (matched) return matched;
           }
         }
+
+        return topLinks.find((link) => {
+          if (!link.href) return false;
+          const linkPath = normalize(
+            new URL(link.href, window.location.origin).pathname
+          );
+          return linkPath === path;
+        });
       }
 
-      return topLinks.find((link) => {
-        if (!link.href) return false;
-        const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/+$/, "") || "/";
-        return linkPath === path;
+      function setActiveClasses() {
+        topLinks.forEach((link) => {
+          link.classList.remove("mfl-nav-active");
+        });
+
+        const active = getActiveLink();
+
+        if (active) {
+          active.classList.add("mfl-nav-active");
+        }
+
+        return active;
+      }
+
+      function moveUnderlineTo(link) {
+        if (!link) {
+          underline.style.opacity = "0";
+          underline.style.width = "0px";
+          return;
+        }
+
+        window.requestAnimationFrame(() => {
+          const navRect = navMenu.getBoundingClientRect();
+          const linkRect = link.getBoundingClientRect();
+
+          underline.style.width = `${linkRect.width}px`;
+          underline.style.transform = `translate3d(${linkRect.left - navRect.left}px, 0, 0)`;
+          underline.style.opacity = "1";
+        });
+      }
+
+      let activeLink = setActiveClasses();
+      moveUnderlineTo(activeLink);
+
+      topLinks.forEach((link) => {
+        link.addEventListener("mouseenter", () => {
+          moveUnderlineTo(link);
+        });
+
+        link.addEventListener("focus", () => {
+          moveUnderlineTo(link);
+        });
       });
+
+      navMenu.addEventListener("mouseleave", () => {
+        activeLink = setActiveClasses();
+        moveUnderlineTo(activeLink);
+      });
+
+      window.addEventListener("resize", () => {
+        activeLink = setActiveClasses();
+        moveUnderlineTo(activeLink);
+      });
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+          activeLink = setActiveClasses();
+          moveUnderlineTo(activeLink);
+        });
+      }
+
+      window.setTimeout(() => {
+        activeLink = setActiveClasses();
+        moveUnderlineTo(activeLink);
+      }, 150);
     }
 
-    let activeLink = getActiveLink();
-
-    if (activeLink) {
-      activeLink.classList.add("mfl-nav-active");
-      moveUnderlineTo(activeLink);
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMflNavbar);
+    } else {
+      initMflNavbar();
     }
-
-    topLinks.forEach((link) => {
-      link.addEventListener("mouseenter", function () {
-        moveUnderlineTo(link);
-      });
-
-      link.addEventListener("focus", function () {
-        moveUnderlineTo(link);
-      });
-    });
-
-    navMenu.addEventListener("mouseleave", function () {
-      activeLink = getActiveLink();
-      moveUnderlineTo(activeLink);
-    });
-
-    window.addEventListener("resize", function () {
-      activeLink = getActiveLink();
-      moveUnderlineTo(activeLink);
-    });
-  });
+  })();
 </script>
