@@ -504,3 +504,56 @@ section#alumni .prose {
     justify-content: center;
   }
 }
+/* ==========================================================================
+   Researchers page icon refinement
+   ========================================================================== */
+
+/* Member bio line breaks */
+.mfl-member-row-bio {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+  max-width: 860px;
+}
+
+.mfl-member-row-bio p {
+  margin: 0;
+}
+
+/* HugoBlox SVG icons in member links */
+.mfl-member-row-link svg,
+.mfl-member-row-link .mfl-member-icon {
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  display: block;
+}
+
+/* Make SVG icons follow hover color */
+.mfl-member-row-link svg,
+.mfl-member-row-link svg * {
+  fill: currentColor;
+  color: currentColor;
+}
+
+/* Link icon button style */
+.mfl-member-row-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  color: #4b5563;
+  text-decoration: none !important;
+  border-radius: 0.35rem;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.mfl-member-row-link:hover {
+  color: var(--mfl-nav-accent, #1D2475) !important;
+  background-color: rgba(29, 36, 117, 0.08);
+  transform: translateY(-1px);
+}
