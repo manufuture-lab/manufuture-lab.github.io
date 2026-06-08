@@ -34,7 +34,8 @@
           {{- end -}}
 
           {{- with $m.bio -}}
-            <p class="mfl-member-row-bio">{{ . | markdownify }}</p>
+            {{- $bio := replaceRE "\r?\n" "<br>" . -}}
+            <div class="mfl-member-row-bio">{{ $bio | markdownify }}</div>
           {{- end -}}
         </div>
 
@@ -43,20 +44,17 @@
             {{- range . -}}
               {{- $url := .url | default "" -}}
               {{- if $url -}}
-                <a href="{{ $url }}" class="mfl-member-row-link mfl-member-link-{{ .icon }}" aria-label="{{ .label }}" title="{{ .label }}">
-                  {{- if eq .icon "email" -}}
-                    <span class="mfl-link-symbol">✉</span>
-                  {{- else if eq .icon "linkedin" -}}
-                    <span class="mfl-link-symbol mfl-link-linkedin">in</span>
-                  {{- else if eq .icon "scholar" -}}
-                    <span class="mfl-link-symbol mfl-link-scholar">g</span>
-                  {{- else if eq .icon "researchgate" -}}
-                    <span class="mfl-link-symbol mfl-link-researchgate">R<sup>G</sup></span>
-                  {{- else if eq .icon "cv" -}}
-                    <span class="mfl-link-symbol mfl-link-cv">CV</span>
-                  {{- else -}}
-                    <span class="mfl-link-symbol">↗</span>
-                  {{- end -}}
+                {{- $data_pack := .pack | default "" -}}
+                {{- $icon_pack := $data_pack -}}
+
+                {{- if eq $data_pack "fab" -}}
+                  {{- $icon_pack = "brands" -}}
+                {{- else if eq $data_pack "ai" -}}
+                  {{- $icon_pack = "academicons" -}}
+                {{- end -}}
+
+                <a href="{{ $url }}" class="mfl-member-row-link" aria-label="{{ .label }}" title="{{ .label }}" target="_blank" rel="noopener">
+                  {{- partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-member-icon\"") -}}
                 </a>
               {{- end -}}
             {{- end -}}
