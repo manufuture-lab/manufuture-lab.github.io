@@ -224,7 +224,7 @@
 .mfl-member-tags span {
   display: inline-block;
   font-size: 0.8rem;
-  color: #1D2475;
+  color: var(--mfl-nav-accent);
   background: #eef2ff;
   padding: 0.25rem 0.5rem;
   border-radius: 0.3rem;
