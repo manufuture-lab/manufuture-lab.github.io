@@ -4,7 +4,7 @@ members:
     name: "Hanyang Kim (김한양)"
     role: "Graduate Research Assistant (M.S. candidate)"
     bio: "B.S. in Mechanical Engineering, Hanyang University ERICA (2026)"
-    photo: "assets/media/members/Hanyang-Kim.png"
+    photo: "media/members/Hanyang-Kim.png"
     links:
       - icon: email
         label: Email
