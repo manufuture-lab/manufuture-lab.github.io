@@ -8,6 +8,18 @@ design:
 
 sections:
   - block: markdown
+    id: researchers-banner
+    content:
+      title: ""
+      text: |
+        {{< mfl-researchers-banner >}}
+    design:
+      spacing:
+        padding: ["2rem", 0, "1rem", 0]
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
+
+  - block: markdown
     id: graduate-students
     content:
       title: "Graduate Students"
