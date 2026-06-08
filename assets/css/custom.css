@@ -557,3 +557,58 @@ section#alumni .prose {
   background-color: rgba(29, 36, 117, 0.08);
   transform: translateY(-1px);
 }
+/* ==========================================================================
+   Researchers page banner image
+   ========================================================================== */
+
+.mfl-researchers-banner {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.mfl-researchers-banner-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 0.9rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+
+/* ==========================================================================
+   Researchers page icon color update
+   ========================================================================== */
+
+:root {
+  --mfl-member-icon-accent: #0353a4;
+}
+
+/* Default member icon color */
+.mfl-member-row-link {
+  color: #4b5563;
+}
+
+/* Hover member icon color */
+.mfl-member-row-link:hover {
+  color: var(--mfl-member-icon-accent, #0353a4) !important;
+  background-color: rgba(3, 83, 164, 0.08) !important;
+}
+
+/* Make SVG icons follow the link color */
+.mfl-member-row-link svg,
+.mfl-member-row-link svg * {
+  fill: currentColor;
+  color: currentColor;
+}
+
+/* Icon size */
+.mfl-member-row-link svg,
+.mfl-member-row-link .mfl-member-icon {
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  display: block;
+}
