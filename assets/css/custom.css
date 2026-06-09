@@ -825,3 +825,243 @@ section#alumni .prose {
     padding: 1.5rem;
   }
 }
+/* ==========================================================================
+   Professor page: horizontal wide layout
+   ========================================================================== */
+
+.mfl-professor-section,
+.mfl-professor-section .container,
+.mfl-professor-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.mfl-professor-section .prose {
+  text-align: left !important;
+}
+
+.mfl-professor-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Top professor profile: wide horizontal card */
+.mfl-professor-profile-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: stretch;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* Photo: portrait ratio like Researchers */
+.mfl-professor-profile-photo-wrap {
+  width: 260px;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  background: #e5e7eb;
+  align-self: start;
+}
+
+.mfl-professor-profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mfl-professor-profile-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #64748b;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+/* Right body */
+.mfl-professor-profile-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: 0.25rem 0;
+}
+
+.mfl-professor-profile-name {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #020617;
+  margin: 0 0 1rem 0;
+  max-width: none;
+}
+
+.mfl-professor-profile-position {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 1.25rem;
+}
+
+.mfl-professor-profile-contact {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+.mfl-professor-profile-contact a {
+  color: #111827;
+  text-decoration: none;
+}
+
+.mfl-professor-profile-contact a:hover {
+  color: #0353a4;
+}
+
+/* Icons */
+.mfl-professor-profile-links {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.75rem;
+}
+
+.mfl-professor-profile-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  color: #4b5563;
+  background: #ffffff;
+  border-radius: 0.35rem;
+  text-decoration: none !important;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.mfl-professor-profile-link:hover {
+  color: #0353a4 !important;
+  background-color: rgba(3, 83, 164, 0.08);
+  transform: translateY(-1px);
+}
+
+.mfl-professor-profile-link svg,
+.mfl-professor-profile-link svg *,
+.mfl-professor-profile-icon {
+  width: 1.35rem !important;
+  height: 1.35rem !important;
+  fill: currentColor;
+  color: currentColor;
+}
+
+.mfl-professor-profile-icon-fallback {
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Wide info blocks */
+.mfl-professor-info-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+.mfl-professor-info-card h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.mfl-professor-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mfl-professor-info-item {
+  line-height: 1.65;
+}
+
+.mfl-professor-info-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #020617;
+  margin-bottom: 0.15rem;
+}
+
+.mfl-professor-info-text {
+  color: #475569;
+}
+
+.mfl-professor-info-note {
+  color: #64748b;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+/* Awards */
+.mfl-professor-awards-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.mfl-professor-awards-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .mfl-professor-page {
+    padding: 0 1rem;
+  }
+
+  .mfl-professor-profile-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mfl-professor-profile-photo-wrap {
+    width: 240px;
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mfl-professor-profile-body {
+    text-align: center;
+  }
+
+  .mfl-professor-profile-links {
+    justify-content: center;
+  }
+
+  .mfl-professor-info-card {
+    padding: 1.5rem;
+  }
+}
