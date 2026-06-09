@@ -1324,3 +1324,31 @@ section#professor > div,
     padding: 1.5rem;
   }
 }
+/* ==========================================================================
+   Professor page: awards font size refinement
+   ========================================================================== */
+
+/* Match Awards & Honors text size with professor affiliation text */
+.mfl-professor-wide-awards,
+.mfl-professor-awards-list,
+.mfl-professor-awards {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #475569 !important;
+}
+
+.mfl-professor-wide-awards li,
+.mfl-professor-awards-list li,
+.mfl-professor-awards li {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  margin-bottom: 0.4rem;
+}
+
+/* Fallback selector in case awards are rendered as a plain markdown list */
+section#professor .prose ul:last-child,
+.mfl-professor-section .prose ul:last-child {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #475569 !important;
+}
