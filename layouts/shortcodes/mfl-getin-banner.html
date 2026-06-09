@@ -1,0 +1,10 @@
+{{- $img := resources.Get "media/getin.png" -}}
+
+{{- if $img -}}
+  {{- $processed := $img.Fit "1600x700" -}}
+  <div class="mfl-getin-banner">
+    <img src="{{ $processed.RelPermalink }}" alt="Join ManuFuture Laboratory" class="mfl-getin-banner-img" loading="lazy">
+  </div>
+{{- else -}}
+  {{- warnf "Join MFL banner image not found: assets/media/getin.png" -}}
+{{- end -}}
