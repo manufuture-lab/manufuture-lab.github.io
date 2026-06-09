@@ -2,33 +2,33 @@
 
 <div class="mfl-professor-page">
 
-  <section class="mfl-professor-hero">
-    <div class="mfl-professor-photo-wrap">
+  <section class="mfl-professor-profile-card">
+    <div class="mfl-professor-profile-photo-wrap">
       {{- if $p.photo -}}
         {{- $img := resources.Get $p.photo -}}
         {{- if $img -}}
-          {{- $processed := $img.Fill "640x820 Center" -}}
-          <img src="{{ $processed.RelPermalink }}" alt="{{ $p.name }}" class="mfl-professor-photo">
+          {{- $processed := $img.Fill "420x560 Center" -}}
+          <img src="{{ $processed.RelPermalink }}" alt="{{ $p.name }}" class="mfl-professor-profile-photo">
         {{- else -}}
-          <div class="mfl-professor-photo-placeholder">SK</div>
+          <div class="mfl-professor-profile-photo-placeholder">SK</div>
         {{- end -}}
       {{- else -}}
-        <div class="mfl-professor-photo-placeholder">SK</div>
+        <div class="mfl-professor-profile-photo-placeholder">SK</div>
       {{- end -}}
     </div>
 
-    <div class="mfl-professor-info">
-      <h1 class="mfl-professor-name">{{ $p.name }}</h1>
+    <div class="mfl-professor-profile-body">
+      <h1 class="mfl-professor-profile-name">{{ $p.name }}</h1>
 
       {{- with $p.position -}}
-        <div class="mfl-professor-position">
+        <div class="mfl-professor-profile-position">
           {{- range . -}}
             <div>{{ . }}</div>
           {{- end -}}
         </div>
       {{- end -}}
 
-      <div class="mfl-professor-contact">
+      <div class="mfl-professor-profile-contact">
         {{- with $p.email -}}
           <div><strong>Email:</strong> <a href="mailto:{{ . }}">{{ . }}</a></div>
         {{- end -}}
@@ -39,7 +39,7 @@
       </div>
 
       {{- with $p.links -}}
-        <div class="mfl-professor-links" aria-label="{{ $p.name }} links">
+        <div class="mfl-professor-profile-links" aria-label="{{ $p.name }} links">
           {{- range . -}}
             {{- $url := .url | default "" -}}
             {{- if $url -}}
@@ -52,12 +52,12 @@
                 {{- $icon_pack = "academicons" -}}
               {{- end -}}
 
-              <a href="{{ $url }}" class="mfl-professor-link" aria-label="{{ .label }}" title="{{ .label }}" target="_blank" rel="noopener">
-                {{- $icon := partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-professor-icon\"") -}}
+              <a href="{{ $url }}" class="mfl-professor-profile-link" aria-label="{{ .label }}" title="{{ .label }}" target="_blank" rel="noopener">
+                {{- $icon := partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-professor-profile-icon\"") -}}
                 {{- if $icon -}}
                   {{ $icon | safeHTML }}
                 {{- else -}}
-                  <span class="mfl-professor-icon-fallback">{{ .label }}</span>
+                  <span class="mfl-professor-profile-icon-fallback">{{ .label }}</span>
                 {{- end -}}
               </a>
             {{- end -}}
@@ -67,39 +67,39 @@
     </div>
   </section>
 
-  <section class="mfl-professor-card">
+  <section class="mfl-professor-info-card">
     <h2>Education</h2>
 
-    <div class="mfl-professor-list">
+    <div class="mfl-professor-info-list">
       {{- range $p.education -}}
-        <div class="mfl-professor-list-item">
-          <div class="mfl-professor-list-title">{{ .degree }}</div>
-          <div class="mfl-professor-list-text">{{ .institution }}</div>
+        <div class="mfl-professor-info-item">
+          <div class="mfl-professor-info-title">{{ .degree }}</div>
+          <div class="mfl-professor-info-text">{{ .institution }}</div>
           {{- with .note -}}
-            <div class="mfl-professor-list-note">Note: {{ . }}</div>
+            <div class="mfl-professor-info-note">Note: {{ . }}</div>
           {{- end -}}
         </div>
       {{- end -}}
     </div>
   </section>
 
-  <section class="mfl-professor-card">
+  <section class="mfl-professor-info-card">
     <h2>Professional Experience</h2>
 
-    <div class="mfl-professor-list">
+    <div class="mfl-professor-info-list">
       {{- range $p.experience -}}
-        <div class="mfl-professor-list-item">
-          <div class="mfl-professor-list-title">{{ .title }}</div>
-          <div class="mfl-professor-list-text">{{ .affiliation }}</div>
+        <div class="mfl-professor-info-item">
+          <div class="mfl-professor-info-title">{{ .title }}</div>
+          <div class="mfl-professor-info-text">{{ .affiliation }}</div>
         </div>
       {{- end -}}
     </div>
   </section>
 
-  <section class="mfl-professor-card">
+  <section class="mfl-professor-info-card">
     <h2>Awards &amp; Honors</h2>
 
-    <ul class="mfl-professor-awards">
+    <ul class="mfl-professor-awards-list">
       {{- range $p.awards -}}
         <li>{{ . }}</li>
       {{- end -}}
