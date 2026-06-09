@@ -1,0 +1,60 @@
+name: "Sukkyung Kang, 강석경"
+position:
+  - "Assistant Professor"
+  - "Department of Mechanical Engineering"
+  - "Hanyang University ERICA"
+
+photo: "media/sukkyung-kang.jpg"
+
+email: "Email: example@hanyang.ac.kr"
+tel: "TEL: +82 031-000-0000"
+
+links:
+  - pack: fab
+    icon: linkedin
+    label: LinkedIn
+    url: "https://www.linkedin.com/in/sukkyung-kang-369440223/"
+
+  - pack: ai
+    icon: google-scholar
+    label: Google Scholar
+    url: "https://scholar.google.com/citations?user=WpQFDrYAAAAJ&hl=en"
+
+  - pack: fab
+    icon: researchgate
+    label: ResearchGate
+    url: "https://www.researchgate.net/profile/Sukkyung-Kang?ev=hdr_xprf"
+
+  - pack: fab
+    icon: orcid
+    label: ORCID
+    url: "https://orcid.org/0000-0002-4301-1354"
+
+  - pack: ai
+    icon: cv
+    label: CV
+    url: "#"
+
+education:
+  - degree: "Ph.D. in Mechanical Engineering (2025)"
+    institution: "Korea Advanced Institute of Science and Technology (KAIST)"
+
+  - degree: "M.S. in Mechanical Engineering (2022)"
+    institution: "Korea Advanced Institute of Science and Technology (KAIST)"
+
+  - degree: "B.S. in Mechanical Engineering (2020)"
+    institution: "Hanyang University (HYU)"
+    note: "(Note: Military Service during April 2015 - January 2017)"
+
+experience:
+  - title: "Assistant Professor (Sep. 2026 - Present)"
+    affiliation: "Department of Mechanical Engineering, Hanyang University"
+
+  - title: "Postdoctoral Fellow (Aug. 2025 - Aug. 2026)"
+    affiliation: "PRISM-AI Center (Platform for Real-world Innovation in Smart Manufacturing and AI), KAIST"
+
+awards:
+  - "젊은 과학자 상, 국제마이크로전자패키징학회(ISMP), 2025"
+  - "삼성휴먼테크논문대상 금상·은상 동시 수상, 2025"
+  - "우덕재단 미래장학금, 2024"
+  - "국내외 학술대회 발표상 (ICPT, MRS, ISMP, KTS, KSPE, KMEPS, ENGE)"
