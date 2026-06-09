@@ -1352,3 +1352,25 @@ section#professor .prose ul:last-child,
   line-height: 1.75 !important;
   color: #475569 !important;
 }
+/* ==========================================================================
+   Professor page: prevent profile photo cropping
+   ========================================================================== */
+
+.mfl-professor-wide-photo {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f3f4f6;
+}
+
+.mfl-professor-wide-photo-wrap {
+  background: #f3f4f6 !important;
+}/* ==========================================================================
+   Professor page: awards font size refinement
+   ========================================================================== */
+
+.mfl-professor-wide-awards,
+.mfl-professor-wide-awards li {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  color: #475569 !important;
+}
