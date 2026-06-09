@@ -11,8 +11,8 @@
         {{- if $m.photo -}}
           {{- $img := resources.Get $m.photo -}}
           {{- if $img -}}
-            {{- $processed := $img.Fill "420x540 Center" -}}
-            <img src="{{ $processed.RelPermalink }}" alt="{{ $m.name }}" class="mfl-member-row-photo">
+            {{- $processed := $img.Fill "420x560 Center" -}}
+            <img src="{{ $processed.RelPermalink }}" alt="{{ $m.name }}" class="mfl-member-row-photo" loading="lazy">
           {{- else -}}
             <div class="mfl-member-row-photo-placeholder">
               <span>{{ substr $m.name 0 1 }}</span>
@@ -35,7 +35,7 @@
 
           {{- with $m.bio -}}
             {{- $bio := replaceRE "\r?\n" "<br>" . -}}
-            <div class="mfl-member-row-bio">{{ $bio | markdownify }}</div>
+            <div class="mfl-member-row-bio">{{ $bio | safeHTML }}</div>
           {{- end -}}
         </div>
 
