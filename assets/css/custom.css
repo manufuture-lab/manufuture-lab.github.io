@@ -1374,3 +1374,34 @@ section#professor .prose ul:last-child,
   line-height: 1.75 !important;
   color: #475569 !important;
 }
+/* ==========================================================================
+   Professor page: fix profile photo vertical shift
+   ========================================================================== */
+
+/*
+  The professor profile image is rendered inside a markdown/prose block.
+  Tailwind Typography may add default margins to images inside .prose.
+  Those margins can push the image downward inside the fixed photo frame.
+*/
+section#professor .prose img.mfl-professor-wide-photo,
+.mfl-professor-section .prose img.mfl-professor-wide-photo,
+.mfl-professor-wide-photo-wrap > img.mfl-professor-wide-photo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #f3f4f6;
+}
+
+/* Keep the photo frame as an exact 3:4 portrait box */
+.mfl-professor-wide-photo-wrap {
+  width: 260px !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+  background: #f3f4f6 !important;
+  display: block !important;
+}
