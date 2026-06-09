@@ -17,6 +17,7 @@ sections:
     design:
       spacing:
         padding: ["3rem", 0, "3rem", 0]
+      css_class: "mfl-professor-section"
       css_style: "max-width: 100% !important; width: 100% !important;"
       container: false
 ---
