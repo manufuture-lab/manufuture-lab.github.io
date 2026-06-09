@@ -7,7 +7,7 @@
       {{- if $p.photo -}}
         {{- $img := resources.Get $p.photo -}}
         {{- if $img -}}
-          {{- $processed := $img.Fill "420x560 Center" -}}
+          {{- $processed := $img.Fit "420x560" -}}
           <img src="{{ $processed.RelPermalink }}" alt="{{ $p.name }}" class="mfl-professor-wide-photo">
         {{- else -}}
           <div class="mfl-professor-wide-photo-placeholder">SK</div>
