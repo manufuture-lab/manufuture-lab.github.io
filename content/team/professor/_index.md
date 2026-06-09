@@ -10,19 +10,13 @@ sections:
   - block: markdown
     id: professor
     content:
-      title: "Professor"
+      title: ""
       text: |
-        ## Sukkyung Kang
-
-        Assistant Professor  
-        ManuFuture Laboratory  
-        Hanyang University
-
-        Research interests: future manufacturing, advanced materials processing, surface/interface engineering, and data-driven process innovation.
-
-        **Email:** @hanyang.ac.kr
+        {{< mfl-professor >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["3rem", 0, "3rem", 0]
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
