@@ -1405,3 +1405,75 @@ section#professor .prose img.mfl-professor-wide-photo,
   background: #f3f4f6 !important;
   display: block !important;
 }
+/* ==========================================================================
+   Researchers page: fix member photo vertical shift
+   ========================================================================== */
+
+/*
+  Member cards are rendered inside HugoBlox markdown/prose sections.
+  Typography styles may add default margins to images.
+  These rules force member photos to sit exactly inside the portrait frame.
+*/
+section#graduate-students .prose img.mfl-member-row-photo,
+section#undergraduate-students .prose img.mfl-member-row-photo,
+section#alumni .prose img.mfl-member-row-photo,
+.mfl-member-row-photo-wrap > img.mfl-member-row-photo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  background: #f3f4f6;
+}
+
+/* Keep the member photo frame as an exact 3:4 portrait box */
+.mfl-member-row-photo-wrap {
+  width: 170px !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+  background: #f3f4f6 !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* Optional: for mobile layout */
+@media (max-width: 767px) {
+  .mfl-member-row-photo-wrap {
+    width: 180px !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   Join MFL page: getin banner
+   ========================================================================== */
+
+.mfl-getin-banner {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.mfl-getin-banner-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  border-radius: 0.9rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+  background: #f3f4f6;
+}
+
+@media (max-width: 767px) {
+  .mfl-getin-banner {
+    padding: 0 1rem;
+  }
+}
