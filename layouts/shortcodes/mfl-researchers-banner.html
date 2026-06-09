@@ -1,9 +1,0 @@
-{{- $img := resources.Get "media/getin.png" -}}
-
-{{- if $img -}}
-  <div class="mfl-researchers-banner">
-    <img src="{{ $img.RelPermalink }}" alt="Join ManuFuture Laboratory" class="mfl-researchers-banner-img">
-  </div>
-{{- else -}}
-  {{- warnf "Researchers banner image not found: assets/media/getin.png" -}}
-{{- end -}}
