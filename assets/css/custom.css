@@ -1952,3 +1952,12 @@ section#journal-publications h2,
     font-size: 0.98rem !important;
   }
 }
+/* ==========================================================================
+   Journal page: remove bold from paper title
+   ========================================================================== */
+
+.mfl-journal-title,
+.mfl-journal-title span,
+.mfl-journal-number {
+  font-weight: 500 !important;
+}
