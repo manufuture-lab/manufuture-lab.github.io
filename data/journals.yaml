@@ -4,12 +4,284 @@ submitted:
   - "Data-free physics-informed inverse programming of bistable kirigami energy landscapes, Sukheon Kang, Sukkyung Kang, Sanha Kim, Seunghwa Ryu, in revision."
 
 published:
-  - date: "2021-01-01"
+  - order: 1
     title: "Mechanical abrasion by bi-layered pad micro-asperity in chemical mechanical polishing"
     image: "media/publications/1. Ryu-CIRP-2021.jpg"
     authors: "Hyun Jun Ryu, Dong Geun Kim, **Sukkyung Kang**, Ji-Hun Jeong and Sanha Kim"
     journal: "CIRP Annals - Manufacturing Technology"
     details: "70, 1, 273-276, 2021"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 2
+    title: "Development of cutoff size adjustable omnidirectional inlet cyclone separator"
+    image: "media/publications/2. Lim-SaPT-2021.jpg"
+    authors: "Jun-Hyung Lim, Sung-Hyeon Oh, **Sukkyung Kang**, Kyung-Joo Lee and Se-Jin Yook"
+    journal: "Separation and Purification Technology"
+    details: "276, 1, 11937, 2021"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 3
+    title: "Predictive Model for Bearing Torque in Bolt Fastening"
+    image: "media/publications/3. Kang-CIRP-2022.jpg"
+    authors: "**Sukkyung Kang**#, Somin Shin#, Hyena Hwang and Sanha Kim"
+    journal: "CIRP Annals - Manufacturing Technology"
+    details: "71, 1, 489-492, 2022"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 4
+    title: "Advanced Cu/Polymer hybrid bonding system for fine-pitch 3D stacking devices"
+    image: "media/publications/4. Park-AMT-2023.jpg"
+    authors: "Juseong Park#, **Sukkyung Kang**#, Myeong Eun Kim, Nam Jun Kim, Jungkyun Kim, Sanha Kim and Kyung Min Kim"
+    journal: "Advanced Materials Technology"
+    details: "8, 20, 2202134, 2023"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 5
+    title: "Nanotransfer Printing for Synthesis of Vertically Aligned Carbon Nanotubes with Enhanced Atomic Penetration"
+    image: "media/publications/5. Ha-AFM-2024.jpg"
+    authors: "Ji-Hwan Ha#, Inyeong Yang#, Junseong Ahn#, **Sukkyung Kang**, Zhi-Jun Zhao, Yongrok Jeong, Hyeongmin Je, Joono Cheong, Soon Hyoung Hwang, Sohee Jeon, Jun-Ho Jeong, Sanha Kim and Inkyu Park"
+    journal: "Advanced Functional Materials"
+    details: "34, 42, 2315028, 2024. (selected as cover)"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 6
+    title: "Ru Passivation Layer Enables Cu–Cu Direct Bonding at Low Temperatures with Oxidation Inhibition"
+    image: "media/publications/6. Jeon-ACSAMI-2024.jpg"
+    authors: "Chansu Jeon#, **Sukkyung Kang**#, Myeong Eun Kim#, Juseong Park, Daehee Kim, Sanha Kim and Kyung Min Kim"
+    journal: "ACS Applied Materials & Interfaces"
+    details: "16, 36, 48481-48487, 2024"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 7
+    title: "Analysis of Torque Variation in Bolt Fastening on Coated Steel Surfaces"
+    image: "media/publications/7. Kang-Tribint-2024.jpg"
+    authors: "**Sukkyung Kang**#, Seounghee Yun#, Hyena Hwang and Sanha Kim"
+    journal: "Tribology International"
+    details: "202, 110395, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 8
+    title: "Nanometer-resolution white-light scanning interferometry for surface-profiling of hybrid bonding samples for advanced semiconductor packaging"
+    image: "media/publications/8. Chu-ASS-2025.jpg"
+    authors: "Huy Hoang Chu#, Dae Hee Kim#, Jun Hyung Park, **Sukkyung Kang**, Jaiho Son, Hyunmin Lee, Hongki Yoo, Seung-Woo Kim, Sanha Kim and Young-Jin Kim"
+    journal: "Applied Surface Science"
+    details: "689, 162466, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 9
+    title: "Characteristics of PVD SiCN for Application in Hybrid Cu Bonding"
+    image: "media/publications/9. Choi-JSTS-2025.jpg"
+    authors: "Junyoung Choi, Suin Jang, Dongmyeong Lee, **Sukkyung Kang**, Sanha Kim and Sarah Eunkyung Kim"
+    journal: "Journal of Semiconductor Technology and Science"
+    details: "25, 1, 102, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 10
+    title: "Mitigation of Cu Dishing in Chemical Mechanical Polishing using Micro-Structured Pads"
+    image: "media/publications/10. Park-CIRP-2025.jpg"
+    authors: "Seulah Park#, **Sukkyung Kang**#, Dong-Geun Kim# and Sanha Kim"
+    journal: "CIRP Annals - Manufacturing Technology"
+    details: "74, 1, 465-469, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 11
+    title: "Frequency-comb-referenced Terahertz Fabry-Pérot interferometry for monitoring semiconductor wafer thinning process with a nanometer precision"
+    image: "media/publications/11. Kang-CIRP-2025.jpg"
+    authors: "Guseon Kang, Jaeyoon Kim, Jun Hyung Park, **Sukkyung Kang**, Dong Geun Kim and Young Jin Kim"
+    journal: "CIRP Annals - Manufacturing Technology"
+    details: "74, 1, 679-683, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 12
+    title: "Modeling framework and discussion of microstructural effects on the formation of Cu–Cu bonding interfaces in semiconductor stacking"
+    image: "media/publications/12. Lee-IJP-2025.png"
+    authors: "Jae-Uk Lee, Hyun-Dong Lee, Sung-Hyun Oh, Young-Dae Shim, **Sukkyung Kang**, Sanha Kim, Hoo-Jeong Lee and Eun-Ho Lee"
+    journal: "International Journal of Plasticity"
+    details: "195, 104501, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 13
+    title: "An ionic gelation powder for ultrafast hemostasis and accelerated wound healing"
+    image: "media/publications/13. Son-AFM-2025.png"
+    authors: "Youngju Son, Kyusoon Pak, Taehoon Lee, Monica Celine Prayogo, Jinyoung Choi, **Sukkyung Kang**, Minjoo Kang, Byungkook Oh, Sang Yu Sun, Sanha Kim, Sung Gap Im, Sangyong Jon and Steve Park"
+    journal: "Advanced Functional Materials"
+    details: "online published, e23910, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 14
+    title: "Chemical mechanical polishing of plasma-modified Cu/polymer interfaces for advanced hybrid bonding"
+    image: "media/publications/14. Kang-AdvSci-2025.png"
+    authors: "**Sukkyung Kang**#, Chansu Jeon#, Juseong Park, Seulah Park, Kyung Min Kim and Sanha Kim"
+    journal: "Advanced Science"
+    details: "13, 3, e12611, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 15
+    title: "Effects of grain size on bonding performance of Cu-to-Cu bonding"
+    image: "media/publications/15. Lee-JMRnT-2025.png"
+    authors: "Hyun-Dong Lee#, **Sukkyung Kang**#, Yeo-Jin Kim, Eun-Ho Lee, Sung-Ho Park, Won-Seob Cho, Yong-Jin Park, Alexandra Haag, Soichi Watanabe, Marco Arnold, Sanha Kim and Hoo-Jeong Lee"
+    journal: "Journal of Materials Research and Technology"
+    details: "36, 8965-8974, 2025"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 16
+    title: "Carbon nanotube sandpaper for atomic-precision surface finishing"
+    image: "media/publications/16. Kang-ACHM-2026.png"
+    authors: "**Sukkyung Kang**, Ji-hun Jeong, Hyun Jun Ryu, Gunhoo Park and Sanha Kim"
+    journal: "Advanced Composites and Hybrid Materials"
+    details: "9, 44, 2026. (* featured at KAIST News, KAIST ME News, phys.org, 동아사이언스, 매일경제, 국가나노기술정책센터, 서울경제, Semiconductor Engineering and more...)"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 17
+    title: "Challenges and innovations in chemical mechanical polishing in the More-than-Moore era"
+    image: "media/publications/17. Je-IJPEM-GT-2026.png"
+    authors: "Hyeongmin Je#, **Sukkyung Kang**# and Sanha Kim"
+    journal: "International Journal of Precision Engineering and Manufacturing - Green Technology"
+    details: "online published, 2026"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 18
+    title: "Surface-modified anode current collectors via lithiophilic zinc-based bimetallic co-electrodeposition for lithium-metal batteries"
+    image: "media/publications/18. Kim-NanoHori-2026.png"
+    authors: "Dong Geun Kim, Dongyeon Won, Inyeong Yang, **Sukkyung Kang**, Jae Young Seok, Hyunwoong Baek and Sanha Kim"
+    journal: "In revision"
+    details: ""
     links:
       - pack: hero
         icon: arrow-top-right-on-square
