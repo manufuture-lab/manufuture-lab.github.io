@@ -8,13 +8,16 @@ design:
 
 sections:
   - block: markdown
-    id: journal
+    id: journal-publications
     content:
       title: "Journal Publications"
       text: |
-        To be updated.
+        {{< mfl-journals >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["2rem", 0, "2rem", 0]
+      css_class: "mfl-journal-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
