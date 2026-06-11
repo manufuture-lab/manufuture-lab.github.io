@@ -1709,3 +1709,125 @@ section#journal-publications h2,
     width: 100%;
   }
 }
+/* ==========================================================================
+   Journal page: title and link button refinement
+   ========================================================================== */
+
+/* Make journal title more prominent */
+.mfl-journal-title {
+  font-size: 1.45rem !important;
+  line-height: 1.35 !important;
+  font-weight: 800 !important;
+  color: #020617 !important;
+  margin: 0 0 0.65rem 0 !important;
+}
+
+/* Keep the number aligned with the title */
+.mfl-journal-number {
+  font-weight: 800 !important;
+  margin-right: 0.25rem !important;
+}
+
+/* Authors: smaller than title, but clear */
+.mfl-journal-authors {
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  color: #111827 !important;
+  margin: 0 0 0.45rem 0 !important;
+}
+
+.mfl-journal-authors strong {
+  font-weight: 800 !important;
+  color: #020617 !important;
+}
+
+/* Venue line */
+.mfl-journal-venue {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+.mfl-journal-venue strong {
+  font-weight: 800 !important;
+  color: #020617 !important;
+}
+
+/* DOI/PDF buttons: bigger and cleaner */
+.mfl-journal-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 0.35rem !important;
+}
+
+.mfl-journal-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  min-height: 2.35rem !important;
+  padding: 0.45rem 0.75rem !important;
+  color: #ffffff !important;
+  background: #0353a4 !important;
+  border: 1px solid #0353a4 !important;
+  border-radius: 999px !important;
+  font-size: 0.98rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(3, 83, 164, 0.18);
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.mfl-journal-link:hover {
+  color: #ffffff !important;
+  background: #1D2475 !important;
+  border-color: #1D2475 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(29, 36, 117, 0.22);
+}
+
+/* Bigger icons */
+.mfl-journal-link svg,
+.mfl-journal-link svg *,
+.mfl-journal-icon {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  fill: currentColor !important;
+  color: currentColor !important;
+  stroke: currentColor !important;
+  stroke-width: 2.25 !important;
+}
+
+/* Fallback icon if SVG is unavailable */
+.mfl-journal-icon-fallback {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+}
+
+/* Button label */
+.mfl-journal-link span {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile title size */
+@media (max-width: 767px) {
+  .mfl-journal-title {
+    font-size: 1.2rem !important;
+  }
+
+  .mfl-journal-authors,
+  .mfl-journal-venue {
+    font-size: 0.98rem !important;
+  }
+}
