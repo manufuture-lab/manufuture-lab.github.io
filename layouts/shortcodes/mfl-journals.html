@@ -21,7 +21,7 @@
 
     {{- with $data.published -}}
       <div class="mfl-journal-list">
-        {{- range $i, $pub := sort . "date" "asc" -}}
+        {{- range $i, $pub := sort . "order" "desc" -}}
           <article class="mfl-journal-row">
 
             <div class="mfl-journal-image-wrap">
@@ -40,7 +40,7 @@
 
             <div class="mfl-journal-body">
               <h4 class="mfl-journal-title">
-                <span class="mfl-journal-number">{{ add $i 1 }}.</span>
+                <span class="mfl-journal-number">{{ $pub.order | default (add $i 1) }}.</span>
                 <span>{{ $pub.title }}</span>
               </h4>
 
