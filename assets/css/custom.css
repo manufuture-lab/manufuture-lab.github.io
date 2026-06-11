@@ -1961,3 +1961,25 @@ section#journal-publications h2,
 .mfl-journal-number {
   font-weight: 500 !important;
 }
+/* ==========================================================================
+   Journal page: subtle highlight for author name and journal name
+   ========================================================================== */
+
+/* Paper title color */
+.mfl-journal-title,
+.mfl-journal-title span,
+.mfl-journal-number {
+  color: #020617 !important;
+}
+
+/* Highlighted author name: no bold, title-like color */
+.mfl-journal-authors strong {
+  font-weight: 400 !important;
+  color: #020617 !important;
+}
+
+/* Journal name: no bold, title-like color */
+.mfl-journal-venue strong {
+  font-weight: 400 !important;
+  color: #020617 !important;
+}
