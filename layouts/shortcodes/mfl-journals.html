@@ -49,7 +49,7 @@
               {{- end -}}
 
               <p class="mfl-journal-venue">
-                <strong>{{ $pub.journal }}</strong>{{ with $pub.details }}, {{ . }}{{ end }}
+                <strong>{{ $pub.journal }}</strong>{{ with $pub.details }}, <span class="mfl-journal-details">{{ . }}</span>{{ end }}
               </p>
 
               {{- with $pub.links -}}
@@ -57,23 +57,20 @@
                   {{- range . -}}
                     {{- $url := .url | default "" -}}
                     {{- if $url -}}
-                      {{- $data_pack := .pack | default "" -}}
-                      {{- $icon_pack := $data_pack -}}
+                      {{- $icon_pack := .pack | default "hero" -}}
 
-                      {{- if eq $data_pack "fas" -}}
+                      {{- if eq $icon_pack "fas" -}}
                         {{- $icon_pack = "hero" -}}
-                      {{- else if eq $data_pack "fab" -}}
+                      {{- else if eq $icon_pack "fab" -}}
                         {{- $icon_pack = "brands" -}}
-                      {{- else if eq $data_pack "ai" -}}
+                      {{- else if eq $icon_pack "ai" -}}
                         {{- $icon_pack = "academicons" -}}
                       {{- end -}}
 
-                      <a href="{{ $url }}" class="mfl-journal-link mfl-journal-link-{{ .label }}" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">
+                      <a href="{{ $url }}" class="mfl-journal-link" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">
                         {{- $icon := partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-journal-icon\"") -}}
                         {{- if $icon -}}
                           {{ $icon | safeHTML }}
-                        {{- else -}}
-                          <span class="mfl-journal-icon-fallback">↗</span>
                         {{- end -}}
                         <span>[{{ .label }}]</span>
                       </a>
