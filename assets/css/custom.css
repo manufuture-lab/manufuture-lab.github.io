@@ -1477,3 +1477,235 @@ section#alumni .prose img.mfl-member-row-photo,
     padding: 0 1rem;
   }
 }
+/* ==========================================================================
+   Publications: Journal page
+   ========================================================================== */
+
+section#journal-publications,
+.mfl-journal-section {
+  width: 100% !important;
+}
+
+section#journal-publications .container,
+section#journal-publications .prose,
+.mfl-journal-section .container,
+.mfl-journal-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#journal-publications > div,
+.mfl-journal-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main page title: Journal Publications */
+section#journal-publications h2,
+.mfl-journal-section h2 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475) !important;
+  padding-bottom: 0.8rem !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Page wrapper */
+.mfl-journal-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Subsections */
+.mfl-journal-subsection {
+  margin-bottom: 2.5rem;
+}
+
+.mfl-journal-subsection h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+}
+
+/* Submitted list */
+.mfl-journal-submitted-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #475569;
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+
+.mfl-journal-submitted-list li {
+  margin-bottom: 0.65rem;
+}
+
+/* Accepted/Published list */
+.mfl-journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Journal row card */
+.mfl-journal-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* 16:9 image */
+.mfl-journal-image-wrap {
+  width: 280px;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  background: #e5e7eb;
+  align-self: start;
+  flex-shrink: 0;
+}
+
+.mfl-journal-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.mfl-journal-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #64748b;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+/* Text content */
+.mfl-journal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.mfl-journal-title {
+  font-size: 1.18rem;
+  line-height: 1.45;
+  font-weight: 800;
+  color: #020617;
+  margin: 0 0 0.55rem 0;
+}
+
+.mfl-journal-number {
+  margin-right: 0.25rem;
+}
+
+.mfl-journal-authors {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 0.45rem 0;
+}
+
+.mfl-journal-authors strong {
+  font-weight: 800;
+  color: #020617;
+}
+
+.mfl-journal-venue {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 0.85rem 0;
+}
+
+.mfl-journal-venue strong {
+  font-weight: 800;
+  color: #020617;
+}
+
+/* DOI/PDF links */
+.mfl-journal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.mfl-journal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  border-radius: 0.35rem;
+  padding: 0.25rem 0.4rem;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.mfl-journal-link:hover {
+  color: #0353a4 !important;
+  background-color: rgba(3, 83, 164, 0.08);
+  transform: translateY(-1px);
+}
+
+.mfl-journal-link svg,
+.mfl-journal-link svg *,
+.mfl-journal-icon {
+  width: 1.05rem !important;
+  height: 1.05rem !important;
+  fill: currentColor;
+  color: currentColor;
+}
+
+.mfl-journal-empty {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#journal-publications > div,
+  .mfl-journal-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-journal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mfl-journal-image-wrap {
+    width: 100%;
+  }
+}
