@@ -1831,3 +1831,124 @@ section#journal-publications h2,
     font-size: 0.98rem !important;
   }
 }
+/* ==========================================================================
+   Journal page: typography and link refinement
+   ========================================================================== */
+
+/* Title: keep it prominent */
+.mfl-journal-title {
+  font-size: 1.45rem !important;
+  line-height: 1.35 !important;
+  font-weight: 800 !important;
+  color: #020617 !important;
+  margin: 0 0 0.65rem 0 !important;
+}
+
+.mfl-journal-number {
+  font-weight: 800 !important;
+  margin-right: 0.25rem !important;
+}
+
+/* Authors and publication details: unified typography */
+.mfl-journal-authors,
+.mfl-journal-venue,
+.mfl-journal-details {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+}
+
+/* Remove default paragraph spacing from markdownified authors */
+.mfl-journal-authors {
+  margin: 0 0 0.45rem 0 !important;
+}
+
+.mfl-journal-authors p {
+  margin: 0 !important;
+}
+
+/* Highlighted author remains bold but keeps same size */
+.mfl-journal-authors strong {
+  font-size: inherit !important;
+  font-weight: 800 !important;
+  color: #020617 !important;
+}
+
+/* Venue line */
+.mfl-journal-venue {
+  margin: 0 0 0.85rem 0 !important;
+}
+
+/* Only journal name is bold */
+.mfl-journal-venue strong {
+  font-size: inherit !important;
+  font-weight: 800 !important;
+  color: #020617 !important;
+}
+
+/* DOI/PDF links: subtle, not bold, not pill-button */
+.mfl-journal-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.65rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 0.2rem !important;
+}
+
+.mfl-journal-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.28rem !important;
+  color: #64748b !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0.35rem !important;
+  box-shadow: none !important;
+  padding: 0.2rem 0.25rem !important;
+  font-size: 1.02rem !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.mfl-journal-link:hover {
+  color: #0353a4 !important;
+  background: rgba(3, 83, 164, 0.06) !important;
+  transform: translateY(-1px);
+}
+
+/* Hero icons: larger but lighter */
+.mfl-journal-link svg,
+.mfl-journal-link svg *,
+.mfl-journal-icon {
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  color: currentColor !important;
+}
+
+/* Link label should not be bold */
+.mfl-journal-link span {
+  font-weight: 400 !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .mfl-journal-title {
+    font-size: 1.2rem !important;
+  }
+
+  .mfl-journal-authors,
+  .mfl-journal-venue,
+  .mfl-journal-details,
+  .mfl-journal-link {
+    font-size: 0.98rem !important;
+  }
+}
