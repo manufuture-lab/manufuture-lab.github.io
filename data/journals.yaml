@@ -7,13 +7,7 @@ published:
   - date: "2021-01-01"
     title: "Mechanical abrasion by bi-layered pad micro-asperity in chemical mechanical polishing"
     image: "media/publications/1. Ryu-CIRP-2021.jpg"
-    authors:
-      - name: "Hyun Jun Ryu"
-      - name: "Dong Geun Kim"
-      - name: "Sukkyung Kang"
-        highlight: true
-      - name: "Ji-Hun Jeong"
-      - name: "Sanha Kim"
+    authors: "Hyun Jun Ryu, Dong Geun Kim, **Sukkyung Kang**, Ji-Hun Jeong and Sanha Kim"
     journal: "CIRP Annals - Manufacturing Technology"
     details: "70, 1, 273-276, 2021"
     links:
