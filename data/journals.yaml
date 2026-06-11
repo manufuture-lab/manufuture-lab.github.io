@@ -1,0 +1,27 @@
+submitted:
+  - "Precision multi-layer Terahertz measurement for semiconductor wafer back-grinding, Guseon Kang, Hyunsu Kim, Sukkyung Kang, Jinwoo Jeon, Jaeyoon Kim, Sanha Kim, Young-Jin Kim, under review."
+  - "Asymmetric-beam steady-state thermoreflectance for three dimensional anisotropic thermal conductivity measurements, Juhong Kim, Dong-min Kim, Jeongmin Nam, Dongkyu Kim, Wonjeong Lee, Sukkyung Kang, Sanha Kim, Bong Jae Lee, Joon Sang Kang, in revision."
+  - "Data-free physics-informed inverse programming of bistable kirigami energy landscapes, Sukheon Kang, Sukkyung Kang, Sanha Kim, Seunghwa Ryu, in revision."
+
+published:
+  - date: "2021-01-01"
+    title: "Mechanical abrasion by bi-layered pad micro-asperity in chemical mechanical polishing"
+    image: "media/publications/cirp-annals-2021.jpg"
+    authors:
+      - name: "Hyun Jun Ryu"
+      - name: "Dong Geun Kim"
+      - name: "Sukkyung Kang"
+        highlight: true
+      - name: "Ji-Hun Jeong"
+      - name: "Sanha Kim"
+    journal: "CIRP Annals - Manufacturing Technology"
+    details: "70, 1, 273-276, 2021"
+    links:
+      - pack: fas
+        icon: link
+        label: doi
+        url: "#"
+      - pack: fas
+        icon: document-text
+        label: pdf
+        url: "#"
