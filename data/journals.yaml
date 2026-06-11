@@ -11,11 +11,11 @@ published:
     journal: "CIRP Annals - Manufacturing Technology"
     details: "70, 1, 273-276, 2021"
     links:
-      - pack: fas
-        icon: link
+      - pack: hero
+        icon: arrow-top-right-on-square
         label: doi
         url: "#"
-      - pack: fas
-        icon: document-text
+      - pack: hero
+        icon: document-arrow-down
         label: pdf
         url: "#"
