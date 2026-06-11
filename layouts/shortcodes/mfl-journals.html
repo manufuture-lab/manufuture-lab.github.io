@@ -1,0 +1,105 @@
+{{- $data := site.Data.journals -}}
+
+<div class="mfl-journal-page">
+
+  <section class="mfl-journal-subsection">
+    <h3>Submitted/Under review/In revision</h3>
+
+    {{- with $data.submitted -}}
+      <ul class="mfl-journal-submitted-list">
+        {{- range . -}}
+          <li>{{ . | markdownify }}</li>
+        {{- end -}}
+      </ul>
+    {{- else -}}
+      <p class="mfl-journal-empty">To be updated.</p>
+    {{- end -}}
+  </section>
+
+  <section class="mfl-journal-subsection">
+    <h3>Accepted/Published</h3>
+
+    {{- with $data.published -}}
+      <div class="mfl-journal-list">
+        {{- range $i, $pub := sort . "date" "asc" -}}
+          <article class="mfl-journal-row">
+
+            <div class="mfl-journal-image-wrap">
+              {{- if $pub.image -}}
+                {{- $img := resources.Get $pub.image -}}
+                {{- if $img -}}
+                  {{- $processed := $img.Fill "640x360 Center" -}}
+                  <img src="{{ $processed.RelPermalink }}" alt="{{ $pub.title }}" class="mfl-journal-image" loading="lazy">
+                {{- else -}}
+                  <div class="mfl-journal-image-placeholder">Journal</div>
+                {{- end -}}
+              {{- else -}}
+                <div class="mfl-journal-image-placeholder">Journal</div>
+              {{- end -}}
+            </div>
+
+            <div class="mfl-journal-body">
+              <h4 class="mfl-journal-title">
+                <span class="mfl-journal-number">{{ add $i 1 }}.</span>
+                <span>{{ $pub.title }}</span>
+              </h4>
+
+              {{- with $pub.authors -}}
+                <p class="mfl-journal-authors">
+                  {{- $n := len . -}}
+                  {{- range $idx, $author := . -}}
+                    {{- if gt $idx 0 -}}
+                      {{- if eq $idx (sub $n 1) -}} and {{- else -}}, {{- end -}}
+                    {{- end -}}
+
+                    {{- if $author.highlight -}}
+                      <strong>{{ $author.name }}</strong>
+                    {{- else -}}
+                      {{ $author.name }}
+                    {{- end -}}
+                  {{- end -}}
+                </p>
+              {{- end -}}
+
+              <p class="mfl-journal-venue">
+                <strong>{{ $pub.journal }}</strong>{{ with $pub.details }}, {{ . }}{{ end }}
+              </p>
+
+              {{- with $pub.links -}}
+                <div class="mfl-journal-links">
+                  {{- range . -}}
+                    {{- $url := .url | default "" -}}
+                    {{- if $url -}}
+                      {{- $data_pack := .pack | default "" -}}
+                      {{- $icon_pack := $data_pack -}}
+
+                      {{- if eq $data_pack "fas" -}}
+                        {{- $icon_pack = "hero" -}}
+                      {{- else if eq $data_pack "fab" -}}
+                        {{- $icon_pack = "brands" -}}
+                      {{- else if eq $data_pack "ai" -}}
+                        {{- $icon_pack = "academicons" -}}
+                      {{- end -}}
+
+                      <a href="{{ $url }}" class="mfl-journal-link" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">
+                        {{- $icon := partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-journal-icon\"") -}}
+                        {{- if $icon -}}
+                          {{ $icon | safeHTML }}
+                        {{- end -}}
+                        <span>[{{ .label }}]</span>
+                      </a>
+                    {{- end -}}
+                  {{- end -}}
+                </div>
+              {{- end -}}
+            </div>
+
+          </article>
+        {{- end -}}
+      </div>
+    {{- else -}}
+      <p class="mfl-journal-empty">To be updated.</p>
+    {{- end -}}
+  </section>
+
+</div>
