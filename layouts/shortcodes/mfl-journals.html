@@ -45,20 +45,7 @@
               </h4>
 
               {{- with $pub.authors -}}
-                <p class="mfl-journal-authors">
-                  {{- $n := len . -}}
-                  {{- range $idx, $author := . -}}
-                    {{- if gt $idx 0 -}}
-                      {{- if eq $idx (sub $n 1) -}} and {{- else -}}, {{- end -}}
-                    {{- end -}}
-
-                    {{- if $author.highlight -}}
-                      <strong>{{ $author.name }}</strong>
-                    {{- else -}}
-                      {{ $author.name }}
-                    {{- end -}}
-                  {{- end -}}
-                </p>
+                <p class="mfl-journal-authors">{{ . | markdownify }}</p>
               {{- end -}}
 
               <p class="mfl-journal-venue">
@@ -81,10 +68,12 @@
                         {{- $icon_pack = "academicons" -}}
                       {{- end -}}
 
-                      <a href="{{ $url }}" class="mfl-journal-link" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">
+                      <a href="{{ $url }}" class="mfl-journal-link mfl-journal-link-{{ .label }}" target="_blank" rel="noopener" aria-label="{{ .label }}" title="{{ .label }}">
                         {{- $icon := partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-journal-icon\"") -}}
                         {{- if $icon -}}
                           {{ $icon | safeHTML }}
+                        {{- else -}}
+                          <span class="mfl-journal-icon-fallback">↗</span>
                         {{- end -}}
                         <span>[{{ .label }}]</span>
                       </a>
