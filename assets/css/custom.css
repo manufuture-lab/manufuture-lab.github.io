@@ -2134,3 +2134,82 @@ section#patent h2,
     font-size: 0.98rem !important;
   }
 }
+/* ==========================================================================
+   Publications: Conference page
+   ========================================================================== */
+
+section#conference-presentations,
+.mfl-conference-section {
+  width: 100% !important;
+}
+
+section#conference-presentations .container,
+section#conference-presentations .prose,
+.mfl-conference-section .container,
+.mfl-conference-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#conference-presentations > div,
+.mfl-conference-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main page title: Conference Presentations */
+section#conference-presentations h2,
+.mfl-conference-section h2 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475) !important;
+  padding-bottom: 0.8rem !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Conference list: match Journal submitted list tone */
+.mfl-conference-list {
+  margin: 0 !important;
+  padding-left: 2.2rem !important;
+  color: #64748b !important;
+  line-height: 1.75 !important;
+  font-size: 1.02rem !important;
+  font-weight: 400 !important;
+}
+
+.mfl-conference-list li {
+  margin-bottom: 0.65rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.mfl-conference-list li::marker {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+.mfl-conference-empty {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 767px) {
+  section#conference-presentations > div,
+  .mfl-conference-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-conference-list {
+    padding-left: 1.6rem !important;
+    font-size: 0.98rem !important;
+  }
+}
