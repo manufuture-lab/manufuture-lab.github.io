@@ -69,10 +69,10 @@ hugoblox:
     show_social: false
     text: |
       한양대학교 미래제조 연구실 (ManuFuture Laboratory)
-
-      | Email: @hanyang.ac.kr | Tel: +82 031-000-0000 |
-
-      | Address: Room 000, Bldg 000, 55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, 15588, Republic of Korea |
+#
+#      | Email: @hanyang.ac.kr | Tel: +82 031-000-0000 |
+#
+#      | Address: Room 000, Bldg 000, 55 Hanyangdaehak-ro, Sangnok-gu, Ansan, Gyeonggi-do, 15588, Republic of Korea |
 
   copyright:
     notice: "Copyright © ManuFuture Laboratory. All Rights Reserved."
