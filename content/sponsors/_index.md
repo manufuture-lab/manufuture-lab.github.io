@@ -10,11 +10,14 @@ sections:
   - block: markdown
     id: sponsors
     content:
-      title: "Sponsors"
+      title: ""
       text: |
-        To be updated.
+        {{< mfl-sponsors >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["2rem", 0, "2rem", 0]
+      css_class: "mfl-sponsors-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
