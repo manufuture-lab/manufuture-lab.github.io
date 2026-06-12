@@ -2367,3 +2367,85 @@ section#conference-presentations h2,
     font-size: 0.98rem !important;
   }
 }
+/* ==========================================================================
+   Sponsors page
+   ========================================================================== */
+
+section#sponsors,
+.mfl-sponsors-section {
+  width: 100% !important;
+}
+
+section#sponsors .container,
+section#sponsors .prose,
+.mfl-sponsors-section .container,
+.mfl-sponsors-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#sponsors > div,
+.mfl-sponsors-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Wrapper */
+.mfl-sponsors-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Subheading style similar to Journal page's subsection heading */
+.mfl-sponsors-block h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+/* Sponsor image */
+.mfl-sponsors-image-wrap {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+.mfl-sponsors-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+}
+
+/* Fallback message */
+.mfl-sponsors-empty {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 767px) {
+  section#sponsors > div,
+  .mfl-sponsors-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-sponsors-image-wrap {
+    padding: 1rem;
+  }
+}
