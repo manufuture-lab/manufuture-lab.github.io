@@ -2034,3 +2034,103 @@ section#journal-publications h2,
   border-bottom: none !important;
   background-color: rgba(3, 83, 164, 0.06);
 }
+/* ==========================================================================
+   Publications: Patent page
+   ========================================================================== */
+
+section#patent,
+.mfl-patent-section {
+  width: 100% !important;
+}
+
+section#patent .container,
+section#patent .prose,
+.mfl-patent-section .container,
+.mfl-patent-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#patent > div,
+.mfl-patent-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main page title: Patents */
+section#patent h2,
+.mfl-patent-section h2 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475) !important;
+  padding-bottom: 0.8rem !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Patent text block */
+.mfl-patent-section .prose {
+  color: #334155 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+}
+
+/* Patent list */
+.mfl-patent-section .prose ul {
+  margin-top: 1.2rem !important;
+  margin-bottom: 1.2rem !important;
+  padding-left: 1.4rem !important;
+}
+
+.mfl-patent-section .prose li {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
+  padding-left: 0.15rem !important;
+}
+
+/* Patent numbers and emphasized application lines */
+.mfl-patent-section .prose strong {
+  font-weight: 800 !important;
+  color: #020617 !important;
+}
+
+/* Links: Hanyang blue, no underline by default */
+.mfl-patent-section .prose a {
+  color: #0353a4 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  font-weight: 700 !important;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.mfl-patent-section .prose a:hover {
+  color: #1D2475 !important;
+  background-color: rgba(3, 83, 164, 0.06);
+}
+
+/* Prevent huge gaps from HTML <br> blocks becoming awkward */
+.mfl-patent-section .prose p {
+  margin-top: 0.8rem !important;
+  margin-bottom: 0.8rem !important;
+}
+
+@media (max-width: 767px) {
+  section#patent > div,
+  .mfl-patent-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-patent-section .prose {
+    font-size: 0.98rem !important;
+  }
+}
