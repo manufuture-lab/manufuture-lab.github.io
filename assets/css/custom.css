@@ -2016,3 +2016,21 @@ section#journal-publications h2,
   border-bottom-color: #1D2475;
   background-color: rgba(3, 83, 164, 0.06);
 }
+/* ==========================================================================
+   Journal page: remove underline from featured media links
+   ========================================================================== */
+
+.mfl-journal-note a,
+.mfl-journal-note a:visited {
+  color: #0353a4 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.mfl-journal-note a:hover {
+  color: #1D2475 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background-color: rgba(3, 83, 164, 0.06);
+}
