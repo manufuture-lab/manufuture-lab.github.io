@@ -8,13 +8,16 @@ design:
 
 sections:
   - block: markdown
-    id: conference
+    id: conference-presentations
     content:
-      title: "Conference Publications"
+      title: "Conference Presentations"
       text: |
-        To be updated.
+        {{< mfl-conferences >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["2rem", 0, "2rem", 0]
+      css_class: "mfl-conference-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
