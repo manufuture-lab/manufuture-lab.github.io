@@ -1,0 +1,17 @@
+{{- $img := resources.Get "media/Sponsors_past.png" -}}
+
+<div class="mfl-sponsors-page">
+  <section class="mfl-sponsors-block">
+    <h3>Partner Institutions (with collaboration experience)</h3>
+
+    {{- if $img -}}
+      <div class="mfl-sponsors-image-wrap">
+        <img src="{{ $img.RelPermalink }}" alt="Partner institutions with collaboration experience" class="mfl-sponsors-image">
+      </div>
+    {{- else -}}
+      <p class="mfl-sponsors-empty">
+        Sponsor image not found. Please upload <code>assets/media/Sponsors_past.png</code>.
+      </p>
+    {{- end -}}
+  </section>
+</div>
