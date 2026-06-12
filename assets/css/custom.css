@@ -1983,3 +1983,36 @@ section#journal-publications h2,
   font-weight: 400 !important;
   color: #020617 !important;
 }
+/* ==========================================================================
+   Journal page: featured media note
+   ========================================================================== */
+
+.mfl-journal-note {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+  margin: -0.25rem 0 0.85rem 0 !important;
+}
+
+.mfl-journal-note p {
+  margin: 0 !important;
+}
+
+/* Hanyang blue links in featured note */
+.mfl-journal-note a {
+  color: #0353a4 !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(3, 83, 164, 0.35);
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.mfl-journal-note a:hover {
+  color: #1D2475 !important;
+  border-bottom-color: #1D2475;
+  background-color: rgba(3, 83, 164, 0.06);
+}
