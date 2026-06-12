@@ -52,6 +52,12 @@
                 <strong>{{ $pub.journal }}</strong>{{ with $pub.details }}, <span class="mfl-journal-details">{{ . }}</span>{{ end }}
               </p>
 
+              {{- with $pub.note -}}
+                <div class="mfl-journal-note">
+                  {{ . | markdownify }}
+                </div>
+              {{- end -}}
+
               {{- with $pub.links -}}
                 <div class="mfl-journal-links">
                   {{- range . -}}
