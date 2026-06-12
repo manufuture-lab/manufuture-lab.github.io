@@ -2650,3 +2650,35 @@ section#contact h2,
     font-size: 0.98rem;
   }
 }
+/* ==========================================================================
+   Footer refinement
+   ========================================================================== */
+
+.mfl-footer-inner {
+  text-align: center;
+}
+
+.mfl-footer-logo-wrap {
+  margin-bottom: 0.35rem !important;
+}
+
+.mfl-footer-logo {
+  display: block !important;
+  width: 360px !important;
+  max-width: 85% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+.mfl-footer-text {
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.45 !important;
+  color: #334155 !important;
+}
+
+.mfl-footer-text p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
