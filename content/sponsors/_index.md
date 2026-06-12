@@ -10,7 +10,7 @@ sections:
   - block: markdown
     id: sponsors
     content:
-      title: ""
+      title: "Sponsors and Collaborators"
       text: |
         {{< mfl-sponsors >}}
 
