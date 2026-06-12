@@ -1,0 +1,17 @@
+{{- $presentations := slice -}}
+
+{{- with site.Data.conferences -}}
+  {{- with .presentations -}}
+    {{- $presentations = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $presentations) 0 -}}
+  <ol class="mfl-conference-list" start="{{ len $presentations }}" reversed>
+    {{- range $presentations -}}
+      <li>{{ . | markdownify }}</li>
+    {{- end -}}
+  </ol>
+{{- else -}}
+  <p class="mfl-conference-empty">To be updated.</p>
+{{- end -}}
