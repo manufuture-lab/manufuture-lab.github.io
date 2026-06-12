@@ -2449,3 +2449,27 @@ section#sponsors > div,
     padding: 1rem;
   }
 }
+/* ==========================================================================
+   Sponsors page: main title like Journal Publications
+   ========================================================================== */
+
+section#sponsors h2,
+.mfl-sponsors-section h2 {
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin: 0 0 2.5rem 0 !important;
+}
+
+/* Keep the subsection title left-aligned */
+.mfl-sponsors-block h3 {
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 1rem 0 !important;
+  text-align: left !important;
+}
