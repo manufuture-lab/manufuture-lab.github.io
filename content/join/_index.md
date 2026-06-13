@@ -22,13 +22,11 @@ sections:
   - block: markdown
     id: join
     content:
-      title: "Join MFL"
+      title: "Contact for Prospective Lab Members"
       text: |
-        We are looking for motivated graduate students, undergraduate researchers, and interns who are interested in future manufacturing, advanced materials processing, surface/interface engineering, and data-driven engineering.
+        Thank you for your interest in our lab!
+        We are always seeking motivated graduate students, postdoctoral researchers, and undergraduate students to join our team.
 
-        Prospective members are encouraged to contact Prof. Sukkyung Kang with a brief introduction, CV, transcript, and a short description of research interests.
-
-        **Email:** @hanyang.ac.kr
     design:
       spacing:
         padding: ["2rem", 0, "2rem", 0]
