@@ -2741,3 +2741,103 @@ section#contact h2,
     opacity: 1;
   }
 }
+/* ==========================================================================
+   Teaching page
+   ========================================================================== */
+
+section#teaching,
+.mfl-teaching-section {
+  width: 100% !important;
+}
+
+section#teaching .container,
+section#teaching .prose,
+.mfl-teaching-section .container,
+.mfl-teaching-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#teaching > div,
+.mfl-teaching-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main Teaching title */
+section#teaching h2,
+.mfl-teaching-section h2 {
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: none !important;
+  margin: 0 0 2.5rem 0 !important;
+}
+
+/* Semester heading: similar to Research Areas, but slightly smaller */
+section#teaching h3,
+.mfl-teaching-section h3 {
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 1rem 0 !important;
+}
+
+/* Course list */
+.mfl-teaching-section .prose ul {
+  margin: 0 !important;
+  padding-left: 1.4rem !important;
+}
+
+.mfl-teaching-section .prose li {
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+  color: #475569 !important;
+  margin-bottom: 0.45rem !important;
+  padding-left: 0.2rem !important;
+}
+
+.mfl-teaching-section .prose li::marker {
+  color: var(--mfl-nav-accent, #1D2475) !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#teaching > div,
+  .mfl-teaching-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  section#teaching h3,
+  .mfl-teaching-section h3 {
+    font-size: 1.15rem !important;
+  }
+
+  .mfl-teaching-section .prose li {
+    font-size: 0.98rem !important;
+  }
+}
+/* Teaching course spacing */
+.mfl-teaching-section h3 {
+  margin-top: 1.8rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.mfl-teaching-section h3:first-of-type {
+  margin-top: 0 !important;
+}
+
+.mfl-teaching-section h3 + ul {
+  margin-top: 0 !important;
+  margin-bottom: 1.4rem !important;
+}
