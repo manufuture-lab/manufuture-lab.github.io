@@ -31,22 +31,13 @@ sections:
       css_class: "dark whitespace-pre-line mfl-hero"
       background:
         color: "#0a0e27"
-        gradient:
-          type: radial
-          start: "rgba(124,58,237,0.45)"
-          end: "transparent"
-          position: "50% -10%"
-          shape: ellipse
-          size: "80% 80%"
-        gradient_mesh:
-          enable: true
-          style: orbs
-          intensity: medium
-          animation: pulse
-          colors: ["primary-500/25", "secondary-500/25"]
-          orb_count: 2
-          positions: ["top-1/3 left-1/4", "bottom-1/3 right-1/4"]
-          sizes: ["w-[32rem] h-[32rem]", "w-[26rem] h-[26rem]"]
+        image:
+          filename: "home.png"
+          filters:
+            brightness: 0.55
+          size: cover
+          position: center
+          parallax: false
 
   - block: markdown
     id: intro
