@@ -2841,3 +2841,19 @@ section#teaching h3,
   margin-top: 0 !important;
   margin-bottom: 1.4rem !important;
 }
+/* Teaching: increase spacing between courses */
+.mfl-teaching-section h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+/* Semester line and the next course title */
+.mfl-teaching-section h3 + ul {
+  margin-top: 0 !important;
+  margin-bottom: 4rem !important;
+}
+
+/* No excessive space after the final course */
+.mfl-teaching-section h3 + ul:last-child {
+  margin-bottom: 0 !important;
+}
