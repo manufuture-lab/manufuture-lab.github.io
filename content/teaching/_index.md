@@ -12,15 +12,17 @@ sections:
     content:
       title: "Teaching"
       text: |
+        <br>
+
         ### 기계융합제조공정설계 (Mechanical Convergence Manufacturing Process Design)
         - Fall 2026
 
-        <br><br><br>
+        <br><br>
 
         ### 기계캡스톤디자인1 (Mechanical Capstone Design 1)
         - Fall 2026
 
-        <br><br><br>
+        <br><br>
 
         ### 정역학 (Statics)
         - Fall 2026
