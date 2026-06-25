@@ -2700,3 +2700,44 @@ section#contact h2,
     background-position: center 50% !important;
   }
 }
+/* Professor photo hover transition */
+.mfl-professor-wide-photo-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.mfl-professor-wide-photo-wrap > img.mfl-professor-wide-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.mfl-professor-photo-primary {
+  z-index: 1;
+  opacity: 1;
+}
+
+.mfl-professor-photo-hover {
+  z-index: 2;
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mfl-professor-wide-photo-wrap.has-hover-photo:hover
+  .mfl-professor-photo-primary {
+    opacity: 0;
+  }
+
+  .mfl-professor-wide-photo-wrap.has-hover-photo:hover
+  .mfl-professor-photo-hover {
+    opacity: 1;
+  }
+}
