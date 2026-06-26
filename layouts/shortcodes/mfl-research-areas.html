@@ -1,0 +1,46 @@
+{{- $layout := .Get "layout" | default "grid" -}}
+{{- $areas := site.Data.research_areas.areas | default slice -}}
+
+<div class="mfl-research-area-page mfl-research-area-layout-{{ $layout }}">
+
+  <section class="mfl-research-area-card">
+    <h2>Research Area</h2>
+
+    {{- if gt (len $areas) 0 -}}
+      <div class="{{ if eq $layout "carousel" }}mfl-research-area-carousel{{ else }}mfl-research-area-grid{{ end }}">
+        {{- range sort $areas "order" "asc" -}}
+          <article class="mfl-research-area-item">
+
+            <div class="mfl-research-area-image-wrap">
+              {{- if .image -}}
+                {{- $img := resources.Get .image -}}
+                {{- if $img -}}
+                  {{- $processed := $img.Fill "640x360 Center" -}}
+                  <img
+                    src="{{ $processed.RelPermalink }}"
+                    alt="{{ .title }}"
+                    class="mfl-research-area-image"
+                    loading="lazy"
+                  >
+                {{- else -}}
+                  <div class="mfl-research-area-image-placeholder">{{ .title }}</div>
+                {{- end -}}
+              {{- else -}}
+                <div class="mfl-research-area-image-placeholder">{{ .title }}</div>
+              {{- end -}}
+            </div>
+
+            <div class="mfl-research-area-body">
+              <h3>{{ .title }}</h3>
+              <p>{{ .description }}</p>
+            </div>
+
+          </article>
+        {{- end -}}
+      </div>
+    {{- else -}}
+      <p class="mfl-research-area-empty">To be updated.</p>
+    {{- end -}}
+  </section>
+
+</div>
