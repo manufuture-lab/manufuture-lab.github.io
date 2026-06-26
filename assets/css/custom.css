@@ -2857,3 +2857,96 @@ section#teaching h3,
 .mfl-teaching-section h3 + ul:last-child {
   margin-bottom: 0 !important;
 }
+/* ==========================================================================
+   Research page: Our Vision
+   ========================================================================== */
+
+section#research,
+.mfl-research-section {
+  width: 100% !important;
+}
+
+section#research .container,
+section#research .prose,
+.mfl-research-section .container,
+.mfl-research-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#research > div,
+.mfl-research-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Page wrapper */
+.mfl-research-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Education-style card */
+.mfl-research-vision-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Same style as Professor Education heading */
+.mfl-research-vision-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+/* Same tone as KAIST institution text in Education */
+.mfl-research-vision-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  font-weight: 400;
+}
+
+.mfl-research-vision-text p {
+  margin: 0 0 1.15rem 0;
+}
+
+.mfl-research-vision-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#research > div,
+  .mfl-research-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-research-vision-card {
+    padding: 1.5rem;
+  }
+
+  .mfl-research-vision-card h2 {
+    font-size: 1.55rem;
+  }
+
+  .mfl-research-vision-text {
+    font-size: 0.98rem;
+  }
+}
