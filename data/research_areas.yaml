@@ -1,0 +1,40 @@
+areas:
+  - order: 1
+    title: "Semiconductor Packaging"
+    image: "media/research/semiconductor-packaging.jpg"
+    description: "Developing advanced process and interface technologies for next-generation semiconductor packaging, including HBM, chiplet integration, and quantum devices. We integrate wafer thinning, planarization, cleaning, bonding, and metrology to enable reliable, high-density integration."
+
+  - order: 2
+    title: "Polishing & Grinding"
+    image: "media/research/polishing-grinding.jpg"
+    description: "Developing precision material-removal processes, including chemical mechanical polishing (CMP) and wafer back-grinding, for smooth, low-damage, and integration-ready surfaces. We design pads, slurries, and process conditions based on contact mechanics and surface engineering."
+
+  - order: 3
+    title: "Cleaning"
+    image: "media/research/cleaning.jpg"
+    description: "Developing post-cleaning technologies to remove particles and residues generated during polishing and grinding. We investigate brush-based cleaning through contact mechanics, friction, and particle-detachment mechanisms."
+
+  - order: 4
+    title: "Hybrid Bonding"
+    image: "media/research/hybrid-bonding.jpg"
+    description: "Developing hybrid bonding technologies for 3D chip stacking and fine-pitch interconnects. Our research focuses on thermocompression bonding and Cu-Cu direct bonding, with emphasis on Cu diffusion, creep deformation, surface activation, and bonding reliability for advanced semiconductor packaging."
+
+  - order: 5
+    title: "Automated Fastening & Assembly"
+    image: "media/research/automated-fastening-assembly.jpg"
+    description: "Investigating friction and torque-transfer mechanisms in bolted joints for automated fastening. Our research links surface conditions, coatings, and lubrication to torque transfer, preload consistency, and fastening reliability for robust assembly."
+
+  - order: 6
+    title: "Frictional Haptic Interfaces"
+    image: "media/research/frictional-haptic-interfaces.jpg"
+    description: "Investigating the friction mechanisms of electroactive PVC-gel materials under varying electrical and contact conditions. We leverage electrically tunable friction to develop lightweight haptic interfaces for wearable robots and haptic gloves."
+
+  - order: 7
+    title: "AI-Driven Manufacturing"
+    image: "media/research/ai-driven-manufacturing.jpg"
+    description: "Integrating AI and physics-informed neural networks (PINNs) frameworks for manufacturing process design. We develop predictive and inverse-design frameworks for manufacturing processes, complex structures, and material interfaces."
+
+  - order: 8
+    title: "Reliability Evaluation"
+    image: "media/research/reliability-evaluation.jpg"
+    description: "Evaluating surface quality and process reliability for polishing, cleaning, bonding, and assembly processes. We correlate process conditions with surface quality, interfacial integrity, and device performance to ensure reliable manufacturing."
