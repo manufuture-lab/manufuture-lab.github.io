@@ -10,20 +10,14 @@ sections:
   - block: markdown
     id: research
     content:
-      title: "Research"
+      title: ""
       text: |
-        ## Research Overview
-
-        ManuFuture Laboratory focuses on the science and engineering of future manufacturing systems. Our research integrates advanced materials processing, surface and interface engineering, precision manufacturing, and data-driven process design to develop reliable, sustainable, and high-performance manufacturing technologies.
-
-        ## Research Areas
-
-        - Advanced manufacturing processes
-        - Surface and interface engineering
-        - Data-driven process monitoring and optimization
-        - Sustainable and intelligent manufacturing systems
+        {{< mfl-research-vision >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["3rem", 0, "3rem", 0]
+      css_class: "mfl-research-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
