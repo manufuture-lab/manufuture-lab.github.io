@@ -14,6 +14,8 @@ sections:
       text: |
         {{< mfl-research-vision >}}
 
+        {{< mfl-research-areas >}}
+
     design:
       spacing:
         padding: ["3rem", 0, "3rem", 0]
