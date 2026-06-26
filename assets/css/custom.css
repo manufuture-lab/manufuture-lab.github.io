@@ -2950,3 +2950,203 @@ section#research > div,
     font-size: 0.98rem;
   }
 }
+/* ==========================================================================
+   Research page: Research Area cards
+   ========================================================================== */
+
+section#research,
+.mfl-research-section,
+section#home-research-area,
+.mfl-home-research-section {
+  width: 100% !important;
+}
+
+section#research .container,
+section#research .prose,
+.mfl-research-section .container,
+.mfl-research-section .prose,
+section#home-research-area .container,
+section#home-research-area .prose,
+.mfl-home-research-section .container,
+.mfl-home-research-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#research > div,
+.mfl-research-section > div,
+section#home-research-area > div,
+.mfl-home-research-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.mfl-research-area-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Education-style outer card */
+.mfl-research-area-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.75rem 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Same style as Our Vision / Education heading */
+.mfl-research-area-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+/* Research page: 2 columns × 4 rows */
+.mfl-research-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* Home page: carousel-like horizontal scroll */
+.mfl-research-area-carousel {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.75rem;
+}
+
+.mfl-research-area-carousel .mfl-research-area-item {
+  flex: 0 0 min(520px, 85vw);
+  scroll-snap-align: start;
+}
+
+/* Individual card */
+.mfl-research-area-item {
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+.mfl-research-area-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.mfl-research-area-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.mfl-research-area-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #64748b;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+/* Text inside each research area card */
+.mfl-research-area-body {
+  padding: 1.25rem;
+}
+
+.mfl-research-area-body h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+}
+
+.mfl-research-area-body p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  margin: 0;
+}
+
+/* Empty fallback */
+.mfl-research-area-empty {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Carousel scrollbar */
+.mfl-research-area-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.mfl-research-area-carousel::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.mfl-research-area-carousel::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+.mfl-research-area-carousel::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#research > div,
+  .mfl-research-section > div,
+  section#home-research-area > div,
+  .mfl-home-research-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-research-area-card {
+    padding: 1.5rem;
+  }
+
+  .mfl-research-area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mfl-research-area-card h2,
+  .mfl-research-area-body h3 {
+    font-size: 1.55rem;
+  }
+
+  .mfl-research-area-body p {
+    font-size: 0.98rem;
+  }
+}
