@@ -3352,3 +3352,77 @@ section#intro .prose a:hover,
     display: none;
   }
 }
+/* ==========================================================================
+   Home Research Area carousel: single always-visible custom scrollbar
+   ========================================================================== */
+
+/*
+  Problem:
+  - Desktop native scrollbars can auto-hide depending on browser/OS.
+  - Mobile can show both native scrollbar and custom scrollbar while scrolling.
+
+  Fix:
+  - Hide native scrollbar completely.
+  - Use only the custom scrollbar for both desktop and mobile.
+*/
+
+.mfl-research-area-carousel-wrap.is-carousel {
+  position: relative !important;
+}
+
+/* Keep horizontal scrolling, but hide native browser scrollbar */
+.mfl-research-area-carousel {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;      /* Firefox */
+  -ms-overflow-style: none !important;   /* old Edge/IE */
+}
+
+/* Hide WebKit native scrollbar: Chrome, Safari, mobile browsers */
+.mfl-research-area-carousel::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Always show our custom scrollbar on desktop and mobile */
+.mfl-research-mobile-scrollbar {
+  display: block !important;
+  width: 100% !important;
+  height: 8px !important;
+  margin-top: 0.85rem !important;
+  background: #e5e7eb !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+/* Custom scrollbar thumb */
+.mfl-research-mobile-scrollbar-thumb {
+  display: block !important;
+  height: 100% !important;
+  min-width: 42px !important;
+  background: var(--mfl-nav-accent, #1D2475) !important;
+  border-radius: 999px !important;
+  transform: translateX(0);
+  transition:
+    width 120ms ease,
+    transform 80ms linear;
+}
+
+/* If there is no horizontal overflow, hide the custom scrollbar */
+.mfl-research-area-carousel-wrap.mfl-no-scroll .mfl-research-mobile-scrollbar {
+  display: none !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 767px) {
+  .mfl-research-area-carousel {
+    padding-bottom: 0 !important;
+  }
+
+  .mfl-research-mobile-scrollbar {
+    height: 7px !important;
+    margin-top: 0.75rem !important;
+  }
+}
