@@ -280,7 +280,7 @@ published:
   - order: 18
     title: "Surface-modified anode current collectors via lithiophilic zinc-based bimetallic co-electrodeposition for lithium-metal batteries"
     image: "media/publications/18. Kim-NanoHori-2026.png"
-    authors: "Dong Geun Kim, Dongyeon Won, Inyeong Yang, **Sukkyung Kang**, Jae Young Seok, Hyunwoong Baek and Sanha Kim"
+    authors: "Dong Geun Kim, Dongyeon Won, Inyeong Yang, **Sukkyung Kang**, Jae Young Seok, Hyunwoong Baek, Sanha Kim"
     journal: "Nanoscale Horizons"
     details: "11, 1578-1589, 2026"
     links:
@@ -288,6 +288,22 @@ published:
         icon: arrow-top-right-on-square
         label: doi
         url: "https://doi.org/10.1039/D5NH00766F"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 19
+    title: "Asymmetric-beam steady-state thermoreflectance for three dimensional anisotropic thermal conductivity measurements"
+    image: "media/publications/19. Kim-RSI-2026.png"
+    authors: "Juhong Kim, Dong-min Kim, Jeongmin Nam, Dongkyu Kim, Wonjeong Lee, **Sukkyung Kang**, Sanha Kim, Bong Jae Lee, Joon Sang Kang"
+    journal: "Review of Scientific Instruments"
+    details: "accepted, 2026"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
       - pack: hero
         icon: document-arrow-down
         label: pdf
