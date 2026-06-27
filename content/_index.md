@@ -44,13 +44,16 @@ sections:
     content:
       title: ""
       text: |
-        Welcome to the ManuFuture Laboratory at Hanyang University, led by Prof. Sukkyung Kang. Our laboratory explores future manufacturing technologies at the intersection of advanced materials processing, surface and interface engineering, precision manufacturing, and data-driven process innovation. We aim to develop scientific understanding and practical engineering solutions for sustainable, intelligent, and high-performance manufacturing systems.
+        Welcome to the ManuFuture Laboratory at Hanyang University. Led by Prof. Sukkyung Kang, we pioneer frontier manufacturing by understanding and precisely controlling the fundamental mechanisms of friction, wear, and deformation at surfaces and interfaces.
 
-        We are always looking for motivated students and collaborators interested in shaping the future of manufacturing. [Join us →](/join/)
+        We welcome motivated students and collaborators who are eager to shape the future of manufacturing. [Join us →](/join/)
 
     design:
       spacing:
         padding: ["3rem", 0, "2rem", 0]
+      css_class: "mfl-home-intro-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 
   - block: markdown
     id: home-research-area
