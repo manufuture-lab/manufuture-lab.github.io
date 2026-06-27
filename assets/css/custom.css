@@ -3213,3 +3213,73 @@ section#intro > div,
     font-size: 0.98rem !important;
   }
 }
+/* ==========================================================================
+   Home intro section: match Research Area width and restore font size
+   ========================================================================== */
+
+section#intro,
+.mfl-home-intro-section {
+  width: 100% !important;
+}
+
+section#intro .container,
+section#intro .prose,
+.mfl-home-intro-section .container,
+.mfl-home-intro-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#intro > div,
+.mfl-home-intro-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Paragraph width: same visual width as Research Area */
+section#intro .prose p,
+.mfl-home-intro-section .prose p {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  /* restore larger readable home intro font */
+  font-size: 1.25rem !important;
+  line-height: 1.75 !important;
+  color: #475569 !important;
+}
+
+/* Join us link */
+section#intro .prose a,
+.mfl-home-intro-section .prose a {
+  color: #0353a4 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+section#intro .prose a:hover,
+.mfl-home-intro-section .prose a:hover {
+  color: #1D2475 !important;
+  background-color: rgba(3, 83, 164, 0.06);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#intro > div,
+  .mfl-home-intro-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  section#intro .prose p,
+  .mfl-home-intro-section .prose p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+}
