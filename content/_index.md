@@ -44,7 +44,7 @@ sections:
     content:
       title: ""
       text: |
-        Welcome to the ManuFuture Laboratory at Hanyang University. Led by Prof. Sukkyung Kang, we pioneer frontier manufacturing by understanding and precisely controlling the fundamental mechanisms of friction, wear, and deformation at surfaces and interfaces.
+        Welcome to the ManuFuture Laboratory at Hanyang University. Led by Prof. Sukkyung Kang, we pioneer frontier manufacturing by understanding and precisely controlling the fundamental mechanisms of friction, wear, and deformation at surfaces and interfaces.<br>
         We welcome motivated students and collaborators who are eager to shape the future of manufacturing. [Join us →](/join/)
 
     design:
