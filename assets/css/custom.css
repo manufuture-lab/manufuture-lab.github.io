@@ -3520,3 +3520,21 @@ section#join h2,
     font-size: 1.6rem !important;
   }
 }
+/* ==========================================================================
+   Join MFL: keep text wide, but keep banner image moderate size
+   ========================================================================== */
+
+.mfl-join-section .mfl-getin-banner {
+  max-width: 920px !important;
+  width: 100% !important;
+  margin: 0 auto 2rem auto !important;
+  padding: 0 !important;
+}
+
+.mfl-join-section .mfl-getin-banner-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+}
