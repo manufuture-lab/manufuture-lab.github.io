@@ -20,7 +20,8 @@ sections:
           If you are interested in joining our lab, please send your CV along with a brief introduction about yourself and your research interests.<br><br>
 
           ManuFuture Laboratory에 관심을 가져주셔서 감사드립니다.<br>
-          우리 연구실은 대학원생, 박사후연구원, 학부연구생 등 열정과 도전정신을 가진 연구자를 언제든 환영합니다. 전공에 관계없이 다양한 배경을 가진 구성원들이 함께 협력하며 새로운 아이디어를 만들어가는 연구 문화를 지향합니다.<br>
+          우리 연구실은 대학원생, 박사후연구원, 학부연구생 등 열정과 도전정신을 가진 연구자를 언제든 환영합니다.<br> 
+          전공에 관계없이 다양한 배경을 가진 구성원들이 함께 협력하며 새로운 아이디어를 만들어가는 연구 문화를 지향합니다.<br>
           연구실에 관심이 있으시다면 이력서와 함께 본인 소개 및 관심 연구 분야를 간단히 작성하여 메일로 보내주시기 바랍니다.<br>
           (example@hanyang.ac.kr)<br><br>
         </div>
