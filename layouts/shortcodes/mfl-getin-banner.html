@@ -3,8 +3,15 @@
 {{- if $img -}}
   {{- $processed := $img.Fit "1600x700" -}}
   <div class="mfl-getin-banner">
-    <img src="{{ $processed.RelPermalink }}" alt="Join ManuFuture Laboratory" class="mfl-getin-banner-img" loading="lazy">
+    <img
+      src="{{ $processed.RelPermalink }}"
+      alt="Join ManuFuture Laboratory"
+      class="mfl-getin-banner-img"
+      loading="lazy"
+    >
   </div>
 {{- else -}}
-  {{- warnf "Join MFL banner image not found: assets/media/getin.png" -}}
+  <p class="mfl-getin-banner-missing">
+    Join MFL banner image not found. Please upload <code>assets/media/getin.png</code>.
+  </p>
 {{- end -}}
