@@ -32,7 +32,7 @@ sections:
       background:
         color: "#0a0e27"
         image:
-          filename: "home.png"
+          filename: "home.jpeg"
           filters:
             brightness: 0.55
           size: cover
