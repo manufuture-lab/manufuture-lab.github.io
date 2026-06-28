@@ -3426,3 +3426,97 @@ section#intro .prose a:hover,
     margin-top: 0.75rem !important;
   }
 }
+/* ==========================================================================
+   Join MFL page
+   ========================================================================== */
+
+section#join,
+.mfl-join-section {
+  width: 100% !important;
+}
+
+section#join .container,
+section#join .prose,
+.mfl-join-section .container,
+.mfl-join-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+section#join > div,
+.mfl-join-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main title */
+section#join h2,
+.mfl-join-section h2 {
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* Banner image */
+.mfl-getin-banner {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+  padding: 0;
+}
+
+.mfl-getin-banner-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0.9rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+  background: #f3f4f6;
+}
+
+/* Message text: similar width/tone to home intro */
+.mfl-join-message {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  color: #475569 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+  text-align: left !important;
+}
+
+.mfl-join-message p {
+  margin: 0 !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#join > div,
+  .mfl-join-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-join-message {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  section#join h2,
+  .mfl-join-section h2 {
+    font-size: 1.6rem !important;
+  }
+}
