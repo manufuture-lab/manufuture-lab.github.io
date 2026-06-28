@@ -3538,3 +3538,84 @@ section#join h2,
   max-width: none !important;
   margin: 0 auto !important;
 }
+/* ==========================================================================
+   Research Area carousel: draggable custom scrollbar for PC and mobile
+   ========================================================================== */
+
+.mfl-research-area-carousel-wrap.is-carousel {
+  position: relative !important;
+}
+
+/* Hide native scrollbar to avoid double-scrollbar on mobile */
+.mfl-research-area-carousel {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.mfl-research-area-carousel::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Single custom scrollbar, always visible */
+.mfl-research-scrollbar {
+  display: block !important;
+  width: 100% !important;
+  height: 8px !important;
+  margin-top: 0.85rem !important;
+  background: #e5e7eb !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  touch-action: none !important;
+  user-select: none !important;
+}
+
+/* Draggable thumb */
+.mfl-research-scrollbar-thumb {
+  display: block !important;
+  height: 100% !important;
+  min-width: 48px !important;
+  background: var(--mfl-nav-accent, #1D2475) !important;
+  border-radius: 999px !important;
+  transform: translateX(0);
+  cursor: grab !important;
+  transition:
+    width 120ms ease,
+    background-color 160ms ease;
+}
+
+.mfl-research-scrollbar-thumb:hover {
+  background: #0353a4 !important;
+}
+
+.mfl-research-scrollbar-thumb.is-dragging {
+  cursor: grabbing !important;
+  background: #0353a4 !important;
+}
+
+/* Hide custom scrollbar only if there is no horizontal overflow */
+.mfl-research-area-carousel-wrap.mfl-no-scroll .mfl-research-scrollbar {
+  display: none !important;
+}
+
+/* Compatibility: hide old custom scrollbar if previous class remains */
+.mfl-research-mobile-scrollbar {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .mfl-research-area-carousel {
+    padding-bottom: 0 !important;
+  }
+
+  .mfl-research-scrollbar {
+    height: 7px !important;
+    margin-top: 0.75rem !important;
+  }
+}
