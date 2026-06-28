@@ -44,8 +44,8 @@
         </div>
 
         {{- if $is_carousel -}}
-          <div class="mfl-research-mobile-scrollbar" aria-hidden="true">
-            <span class="mfl-research-mobile-scrollbar-thumb"></span>
+          <div class="mfl-research-scrollbar" aria-hidden="true">
+            <span class="mfl-research-scrollbar-thumb"></span>
           </div>
         {{- end -}}
 
@@ -62,40 +62,141 @@
 {{- if $is_carousel -}}
 <script>
   (function () {
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
     function initMflResearchScrollbars() {
-      document.querySelectorAll(".mfl-research-area-carousel-wrap.is-carousel").forEach(function (wrap) {
-        const scroller = wrap.querySelector(".mfl-research-area-carousel");
-        const track = wrap.querySelector(".mfl-research-mobile-scrollbar");
-        const thumb = wrap.querySelector(".mfl-research-mobile-scrollbar-thumb");
+      document
+        .querySelectorAll(".mfl-research-area-carousel-wrap.is-carousel")
+        .forEach(function (wrap) {
+          if (wrap.dataset.scrollbarReady === "true") return;
+          wrap.dataset.scrollbarReady = "true";
 
-        if (!scroller || !track || !thumb) return;
+          const scroller = wrap.querySelector(".mfl-research-area-carousel");
+          const track = wrap.querySelector(".mfl-research-scrollbar");
+          const thumb = wrap.querySelector(".mfl-research-scrollbar-thumb");
 
-        function updateScrollbar() {
-          const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+          if (!scroller || !track || !thumb) return;
 
-          if (maxScroll <= 1) {
-            wrap.classList.add("mfl-no-scroll");
-            return;
+          let dragging = false;
+          let dragStartX = 0;
+          let dragStartScrollLeft = 0;
+
+          function getMetrics() {
+            const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+            const trackWidth = track.clientWidth;
+
+            const ratio = scroller.clientWidth / scroller.scrollWidth;
+            const thumbWidth = Math.max(trackWidth * ratio, 48);
+            const maxThumbLeft = Math.max(trackWidth - thumbWidth, 1);
+
+            return {
+              maxScroll: maxScroll,
+              trackWidth: trackWidth,
+              thumbWidth: thumbWidth,
+              maxThumbLeft: maxThumbLeft
+            };
           }
 
-          wrap.classList.remove("mfl-no-scroll");
+          function updateScrollbar() {
+            const metrics = getMetrics();
 
-          const trackWidth = track.clientWidth;
-          const ratio = scroller.clientWidth / scroller.scrollWidth;
-          const thumbWidth = Math.max(trackWidth * ratio, 42);
-          const progress = scroller.scrollLeft / maxScroll;
-          const thumbLeft = progress * (trackWidth - thumbWidth);
+            if (metrics.maxScroll <= 1) {
+              wrap.classList.add("mfl-no-scroll");
+              thumb.style.width = "0px";
+              thumb.style.transform = "translateX(0px)";
+              return;
+            }
 
-          thumb.style.width = thumbWidth + "px";
-          thumb.style.transform = "translateX(" + thumbLeft + "px)";
-        }
+            wrap.classList.remove("mfl-no-scroll");
 
-        scroller.addEventListener("scroll", updateScrollbar, { passive: true });
-        window.addEventListener("resize", updateScrollbar);
+            const progress = scroller.scrollLeft / metrics.maxScroll;
+            const thumbLeft = progress * metrics.maxThumbLeft;
 
-        window.requestAnimationFrame(updateScrollbar);
-        window.setTimeout(updateScrollbar, 250);
-      });
+            thumb.style.width = metrics.thumbWidth + "px";
+            thumb.style.transform = "translateX(" + thumbLeft + "px)";
+          }
+
+          function scrollToThumbPosition(clientX) {
+            const metrics = getMetrics();
+            if (metrics.maxScroll <= 1) return;
+
+            const rect = track.getBoundingClientRect();
+            const x = clientX - rect.left;
+            const targetThumbLeft = clamp(
+              x - metrics.thumbWidth / 2,
+              0,
+              metrics.maxThumbLeft
+            );
+
+            const progress = targetThumbLeft / metrics.maxThumbLeft;
+            scroller.scrollTo({
+              left: progress * metrics.maxScroll,
+              behavior: "smooth"
+            });
+          }
+
+          scroller.addEventListener("scroll", updateScrollbar, { passive: true });
+          window.addEventListener("resize", updateScrollbar);
+
+          track.addEventListener("pointerdown", function (event) {
+            const metrics = getMetrics();
+            if (metrics.maxScroll <= 1) return;
+
+            if (event.target === thumb) {
+              dragging = true;
+              dragStartX = event.clientX;
+              dragStartScrollLeft = scroller.scrollLeft;
+
+              thumb.classList.add("is-dragging");
+              track.setPointerCapture(event.pointerId);
+              event.preventDefault();
+              return;
+            }
+
+            scrollToThumbPosition(event.clientX);
+          });
+
+          track.addEventListener("pointermove", function (event) {
+            if (!dragging) return;
+
+            const metrics = getMetrics();
+            if (metrics.maxScroll <= 1) return;
+
+            const deltaX = event.clientX - dragStartX;
+            const scrollDelta = deltaX / metrics.maxThumbLeft * metrics.maxScroll;
+
+            scroller.scrollLeft = clamp(
+              dragStartScrollLeft + scrollDelta,
+              0,
+              metrics.maxScroll
+            );
+
+            event.preventDefault();
+          });
+
+          function stopDragging(event) {
+            if (!dragging) return;
+
+            dragging = false;
+            thumb.classList.remove("is-dragging");
+
+            try {
+              track.releasePointerCapture(event.pointerId);
+            } catch (error) {}
+          }
+
+          track.addEventListener("pointerup", stopDragging);
+          track.addEventListener("pointercancel", stopDragging);
+          track.addEventListener("lostpointercapture", function () {
+            dragging = false;
+            thumb.classList.remove("is-dragging");
+          });
+
+          window.requestAnimationFrame(updateScrollbar);
+          window.setTimeout(updateScrollbar, 250);
+        });
     }
 
     if (document.readyState === "loading") {
