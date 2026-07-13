@@ -3660,17 +3660,6 @@ section#join h2,
    Korean text line-breaking refinement
    ========================================================================== */
 
-/*
-  Prevent Korean words from breaking in the middle.
-  Example:
-  연구를 수
-  행하고 있습니다.
-
-  becomes:
-  연구를 수행하고
-  있습니다.
-*/
-
 section#intro .prose,
 section#intro .prose p,
 .mfl-home-intro-section .prose,
@@ -3678,4 +3667,25 @@ section#intro .prose p,
   word-break: keep-all !important;
   overflow-wrap: normal !important;
   line-break: strict !important;
+}
+/* ==========================================================================
+   Professor page: education supervisor link
+   ========================================================================== */
+
+.mfl-professor-wide-supervisor {
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  color: #475569 !important;
+  font-weight: 400 !important;
+}
+
+.mfl-professor-wide-supervisor a {
+  color: #0353a4 !important;
+  text-decoration: none !important;
+  font-weight: 400 !important;
+}
+
+.mfl-professor-wide-supervisor a:hover {
+  color: #1D2475 !important;
+  background-color: rgba(3, 83, 164, 0.06);
 }
