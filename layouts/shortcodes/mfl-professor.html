@@ -119,18 +119,23 @@
     <div class="mfl-professor-wide-list">
       {{- range $p.education -}}
         <div class="mfl-professor-wide-list-item">
-          <div class="mfl-professor-wide-list-title">
-            {{ .degree }}
-          </div>
+          <div class="mfl-professor-wide-list-title">{{ .degree }}</div>
 
           <div class="mfl-professor-wide-list-text">
             {{ .institution }}
           </div>
 
-          {{- with .note -}}
-            <div class="mfl-professor-wide-list-note">
-              ({{ . }})
+          {{- with .supervisor -}}
+            <div class="mfl-professor-wide-list-text mfl-professor-wide-supervisor">
+              {{ .label }}:
+              <a href="{{ .url }}" target="_blank" rel="noopener">
+                {{ .name }}
+              </a>
             </div>
+          {{- end -}}
+
+          {{- with .note -}}
+            <div class="mfl-professor-wide-list-note">({{ . }})</div>
           {{- end -}}
         </div>
       {{- end -}}
