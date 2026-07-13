@@ -3656,3 +3656,26 @@ section#join h2,
     scroll-snap-align: start !important;
   }
 }
+/* ==========================================================================
+   Korean text line-breaking refinement
+   ========================================================================== */
+
+/*
+  Prevent Korean words from breaking in the middle.
+  Example:
+  연구를 수
+  행하고 있습니다.
+
+  becomes:
+  연구를 수행하고
+  있습니다.
+*/
+
+section#intro .prose,
+section#intro .prose p,
+.mfl-home-intro-section .prose,
+.mfl-home-intro-section .prose p {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  line-break: strict !important;
+}
