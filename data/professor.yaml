@@ -40,15 +40,15 @@ links:
 education:
   - degree: "Ph.D. in Mechanical Engineering (2025)"
     institution: "Korea Advanced Institute of Science and Technology (KAIST)"
-    supervisor:
-      label: "Supervisor"
+    advisor:
+      label: "Advisor"
       name: "Prof. Sanha Kim"
       url: "https://amselab.kaist.ac.kr/home"
 
   - degree: "M.S. in Mechanical Engineering (2022)"
     institution: "Korea Advanced Institute of Science and Technology (KAIST)"
-    supervisor:
-      label: "Supervisor"
+    advisor:
+      label: "Advisor"
       name: "Prof. Sanha Kim"
       url: "https://amselab.kaist.ac.kr/home"
 
