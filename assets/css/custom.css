@@ -3669,23 +3669,23 @@ section#intro .prose p,
   line-break: strict !important;
 }
 /* ==========================================================================
-   Professor page: education supervisor link
+   Professor page: education advisor link
    ========================================================================== */
 
-.mfl-professor-wide-supervisor {
+.mfl-professor-wide-advisor {
   font-size: 1.05rem !important;
   line-height: 1.65 !important;
   color: #475569 !important;
   font-weight: 400 !important;
 }
 
-.mfl-professor-wide-supervisor a {
+.mfl-professor-wide-advisor a {
   color: #0353a4 !important;
   text-decoration: none !important;
   font-weight: 400 !important;
 }
 
-.mfl-professor-wide-supervisor a:hover {
+.mfl-professor-wide-advisor a:hover {
   color: #1D2475 !important;
   background-color: rgba(3, 83, 164, 0.06);
 }
