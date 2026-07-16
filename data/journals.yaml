@@ -200,7 +200,7 @@ published:
     image: "media/publications/13. Son-AFM-2025.png"
     authors: "Youngju Son, Kyusoon Pak, Taehoon Lee, Monica Celine Prayogo, Jinyoung Choi, **Sukkyung Kang**, Minjoo Kang, Byungkook Oh, Sang Yu Sun, Sanha Kim, Sung Gap Im, Sangyong Jon, Steve Park"
     journal: "Advanced Functional Materials"
-    details: "online published, e23910, 2025"
+    details: "36, 22, e23910, 2025"
     links:
       - pack: hero
         icon: arrow-top-right-on-square
@@ -297,12 +297,12 @@ published:
     image: "media/publications/19. Kim-RSI-2026.png"
     authors: "Juhong Kim, Dong-min Kim, Jeongmin Nam, Dongkyu Kim, Wonjeong Lee, **Sukkyung Kang**, Sanha Kim, Bong Jae Lee, Joon Sang Kang"
     journal: "Review of Scientific Instruments"
-    details: "accepted, 2026"
+    details: "97, 7, 2026"
     links:
       - pack: hero
         icon: arrow-top-right-on-square
         label: doi
-        url: "#"
+        url: "https://doi.org/10.1063/5.0335364"
       - pack: hero
         icon: document-arrow-down
         label: pdf
