@@ -1,0 +1,245 @@
+{{- $albums := site.Data.gallery.albums | default slice -}}
+{{- $albums = sort $albums "date" "desc" -}}
+{{- $payload := slice -}}
+
+<div class="mfl-gallery-page">
+
+  {{- if gt (len $albums) 0 -}}
+    <div class="mfl-gallery-grid">
+
+      {{- range $albumIndex, $album := $albums -}}
+        {{- $dateStr := $album.date | default "" -}}
+        {{- $dateLabel := $dateStr -}}
+
+        {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
+          {{- $parsedDate := printf "%s-01" $dateStr | time -}}
+          {{- $dateLabel = ($parsedDate | time.Format "January 2006") -}}
+        {{- end -}}
+
+        {{- $photos := $album.photos | default slice -}}
+        {{- $coverPath := $album.cover | default "" -}}
+
+        {{- if and (eq $coverPath "") (gt (len $photos) 0) -}}
+          {{- $firstPhoto := index $photos 0 -}}
+          {{- $coverPath = $firstPhoto.image -}}
+        {{- end -}}
+
+        {{- $coverSrc := "" -}}
+        {{- with resources.Get $coverPath -}}
+          {{- $coverProcessed := .Fill "900x900 Center" -}}
+          {{- $coverSrc = $coverProcessed.RelPermalink -}}
+        {{- end -}}
+
+        {{- $photoPayload := slice -}}
+        {{- range $photo := $photos -}}
+          {{- $imgPath := $photo.image | default "" -}}
+          {{- with resources.Get $imgPath -}}
+            {{- $full := .Fit "2000x1400" -}}
+            {{- $photoPayload = $photoPayload | append (dict
+              "src" $full.RelPermalink
+              "caption" ($photo.caption | default "")
+            ) -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $payload = $payload | append (dict
+          "title" ($album.title | default "")
+          "date" $dateLabel
+          "category" ($album.category | default "")
+          "photos" $photoPayload
+        ) -}}
+
+        <button
+          type="button"
+          class="mfl-gallery-card"
+          data-gallery-open="{{ $albumIndex }}"
+          aria-label="Open gallery album: {{ $album.title }}"
+        >
+          <div class="mfl-gallery-card-image-wrap">
+            {{- if $coverSrc -}}
+              <img src="{{ $coverSrc }}" alt="{{ $album.title }}" class="mfl-gallery-card-image" loading="lazy">
+            {{- else -}}
+              <div class="mfl-gallery-card-placeholder">Gallery</div>
+            {{- end -}}
+
+            <div class="mfl-gallery-card-overlay">
+              <div class="mfl-gallery-card-meta">
+                {{- with $dateLabel -}}
+                  <span>{{ . }}</span>
+                {{- end -}}
+
+                {{- with $album.category -}}
+                  <span>{{ . }}</span>
+                {{- end -}}
+              </div>
+
+              <h3>{{ $album.title }}</h3>
+
+              <div class="mfl-gallery-card-count">
+                {{ len $photos }} photos
+              </div>
+            </div>
+          </div>
+        </button>
+
+      {{- end -}}
+
+    </div>
+  {{- else -}}
+    <p class="mfl-gallery-empty">No gallery albums yet.</p>
+  {{- end -}}
+
+</div>
+
+<div class="mfl-gallery-modal" aria-hidden="true">
+  <div class="mfl-gallery-modal-backdrop" data-gallery-close></div>
+
+  <div class="mfl-gallery-modal-panel" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+    <button type="button" class="mfl-gallery-modal-close" data-gallery-close aria-label="Close gallery">×</button>
+
+    <div class="mfl-gallery-modal-header">
+      <div>
+        <h3 class="mfl-gallery-modal-title"></h3>
+        <div class="mfl-gallery-modal-date"></div>
+      </div>
+
+      <div class="mfl-gallery-modal-counter"></div>
+    </div>
+
+    <div class="mfl-gallery-modal-image-stage">
+      <button type="button" class="mfl-gallery-modal-nav mfl-gallery-modal-prev" aria-label="Previous photo">‹</button>
+      <img src="" alt="" class="mfl-gallery-modal-image">
+      <button type="button" class="mfl-gallery-modal-nav mfl-gallery-modal-next" aria-label="Next photo">›</button>
+    </div>
+
+    <div class="mfl-gallery-modal-caption"></div>
+  </div>
+</div>
+
+<script id="mfl-gallery-data" type="application/json">
+  {{ $payload | jsonify | safeJS }}
+</script>
+
+<script>
+  (function () {
+    function initMflGallery() {
+      const dataEl = document.getElementById("mfl-gallery-data");
+      const modal = document.querySelector(".mfl-gallery-modal");
+
+      if (!dataEl || !modal) return;
+
+      let albums = [];
+
+      try {
+        albums = JSON.parse(dataEl.textContent || "[]");
+      } catch (error) {
+        albums = [];
+      }
+
+      const image = modal.querySelector(".mfl-gallery-modal-image");
+      const title = modal.querySelector(".mfl-gallery-modal-title");
+      const date = modal.querySelector(".mfl-gallery-modal-date");
+      const caption = modal.querySelector(".mfl-gallery-modal-caption");
+      const counter = modal.querySelector(".mfl-gallery-modal-counter");
+      const prev = modal.querySelector(".mfl-gallery-modal-prev");
+      const next = modal.querySelector(".mfl-gallery-modal-next");
+
+      let albumIndex = 0;
+      let photoIndex = 0;
+
+      function getCurrentAlbum() {
+        return albums[albumIndex] || { photos: [] };
+      }
+
+      function getCurrentPhoto() {
+        const album = getCurrentAlbum();
+        return album.photos[photoIndex] || null;
+      }
+
+      function updateModal() {
+        const album = getCurrentAlbum();
+        const photo = getCurrentPhoto();
+        const total = album.photos ? album.photos.length : 0;
+
+        title.textContent = album.title || "";
+        date.textContent = album.date || "";
+        counter.textContent = total ? `${photoIndex + 1} / ${total}` : "";
+
+        if (photo) {
+          image.src = photo.src;
+          image.alt = photo.caption || album.title || "Gallery photo";
+          caption.textContent = photo.caption || "";
+        } else {
+          image.removeAttribute("src");
+          image.alt = "";
+          caption.textContent = "";
+        }
+
+        const hideNav = total <= 1;
+        prev.hidden = hideNav;
+        next.hidden = hideNav;
+      }
+
+      function openModal(nextAlbumIndex, nextPhotoIndex) {
+        albumIndex = nextAlbumIndex;
+        photoIndex = nextPhotoIndex || 0;
+
+        if (!albums[albumIndex] || !albums[albumIndex].photos || !albums[albumIndex].photos.length) return;
+
+        updateModal();
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.documentElement.classList.add("mfl-gallery-modal-open");
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.documentElement.classList.remove("mfl-gallery-modal-open");
+      }
+
+      function movePhoto(direction) {
+        const album = getCurrentAlbum();
+        const total = album.photos ? album.photos.length : 0;
+
+        if (!total) return;
+
+        photoIndex = (photoIndex + direction + total) % total;
+        updateModal();
+      }
+
+      document.querySelectorAll("[data-gallery-open]").forEach((card) => {
+        card.addEventListener("click", function () {
+          openModal(Number(card.dataset.galleryOpen), 0);
+        });
+      });
+
+      modal.querySelectorAll("[data-gallery-close]").forEach((button) => {
+        button.addEventListener("click", closeModal);
+      });
+
+      prev.addEventListener("click", function () {
+        movePhoto(-1);
+      });
+
+      next.addEventListener("click", function () {
+        movePhoto(1);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (!modal.classList.contains("is-open")) return;
+
+        if (event.key === "Escape") closeModal();
+        if (event.key === "ArrowLeft") movePhoto(-1);
+        if (event.key === "ArrowRight") movePhoto(1);
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMflGallery);
+    } else {
+      initMflGallery();
+    }
+  })();
+</script>
