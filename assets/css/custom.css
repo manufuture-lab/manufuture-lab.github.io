@@ -3689,3 +3689,200 @@ section#intro .prose p,
   color: #1D2475 !important;
   background-color: rgba(3, 83, 164, 0.06);
 }
+/* ==========================================================================
+   Board: News page
+   ========================================================================== */
+
+section#news,
+.mfl-news-section {
+  width: 100% !important;
+}
+
+section#news .container,
+section#news .prose,
+.mfl-news-section .container,
+.mfl-news-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#news > div,
+.mfl-news-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main page title */
+section#news h2,
+.mfl-news-section h2 {
+  width: 100% !important;
+  text-align: left !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475) !important;
+  padding-bottom: 0.8rem !important;
+  margin: 0 0 2rem 0 !important;
+}
+
+/* News list */
+.mfl-news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* News row card: similar to Journal row */
+.mfl-news-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+}
+
+/* Left image */
+.mfl-news-image-wrap {
+  width: 280px;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  background: #e5e7eb;
+  align-self: start;
+  flex-shrink: 0;
+}
+
+.mfl-news-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.mfl-news-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #64748b;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+/* Right text */
+.mfl-news-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.mfl-news-topline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+/* Month/year badge like ISL-style news metadata */
+.mfl-news-date {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: #0353a4;
+  background: rgba(3, 83, 164, 0.08);
+  border: 1px solid rgba(3, 83, 164, 0.18);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+/* News title: similar to MFL journal title */
+.mfl-news-title {
+  font-size: 1.45rem !important;
+  line-height: 1.35 !important;
+  font-weight: 500 !important;
+  color: #020617 !important;
+  margin: 0 0 0.65rem 0 !important;
+}
+
+.mfl-news-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.mfl-news-title a:hover {
+  color: #0353a4 !important;
+}
+
+/* Description: similar to Journal author/details text */
+.mfl-news-description {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+.mfl-news-description p {
+  margin: 0 !important;
+}
+
+.mfl-news-description a {
+  color: #0353a4 !important;
+  text-decoration: none !important;
+}
+
+.mfl-news-description a:hover {
+  color: #1D2475 !important;
+  background-color: rgba(3, 83, 164, 0.06);
+}
+
+.mfl-news-empty {
+  color: #64748b;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#news > div,
+  .mfl-news-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-news-row {
+    grid-template-columns: 1fr;
+  }
+
+  .mfl-news-image-wrap {
+    width: 100%;
+  }
+
+  .mfl-news-title {
+    font-size: 1.2rem !important;
+  }
+
+  .mfl-news-description {
+    font-size: 0.98rem !important;
+  }
+}
