@@ -139,7 +139,7 @@
   margin-bottom: 2rem;
 }
 
-/* Make member sections wide like the ISL members page */
+/* Make member sections wide members page */
 .mfl-members-section .prose {
   max-width: none !important;
 }
@@ -253,7 +253,7 @@
   font-style: italic;
 }
 /* ==========================================================================
-   Researchers page: ISL-like horizontal member rows
+   Researchers page: horizontal member rows
    ========================================================================== */
 
 /* Section width and heading alignment */
