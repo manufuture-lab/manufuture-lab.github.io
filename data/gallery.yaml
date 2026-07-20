@@ -1,0 +1,11 @@
+albums:
+  - slug: "template"
+    title: "Template"
+    date: "2026-08"
+    cover: "media/gallery/template/01.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/template/01.jpg"
+        caption: "MRS Science as Art 공모전 출품-1"
+      - image: "media/gallery/template/02.jpg"
+        caption: "MRS Science as Art 공모전 출품-2"
