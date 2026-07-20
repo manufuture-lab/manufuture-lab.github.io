@@ -25,13 +25,13 @@ links:
   - pack: fab
     icon: researchgate
     label: ResearchGate
-    url: ""
+    url: "https://www.researchgate.net/profile/Sukkyung-Kang?ev=hdr_xprf"
     hidden_url: "https://www.researchgate.net/profile/Sukkyung-Kang?ev=hdr_xprf"
 
   - pack: fab
     icon: orcid
     label: ORCID
-    url: ""
+    url: "https://orcid.org/0000-0002-4301-1354"
     hidden_url: "https://orcid.org/0000-0002-4301-1354"
 
   - pack: ai
