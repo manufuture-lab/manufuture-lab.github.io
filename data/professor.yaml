@@ -8,7 +8,7 @@ position:
 photo: "media/sukkyung-kang.jpg"
 photo_hover: "media/sukkyung-kang-hover.jpg"
 
-email: "example@hanyang.ac.kr"
+email: "skkang00@hanyang.ac.kr"
 tel: "+82 031-000-0000"
 
 links:
@@ -25,17 +25,20 @@ links:
   - pack: fab
     icon: researchgate
     label: ResearchGate
-    url: "https://www.researchgate.net/profile/Sukkyung-Kang?ev=hdr_xprf"
+    url: ""
+    hidden_url: "https://www.researchgate.net/profile/Sukkyung-Kang?ev=hdr_xprf"
 
   - pack: fab
     icon: orcid
     label: ORCID
-    url: "https://orcid.org/0000-0002-4301-1354"
+    url: ""
+    hidden_url: "https://orcid.org/0000-0002-4301-1354"
 
   - pack: ai
     icon: cv
     label: CV
-    url: "#"
+    url: ""
+    hidden_url: "#"
 
 education:
   - degree: "Ph.D. in Mechanical Engineering (2025)"
