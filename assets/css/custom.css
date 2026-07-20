@@ -3800,7 +3800,7 @@ section#news h2,
   margin-bottom: 0.45rem;
 }
 
-/* Month/year badge like ISL-style news metadata */
+/* Month/year badge news metadata */
 .mfl-news-date {
   display: inline-flex;
   align-items: center;
