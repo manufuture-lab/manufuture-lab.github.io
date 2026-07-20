@@ -4586,3 +4586,120 @@ html.mfl-gallery-modal-open {
     right: 0.45rem !important;
   }
 }
+/* ==========================================================================
+   Sponsors page: collaborators + institutions sections
+   ========================================================================== */
+
+section#sponsors,
+.mfl-sponsors-section {
+  width: 100% !important;
+}
+
+section#sponsors .container,
+section#sponsors .prose,
+.mfl-sponsors-section .container,
+.mfl-sponsors-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#sponsors > div,
+.mfl-sponsors-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Main page title: Sponsors and Collaborators */
+section#sponsors h2,
+.mfl-sponsors-section h2 {
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin: 0 0 2.5rem 0 !important;
+}
+
+.mfl-sponsors-page {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Each sponsors block */
+.mfl-sponsors-block {
+  width: 100%;
+  margin-bottom: 2.75rem;
+}
+
+.mfl-sponsors-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Subsection title: Journal-like subsection heading */
+.mfl-sponsors-block h3 {
+  font-size: 1.35rem !important;
+  font-weight: 800 !important;
+  line-height: 1.35 !important;
+  color: #0f172a !important;
+  margin: 0 0 1rem 0 !important;
+  text-align: left !important;
+}
+
+/* Image card */
+.mfl-sponsors-image-wrap {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Image itself */
+.mfl-sponsors-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+}
+
+/* Optional: make collaborators image slightly more compact if needed */
+.mfl-sponsors-collaborators .mfl-sponsors-image-wrap {
+  padding: 1.5rem;
+}
+
+/* Fallback message */
+.mfl-sponsors-empty {
+  color: #64748b;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  font-style: italic;
+  margin: 0.5rem 0 0 0;
+}
+
+@media (max-width: 767px) {
+  section#sponsors > div,
+  .mfl-sponsors-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-sponsors-image-wrap {
+    padding: 1rem;
+  }
+
+  .mfl-sponsors-block h3 {
+    font-size: 1.2rem !important;
+  }
+}
