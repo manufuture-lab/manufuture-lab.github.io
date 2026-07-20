@@ -1,17 +1,59 @@
-{{- $img := resources.Get "media/sponsors_past.jpeg" -}}
+{{- $collabImg := resources.Get "media/collaborators.jpeg" -}}
+{{- if not $collabImg -}}
+  {{- $collabImg = resources.Get "media/collaborators.jpg" -}}
+{{- end -}}
+{{- if not $collabImg -}}
+  {{- $collabImg = resources.Get "media/collaborators.png" -}}
+{{- end -}}
+
+{{- $pastImg := resources.Get "media/sponsors_past.jpeg" -}}
+{{- if not $pastImg -}}
+  {{- $pastImg = resources.Get "media/sponsors_past.jpg" -}}
+{{- end -}}
+{{- if not $pastImg -}}
+  {{- $pastImg = resources.Get "media/sponsors_past.png" -}}
+{{- end -}}
 
 <div class="mfl-sponsors-page">
-  <section class="mfl-sponsors-block">
-    <h3>Partner Institutions (with collaboration experience)</h3>
 
-    {{- if $img -}}
+  <section class="mfl-sponsors-block mfl-sponsors-collaborators">
+    <h3>Collaborators</h3>
+
+    {{- if $collabImg -}}
+      {{- $processed := $collabImg.Fit "1800x1200" -}}
       <div class="mfl-sponsors-image-wrap">
-        <img src="{{ $img.RelPermalink }}" alt="Partner institutions with collaboration experience" class="mfl-sponsors-image">
+        <img
+          src="{{ $processed.RelPermalink }}"
+          alt="Collaborators"
+          class="mfl-sponsors-image"
+          loading="lazy"
+        >
       </div>
     {{- else -}}
       <p class="mfl-sponsors-empty">
-        Sponsor image not found. Please upload <code>assets/media/sponsors_past.png</code>.
+        Collaborators image not found. Please upload <code>assets/media/collaborators.jpeg</code>.
       </p>
     {{- end -}}
   </section>
+
+  <section class="mfl-sponsors-block mfl-sponsors-institutions">
+    <h3>Institutions with Collaboration Experience</h3>
+
+    {{- if $pastImg -}}
+      {{- $processed := $pastImg.Fit "1800x1200" -}}
+      <div class="mfl-sponsors-image-wrap">
+        <img
+          src="{{ $processed.RelPermalink }}"
+          alt="Institutions with collaboration experience"
+          class="mfl-sponsors-image"
+          loading="lazy"
+        >
+      </div>
+    {{- else -}}
+      <p class="mfl-sponsors-empty">
+        Sponsor image not found. Please upload <code>assets/media/sponsors_past.jpeg</code>.
+      </p>
+    {{- end -}}
+  </section>
+
 </div>
