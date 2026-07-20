@@ -1,64 +1,85 @@
+{{- $layout := .Get "layout" | default "list" -}}
+{{- $is_carousel := eq $layout "carousel" -}}
 {{- $items := site.Data.news.news | default slice -}}
 
-{{- if gt (len $items) 0 -}}
-<div class="mfl-news-list">
-  {{- range $index, $item := sort $items "date" "desc" -}}
+<div class="mfl-news-page mfl-news-layout-{{ $layout }}">
 
-    {{- $dateStr := $item.date | default "" -}}
-    {{- $parsedDate := "" -}}
-    {{- if $dateStr -}}
-      {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
-        {{- $parsedDate = (printf "%s-01" $dateStr) | time -}}
-      {{- else -}}
-        {{- $parsedDate = $dateStr | time -}}
-      {{- end -}}
-    {{- end -}}
+  {{- if $is_carousel -}}
+    <section class="mfl-home-news-card">
+      <h2>Latest News</h2>
+  {{- end -}}
 
-    <article class="mfl-news-row">
+  {{- if gt (len $items) 0 -}}
+    <div class="{{ if $is_carousel }}mfl-news-carousel{{ else }}mfl-news-list{{ end }}">
+      {{- range $index, $item := sort $items "date" "desc" -}}
 
-      <div class="mfl-news-image-wrap">
-        {{- if $item.image -}}
-          {{- $img := resources.Get $item.image -}}
-          {{- if $img -}}
-            {{- $processed := $img.Fill "640x360 Center" -}}
-            <img src="{{ $processed.RelPermalink }}" alt="{{ $item.title }}" class="mfl-news-image" loading="lazy">
+        {{- $dateStr := $item.date | default "" -}}
+        {{- $parsedDate := "" -}}
+
+        {{- if $dateStr -}}
+          {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
+            {{- $parsedDate = (printf "%s-01" $dateStr) | time -}}
           {{- else -}}
-            <div class="mfl-news-image-placeholder">News</div>
+            {{- $parsedDate = $dateStr | time -}}
           {{- end -}}
-        {{- else -}}
-          <div class="mfl-news-image-placeholder">News</div>
         {{- end -}}
-      </div>
 
-      <div class="mfl-news-body">
-        <div class="mfl-news-topline">
-          <div class="mfl-news-date">
-            {{- if and $parsedDate (ne $parsedDate.IsZero true) -}}
-              {{ $parsedDate | time.Format "January 2006" }}
-            {{- else if $dateStr -}}
-              {{ $dateStr }}
+        <article class="mfl-news-row">
+
+          <div class="mfl-news-image-wrap">
+            {{- if $item.image -}}
+              {{- $img := resources.Get $item.image -}}
+              {{- if $img -}}
+                {{- $processed := $img.Fill "640x360 Center" -}}
+                <img
+                  src="{{ $processed.RelPermalink }}"
+                  alt="{{ $item.title }}"
+                  class="mfl-news-image"
+                  loading="lazy"
+                >
+              {{- else -}}
+                <div class="mfl-news-image-placeholder">News</div>
+              {{- end -}}
+            {{- else -}}
+              <div class="mfl-news-image-placeholder">News</div>
             {{- end -}}
           </div>
-        </div>
 
-        <h3 class="mfl-news-title">
-          {{- if and $item.url (ne $item.url "#") -}}
-            <a href="{{ $item.url }}">{{ $item.title }}</a>
-          {{- else -}}
-            {{ $item.title }}
-          {{- end -}}
-        </h3>
+          <div class="mfl-news-body">
+            <div class="mfl-news-topline">
+              <div class="mfl-news-date">
+                {{- if and $parsedDate (ne $parsedDate.IsZero true) -}}
+                  {{ $parsedDate | time.Format "January 2006" }}
+                {{- else if $dateStr -}}
+                  {{ $dateStr }}
+                {{- end -}}
+              </div>
+            </div>
 
-        {{- with $item.description -}}
-          <div class="mfl-news-description">
-            {{ . | markdownify }}
+            <h3 class="mfl-news-title">
+              {{- if and $item.url (ne $item.url "#") -}}
+                <a href="{{ $item.url }}">{{ $item.title }}</a>
+              {{- else -}}
+                {{ $item.title }}
+              {{- end -}}
+            </h3>
+
+            {{- with $item.description -}}
+              <div class="mfl-news-description">
+                {{ . | markdownify }}
+              </div>
+            {{- end -}}
           </div>
-        {{- end -}}
-      </div>
 
-    </article>
+        </article>
+      {{- end -}}
+    </div>
+  {{- else -}}
+    <p class="mfl-news-empty">To be updated.</p>
   {{- end -}}
+
+  {{- if $is_carousel -}}
+    </section>
+  {{- end -}}
+
 </div>
-{{- else -}}
-<p class="mfl-news-empty">To be updated.</p>
-{{- end -}}
