@@ -4703,3 +4703,53 @@ section#sponsors h2,
     font-size: 1.2rem !important;
   }
 }
+/* ==========================================================================
+   Gallery modal: prevent counter and close button overlap
+   ========================================================================== */
+
+/* Give the modal header enough right space for the close button */
+.mfl-gallery-modal-header {
+  position: relative !important;
+  padding-right: 4.75rem !important;
+}
+
+/* Let the title/date area shrink safely without pushing the counter */
+.mfl-gallery-modal-header > div:first-child {
+  min-width: 0 !important;
+  padding-right: 1rem !important;
+}
+
+/* Move the photo counter away from the close button */
+.mfl-gallery-modal-counter {
+  flex: 0 0 auto !important;
+  min-width: 3.5rem !important;
+  margin-right: 1.6rem !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+  color: #64748b !important;
+}
+
+/* Keep close button fixed at the top-right corner of the modal */
+.mfl-gallery-modal-close {
+  top: 0.75rem !important;
+  right: 0.9rem !important;
+  z-index: 20 !important;
+}
+
+/* Mobile: slightly tighter spacing */
+@media (max-width: 767px) {
+  .mfl-gallery-modal-header {
+    padding-right: 4rem !important;
+  }
+
+  .mfl-gallery-modal-counter {
+    min-width: 3rem !important;
+    margin-right: 1.2rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .mfl-gallery-modal-close {
+    top: 0.65rem !important;
+    right: 0.7rem !important;
+  }
+}
