@@ -68,4 +68,18 @@ sections:
       css_class: "mfl-home-research-section"
       css_style: "max-width: 100% !important; width: 100% !important;"
       container: false
+
+  - block: markdown
+    id: home-news
+    content:
+      title: ""
+      text: |
+        {{< mfl-news layout="carousel" >}}
+
+    design:
+      spacing:
+        padding: ["2rem", 0, "3rem", 0]
+      css_class: "mfl-home-news-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
