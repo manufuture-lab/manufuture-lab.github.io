@@ -4353,3 +4353,236 @@ html.mfl-gallery-modal-open {
     font-size: 1.6rem;
   }
 }
+/* ==========================================================================
+   Gallery modal refinement: compact, centered, no cropping
+   ========================================================================== */
+
+/* Put gallery modal above sticky header/navbar */
+.mfl-gallery-modal {
+  z-index: 2147483000 !important;
+}
+
+/* Dark background */
+.mfl-gallery-modal-backdrop {
+  background: rgba(2, 6, 23, 0.72) !important;
+  backdrop-filter: blur(5px) !important;
+}
+
+/*
+  Make the modal:
+  centered white panel, not full-screen huge.
+*/
+.mfl-gallery-modal-panel {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+
+  width: min(880px, calc(100vw - 3rem)) !important;
+  max-width: 880px !important;
+  max-height: min(86vh, 820px) !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  background: #ffffff !important;
+  border-radius: 0.9rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Header should always be visible */
+.mfl-gallery-modal-header {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.32) !important;
+  background: #ffffff !important;
+}
+
+.mfl-gallery-modal-title {
+  font-size: 1.15rem !important;
+  line-height: 1.3 !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 0 0.25rem 0 !important;
+}
+
+.mfl-gallery-modal-date {
+  font-size: 0.9rem !important;
+  line-height: 1.35 !important;
+  color: #64748b !important;
+}
+
+.mfl-gallery-modal-counter {
+  font-size: 0.9rem !important;
+  color: #64748b !important;
+  white-space: nowrap !important;
+}
+
+/* Close button: visible inside the modal */
+.mfl-gallery-modal-close {
+  position: absolute !important;
+  top: 0.7rem !important;
+  right: 0.8rem !important;
+  z-index: 10 !important;
+
+  width: 2rem !important;
+  height: 2rem !important;
+
+  border: 0 !important;
+  border-radius: 999px !important;
+  color: #475569 !important;
+  background: #f1f5f9 !important;
+
+  font-size: 1.35rem !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+.mfl-gallery-modal-close:hover {
+  color: #ffffff !important;
+  background: #1D2475 !important;
+}
+
+/*
+  Image area:
+  fixed reasonable height, so caption never gets covered.
+*/
+.mfl-gallery-modal-image-stage {
+  position: relative !important;
+  flex: 0 1 auto !important;
+  min-height: 0 !important;
+
+  height: auto !important;
+  max-height: 58vh !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 1.25rem !important;
+  background: #ffffff !important;
+}
+
+/* Image should be contained, not huge */
+.mfl-gallery-modal-image {
+  display: block !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  max-width: 100% !important;
+  max-height: min(58vh, 560px) !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+  object-position: center center !important;
+
+  border-radius: 0.35rem !important;
+  background: #f8fafc !important;
+}
+
+/* Navigation arrows: small and centered vertically around image */
+.mfl-gallery-modal-nav {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  z-index: 6 !important;
+
+  width: 2rem !important;
+  height: 2rem !important;
+
+  border: 0 !important;
+  border-radius: 999px !important;
+
+  color: #475569 !important;
+  background: #e2e8f0 !important;
+
+  font-size: 1.45rem !important;
+  line-height: 1 !important;
+  cursor: pointer !important;
+}
+
+.mfl-gallery-modal-nav:hover {
+  color: #ffffff !important;
+  background: #1D2475 !important;
+}
+
+.mfl-gallery-modal-prev {
+  left: 0.75rem !important;
+}
+
+.mfl-gallery-modal-next {
+  right: 0.75rem !important;
+}
+
+/* Caption area: always below image */
+.mfl-gallery-modal-caption {
+  flex: 0 0 auto !important;
+
+  min-height: auto !important;
+  max-height: 7.5rem !important;
+  overflow-y: auto !important;
+
+  padding: 0.9rem 1.25rem 1rem 1.25rem !important;
+
+  color: #475569 !important;
+  background: #ffffff !important;
+
+  font-size: 0.98rem !important;
+  line-height: 1.6 !important;
+  word-break: keep-all !important;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.32) !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .mfl-gallery-modal-panel {
+    width: calc(100vw - 1.5rem) !important;
+    max-height: 86vh !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .mfl-gallery-modal-header {
+    padding: 0.85rem 1rem !important;
+  }
+
+  .mfl-gallery-modal-title {
+    font-size: 1rem !important;
+    padding-right: 2rem !important;
+  }
+
+  .mfl-gallery-modal-image-stage {
+    max-height: 52vh !important;
+    padding: 1rem !important;
+  }
+
+  .mfl-gallery-modal-image {
+    max-height: min(52vh, 460px) !important;
+  }
+
+  .mfl-gallery-modal-caption {
+    max-height: 8rem !important;
+    padding: 0.85rem 1rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .mfl-gallery-modal-prev {
+    left: 0.45rem !important;
+  }
+
+  .mfl-gallery-modal-next {
+    right: 0.45rem !important;
+  }
+}
