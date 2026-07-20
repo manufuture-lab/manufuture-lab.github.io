@@ -12,9 +12,12 @@ sections:
     content:
       title: "Gallery"
       text: |
-        To be updated.
+        {{< mfl-gallery >}}
 
     design:
       spacing:
-        padding: ["4rem", 0, "2rem", 0]
+        padding: ["2rem", 0, "2rem", 0]
+      css_class: "mfl-gallery-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
 ---
