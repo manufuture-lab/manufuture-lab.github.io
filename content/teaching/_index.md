@@ -14,7 +14,7 @@ sections:
       text: |
         <br>
 
-        ### 기계융합제조공정설계 (Mechanical Convergence Manufacturing Process Design)
+        ### 기계융합제조공정설계 (Mechanical Fusion Fabrication Process Design)
         - Fall 2026
 
         <br><br>
