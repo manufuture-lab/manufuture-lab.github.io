@@ -1,6 +1,5 @@
 submitted:
   - "Precision multi-layer Terahertz measurement for semiconductor wafer back-grinding, Guseon Kang, Hyunsu Kim, Sukkyung Kang, Jinwoo Jeon, Jaeyoon Kim, Sanha Kim, Young-Jin Kim, under review."
-  - "Data-free physics-informed inverse programming of bistable kirigami energy landscapes, Sukheon Kang, Sukkyung Kang, Sanha Kim, Seunghwa Ryu, in revision."
 
 published:
   - order: 1
@@ -304,6 +303,22 @@ published:
         icon: arrow-top-right-on-square
         label: doi
         url: "https://doi.org/10.1063/5.0335364"
+      - pack: hero
+        icon: document-arrow-down
+        label: pdf
+        url: "#"
+
+  - order: 20
+    title: "Data-free physics-informed inverse programming of bistable kirigami energy landscapes"
+    image: "media/publications/20. Kang-MatHori-2026.png"
+    authors: "Sukheon Kang, **Sukkyung Kang**, Sanha Kim, Seunghwa Ryu"
+    journal: "Materials Horizons"
+    details: "accepted"
+    links:
+      - pack: hero
+        icon: arrow-top-right-on-square
+        label: doi
+        url: "#"
       - pack: hero
         icon: document-arrow-down
         label: pdf
