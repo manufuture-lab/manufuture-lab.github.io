@@ -74,10 +74,14 @@ sections:
     content:
       title: ""
       text: |
-        {{< mfl-news layout="carousel" >}}
+        {{< mfl-news layout="carousel" limit="5" >}}
 
     design:
       spacing:
+        padding: ["2rem", 0, "3rem", 0]
+      css_class: "mfl-home-news-section"
+      css_style: "max-width: 100% !important; width: 100% !important;"
+      container: false
         padding: ["2rem", 0, "3rem", 0]
       css_class: "mfl-home-news-section"
       css_style: "max-width: 100% !important; width: 100% !important;"
