@@ -1,6 +1,13 @@
 {{- $layout := .Get "layout" | default "list" -}}
+{{- $limit := int (.Get "limit" | default "999") -}}
 {{- $is_carousel := eq $layout "carousel" -}}
+
 {{- $items := site.Data.news.news | default slice -}}
+{{- $items = sort $items "date" "desc" -}}
+
+{{- if and $is_carousel (gt $limit 0) -}}
+  {{- $items = first $limit $items -}}
+{{- end -}}
 
 <div class="mfl-news-page mfl-news-layout-{{ $layout }}">
 
@@ -10,70 +17,149 @@
   {{- end -}}
 
   {{- if gt (len $items) 0 -}}
-    <div class="{{ if $is_carousel }}mfl-news-carousel{{ else }}mfl-news-list{{ end }}">
-      {{- range $index, $item := sort $items "date" "desc" -}}
 
-        {{- $dateStr := $item.date | default "" -}}
-        {{- $parsedDate := "" -}}
+    {{- if $is_carousel -}}
+      <div class="mfl-news-home-carousel-wrap">
 
-        {{- if $dateStr -}}
-          {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
-            {{- $parsedDate = (printf "%s-01" $dateStr) | time -}}
-          {{- else -}}
-            {{- $parsedDate = $dateStr | time -}}
+        <div class="mfl-news-home-carousel">
+          {{- range $index, $item := $items -}}
+
+            {{- $dateStr := $item.date | default "" -}}
+            {{- $dateLabel := $dateStr -}}
+
+            {{- if $dateStr -}}
+              {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
+                {{- $parsedDate := (printf "%s-01" $dateStr) | time -}}
+                {{- $dateLabel = ($parsedDate | time.Format "January 2006") -}}
+              {{- else -}}
+                {{- $parsedDate := $dateStr | time -}}
+                {{- if not $parsedDate.IsZero -}}
+                  {{- $dateLabel = ($parsedDate | time.Format "January 2006") -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+            <article class="mfl-news-home-item">
+
+              <div class="mfl-news-home-image-wrap">
+                {{- if $item.image -}}
+                  {{- $img := resources.Get $item.image -}}
+                  {{- if $img -}}
+                    {{- $processed := $img.Fill "640x360 Center" -}}
+                    <img
+                      src="{{ $processed.RelPermalink }}"
+                      alt="{{ $item.title }}"
+                      class="mfl-news-home-image"
+                      loading="lazy"
+                    >
+                  {{- else -}}
+                    <div class="mfl-news-home-image-placeholder">News</div>
+                  {{- end -}}
+                {{- else -}}
+                  <div class="mfl-news-home-image-placeholder">News</div>
+                {{- end -}}
+              </div>
+
+              <div class="mfl-news-home-body">
+                {{- with $dateLabel -}}
+                  <div class="mfl-news-home-date">{{ . }}</div>
+                {{- end -}}
+
+                <h3 class="mfl-news-home-title">
+                  {{- if and $item.url (ne $item.url "#") -}}
+                    <a href="{{ $item.url }}">{{ $item.title }}</a>
+                  {{- else -}}
+                    {{ $item.title }}
+                  {{- end -}}
+                </h3>
+
+                {{- with $item.description -}}
+                  <div class="mfl-news-home-description">
+                    {{ . | markdownify }}
+                  </div>
+                {{- end -}}
+              </div>
+
+            </article>
+
           {{- end -}}
-        {{- end -}}
+        </div>
 
-        <article class="mfl-news-row">
+        <div class="mfl-news-home-scrollbar" aria-hidden="true">
+          <span class="mfl-news-home-scrollbar-thumb"></span>
+        </div>
 
-          <div class="mfl-news-image-wrap">
-            {{- if $item.image -}}
-              {{- $img := resources.Get $item.image -}}
-              {{- if $img -}}
-                {{- $processed := $img.Fill "640x360 Center" -}}
-                <img
-                  src="{{ $processed.RelPermalink }}"
-                  alt="{{ $item.title }}"
-                  class="mfl-news-image"
-                  loading="lazy"
-                >
+      </div>
+
+    {{- else -}}
+
+      <div class="mfl-news-list">
+        {{- range $index, $item := $items -}}
+
+          {{- $dateStr := $item.date | default "" -}}
+          {{- $dateLabel := $dateStr -}}
+
+          {{- if $dateStr -}}
+            {{- if gt (len (findRE `^\d{4}-\d{2}$` $dateStr)) 0 -}}
+              {{- $parsedDate := (printf "%s-01" $dateStr) | time -}}
+              {{- $dateLabel = ($parsedDate | time.Format "January 2006") -}}
+            {{- else -}}
+              {{- $parsedDate := $dateStr | time -}}
+              {{- if not $parsedDate.IsZero -}}
+                {{- $dateLabel = ($parsedDate | time.Format "January 2006") -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          <article class="mfl-news-row">
+
+            <div class="mfl-news-image-wrap">
+              {{- if $item.image -}}
+                {{- $img := resources.Get $item.image -}}
+                {{- if $img -}}
+                  {{- $processed := $img.Fill "640x360 Center" -}}
+                  <img
+                    src="{{ $processed.RelPermalink }}"
+                    alt="{{ $item.title }}"
+                    class="mfl-news-image"
+                    loading="lazy"
+                  >
+                {{- else -}}
+                  <div class="mfl-news-image-placeholder">News</div>
+                {{- end -}}
               {{- else -}}
                 <div class="mfl-news-image-placeholder">News</div>
               {{- end -}}
-            {{- else -}}
-              <div class="mfl-news-image-placeholder">News</div>
-            {{- end -}}
-          </div>
-
-          <div class="mfl-news-body">
-            <div class="mfl-news-topline">
-              <div class="mfl-news-date">
-                {{- if and $parsedDate (ne $parsedDate.IsZero true) -}}
-                  {{ $parsedDate | time.Format "January 2006" }}
-                {{- else if $dateStr -}}
-                  {{ $dateStr }}
-                {{- end -}}
-              </div>
             </div>
 
-            <h3 class="mfl-news-title">
-              {{- if and $item.url (ne $item.url "#") -}}
-                <a href="{{ $item.url }}">{{ $item.title }}</a>
-              {{- else -}}
-                {{ $item.title }}
-              {{- end -}}
-            </h3>
-
-            {{- with $item.description -}}
-              <div class="mfl-news-description">
-                {{ . | markdownify }}
+            <div class="mfl-news-body">
+              <div class="mfl-news-topline">
+                <div class="mfl-news-date">
+                  {{- $dateLabel -}}
+                </div>
               </div>
-            {{- end -}}
-          </div>
 
-        </article>
-      {{- end -}}
-    </div>
+              <h3 class="mfl-news-title">
+                {{- if and $item.url (ne $item.url "#") -}}
+                  <a href="{{ $item.url }}">{{ $item.title }}</a>
+                {{- else -}}
+                  {{ $item.title }}
+                {{- end -}}
+              </h3>
+
+              {{- with $item.description -}}
+                <div class="mfl-news-description">
+                  {{ . | markdownify }}
+                </div>
+              {{- end -}}
+            </div>
+
+          </article>
+        {{- end -}}
+      </div>
+
+    {{- end -}}
+
   {{- else -}}
     <p class="mfl-news-empty">To be updated.</p>
   {{- end -}}
@@ -83,3 +169,146 @@
   {{- end -}}
 
 </div>
+
+{{- if $is_carousel -}}
+<script>
+  (function () {
+    function clamp(value, min, max) {
+      return Math.min(Math.max(value, min), max);
+    }
+
+    function initMflNewsHomeScrollbars() {
+      document.querySelectorAll(".mfl-news-home-carousel-wrap").forEach(function (wrap) {
+        if (wrap.dataset.scrollbarReady === "true") return;
+        wrap.dataset.scrollbarReady = "true";
+
+        const scroller = wrap.querySelector(".mfl-news-home-carousel");
+        const track = wrap.querySelector(".mfl-news-home-scrollbar");
+        const thumb = wrap.querySelector(".mfl-news-home-scrollbar-thumb");
+
+        if (!scroller || !track || !thumb) return;
+
+        let dragging = false;
+        let dragStartX = 0;
+        let dragStartScrollLeft = 0;
+
+        function getMetrics() {
+          const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+          const trackWidth = track.clientWidth;
+          const ratio = scroller.clientWidth / scroller.scrollWidth;
+          const thumbWidth = Math.max(trackWidth * ratio, 48);
+          const maxThumbLeft = Math.max(trackWidth - thumbWidth, 1);
+
+          return {
+            maxScroll: maxScroll,
+            trackWidth: trackWidth,
+            thumbWidth: thumbWidth,
+            maxThumbLeft: maxThumbLeft
+          };
+        }
+
+        function updateScrollbar() {
+          const metrics = getMetrics();
+
+          if (metrics.maxScroll <= 1) {
+            wrap.classList.add("mfl-no-scroll");
+            thumb.style.width = "0px";
+            thumb.style.transform = "translateX(0px)";
+            return;
+          }
+
+          wrap.classList.remove("mfl-no-scroll");
+
+          const progress = scroller.scrollLeft / metrics.maxScroll;
+          const thumbLeft = progress * metrics.maxThumbLeft;
+
+          thumb.style.width = metrics.thumbWidth + "px";
+          thumb.style.transform = "translateX(" + thumbLeft + "px)";
+        }
+
+        function scrollToThumbPosition(clientX) {
+          const metrics = getMetrics();
+          if (metrics.maxScroll <= 1) return;
+
+          const rect = track.getBoundingClientRect();
+          const x = clientX - rect.left;
+          const targetThumbLeft = clamp(
+            x - metrics.thumbWidth / 2,
+            0,
+            metrics.maxThumbLeft
+          );
+
+          const progress = targetThumbLeft / metrics.maxThumbLeft;
+          scroller.scrollLeft = progress * metrics.maxScroll;
+        }
+
+        scroller.addEventListener("scroll", updateScrollbar, { passive: true });
+        window.addEventListener("resize", updateScrollbar);
+
+        track.addEventListener("pointerdown", function (event) {
+          const metrics = getMetrics();
+          if (metrics.maxScroll <= 1) return;
+
+          if (event.target === thumb) {
+            dragging = true;
+            dragStartX = event.clientX;
+            dragStartScrollLeft = scroller.scrollLeft;
+
+            thumb.classList.add("is-dragging");
+            track.setPointerCapture(event.pointerId);
+            event.preventDefault();
+            return;
+          }
+
+          scrollToThumbPosition(event.clientX);
+        });
+
+        track.addEventListener("pointermove", function (event) {
+          if (!dragging) return;
+
+          const metrics = getMetrics();
+          if (metrics.maxScroll <= 1) return;
+
+          const deltaX = event.clientX - dragStartX;
+          const scrollDelta = deltaX / metrics.maxThumbLeft * metrics.maxScroll;
+
+          scroller.scrollLeft = clamp(
+            dragStartScrollLeft + scrollDelta,
+            0,
+            metrics.maxScroll
+          );
+
+          event.preventDefault();
+        });
+
+        function stopDragging(event) {
+          if (!dragging) return;
+
+          dragging = false;
+          thumb.classList.remove("is-dragging");
+
+          try {
+            track.releasePointerCapture(event.pointerId);
+          } catch (error) {}
+        }
+
+        track.addEventListener("pointerup", stopDragging);
+        track.addEventListener("pointercancel", stopDragging);
+        track.addEventListener("lostpointercapture", function () {
+          dragging = false;
+          thumb.classList.remove("is-dragging");
+        });
+
+        window.requestAnimationFrame(updateScrollbar);
+        window.setTimeout(updateScrollbar, 250);
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMflNewsHomeScrollbars);
+    } else {
+      initMflNewsHomeScrollbars();
+    }
+  })();
+</script>
+{{- end -}}
