@@ -4753,3 +4753,253 @@ section#sponsors h2,
     right: 0.7rem !important;
   }
 }
+/* ==========================================================================
+   Home Latest News: Research Area-style carousel
+   ========================================================================== */
+
+/* Korean line breaking for news */
+.mfl-news-title,
+.mfl-news-title a,
+.mfl-news-description,
+.mfl-news-description p,
+.mfl-news-body,
+.mfl-news-home-title,
+.mfl-news-home-title a,
+.mfl-news-home-description,
+.mfl-news-home-description p,
+.mfl-news-home-body {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  line-break: strict !important;
+}
+
+/* Home News section width */
+section#home-news,
+.mfl-home-news-section {
+  width: 100% !important;
+}
+
+section#home-news .container,
+section#home-news .prose,
+.mfl-home-news-section .container,
+.mfl-home-news-section .prose {
+  max-width: 100% !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+section#home-news > div,
+.mfl-home-news-section > div {
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* Outer card: same feeling as Research Area */
+.mfl-home-news-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  padding: 1.75rem 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* Heading: same as Research Area */
+.mfl-home-news-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 2px solid var(--mfl-nav-accent, #1D2475);
+  padding-bottom: 0.75rem;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+/* Carousel */
+.mfl-news-home-carousel-wrap {
+  width: 100%;
+}
+
+.mfl-news-home-carousel {
+  display: flex !important;
+  gap: 1.25rem !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+  padding-bottom: 0 !important;
+
+  /* hide native scrollbar to avoid double-scrollbar */
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.mfl-news-home-carousel::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* News card: same width as Research Area card */
+.mfl-news-home-item {
+  flex: 0 0 min(520px, 85vw) !important;
+  background: #ffffff;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+.mfl-news-home-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.mfl-news-home-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.mfl-news-home-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #64748b;
+  font-size: 1.05rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+}
+
+.mfl-news-home-body {
+  padding: 1.25rem;
+}
+
+.mfl-news-home-date {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  color: #0353a4;
+  background: rgba(3, 83, 164, 0.08);
+  border: 1px solid rgba(3, 83, 164, 0.18);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.mfl-news-home-title {
+  font-size: 1.35rem !important;
+  line-height: 1.35 !important;
+  font-weight: 500 !important;
+  color: #020617 !important;
+  margin: 0 0 0.65rem 0 !important;
+}
+
+.mfl-news-home-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.mfl-news-home-title a:hover {
+  color: #0353a4 !important;
+}
+
+.mfl-news-home-description {
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #64748b !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+}
+
+.mfl-news-home-description p {
+  margin: 0 !important;
+}
+
+/* Single blue scrollbar, same as Research Area */
+.mfl-news-home-scrollbar {
+  display: block !important;
+  width: 100% !important;
+  height: 8px !important;
+  margin-top: 0.85rem !important;
+  background: #e5e7eb !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  touch-action: none !important;
+  user-select: none !important;
+}
+
+.mfl-news-home-scrollbar-thumb {
+  display: block !important;
+  height: 100% !important;
+  min-width: 48px !important;
+  background: var(--mfl-nav-accent, #1D2475) !important;
+  border-radius: 999px !important;
+  transform: translateX(0);
+  cursor: grab !important;
+  transition:
+    width 120ms ease,
+    background-color 160ms ease;
+}
+
+.mfl-news-home-scrollbar-thumb:hover,
+.mfl-news-home-scrollbar-thumb.is-dragging {
+  background: #0353a4 !important;
+}
+
+.mfl-news-home-carousel-wrap.mfl-no-scroll .mfl-news-home-scrollbar {
+  display: none !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  section#home-news > div,
+  .mfl-home-news-section > div {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .mfl-home-news-card {
+    padding: 1.5rem;
+  }
+
+  .mfl-home-news-card h2 {
+    font-size: 1.55rem;
+  }
+
+  .mfl-news-home-item {
+    flex: 0 0 85vw !important;
+  }
+
+  .mfl-news-home-title {
+    font-size: 1.15rem !important;
+  }
+
+  .mfl-news-home-description {
+    font-size: 0.98rem !important;
+  }
+
+  .mfl-news-home-scrollbar {
+    height: 7px !important;
+    margin-top: 0.75rem !important;
+  }
+}
