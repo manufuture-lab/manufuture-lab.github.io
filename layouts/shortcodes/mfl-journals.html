@@ -24,17 +24,36 @@
         {{- range $i, $pub := sort . "order" "desc" -}}
           <article class="mfl-journal-row">
 
-            <div class="mfl-journal-image-wrap">
+            <div class="mfl-journal-image-wrap{{ if $pub.cover_image }} has-cover-image{{ end }}">
               {{- if $pub.image -}}
                 {{- $img := resources.Get $pub.image -}}
                 {{- if $img -}}
                   {{- $processed := $img.Fill "640x360 Center" -}}
-                  <img src="{{ $processed.RelPermalink }}" alt="{{ $pub.title }}" class="mfl-journal-image" loading="lazy">
+                  <img
+                    src="{{ $processed.RelPermalink }}"
+                    alt="{{ $pub.title }}"
+                    class="mfl-journal-image mfl-journal-image-primary"
+                    loading="lazy"
+                  >
                 {{- else -}}
                   <div class="mfl-journal-image-placeholder">Journal</div>
                 {{- end -}}
               {{- else -}}
                 <div class="mfl-journal-image-placeholder">Journal</div>
+              {{- end -}}
+
+              {{- if $pub.cover_image -}}
+                {{- $coverImg := resources.Get $pub.cover_image -}}
+                {{- if $coverImg -}}
+                  {{- $coverProcessed := $coverImg.Fit "640x360" -}}
+                  <img
+                    src="{{ $coverProcessed.RelPermalink }}"
+                    alt="{{ $pub.title }} cover"
+                    class="mfl-journal-image mfl-journal-image-cover"
+                    loading="lazy"
+                    aria-hidden="true"
+                  >
+                {{- end -}}
               {{- end -}}
             </div>
 
