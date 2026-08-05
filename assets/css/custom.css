@@ -5085,3 +5085,11 @@ section#home-news > div,
     background: rgba(3, 83, 164, 0.82);
   }
 }
+/* ==========================================================================
+   Journal page: remove cover badge
+   ========================================================================== */
+
+.mfl-journal-image-wrap.has-cover-image::after {
+  content: none !important;
+  display: none !important;
+}
