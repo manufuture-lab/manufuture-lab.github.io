@@ -5003,3 +5003,85 @@ section#home-news > div,
     margin-top: 0.75rem !important;
   }
 }
+/* ==========================================================================
+   Journal page: hover cover image transition
+   ========================================================================== */
+
+/* Make journal image area support two stacked images */
+.mfl-journal-image-wrap {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #f8fafc !important;
+}
+
+/* Both primary and cover images occupy the same frame */
+.mfl-journal-image-wrap > img.mfl-journal-image {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition:
+    opacity 0.42s ease-in-out,
+    transform 0.42s ease-in-out;
+}
+
+/* Normal representative image */
+.mfl-journal-image-primary {
+  z-index: 1;
+  opacity: 1;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Cover image: often portrait, so contain is safer */
+.mfl-journal-image-cover {
+  z-index: 2;
+  opacity: 0;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #ffffff !important;
+}
+
+/* Hover transition only when cover_image exists */
+@media (hover: hover) and (pointer: fine) {
+  .mfl-journal-image-wrap.has-cover-image:hover .mfl-journal-image-primary {
+    opacity: 0;
+    transform: scale(1.015);
+  }
+
+  .mfl-journal-image-wrap.has-cover-image:hover .mfl-journal-image-cover {
+    opacity: 1;
+    transform: scale(1.015);
+  }
+}
+
+/* Small cover badge */
+.mfl-journal-image-wrap.has-cover-image::after {
+  content: "Cover";
+  position: absolute;
+  left: 0.55rem;
+  bottom: 0.55rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: rgba(29, 36, 117, 0.82);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  font-weight: 500;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+/* Hide badge on hover if preferred? Keep it subtle on cover image */
+@media (hover: hover) and (pointer: fine) {
+  .mfl-journal-image-wrap.has-cover-image:hover::after {
+    background: rgba(3, 83, 164, 0.82);
+  }
+}
