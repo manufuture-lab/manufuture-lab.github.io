@@ -22,7 +22,7 @@ sections:
         ManuFuture Laboratory
         @ Hanyang University
 
-      text: "한양대학교 미래제조 연구실"
+      text: "한양대학교 생산제조 연구실"
 
     design:
       spacing:
