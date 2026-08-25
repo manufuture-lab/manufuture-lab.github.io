@@ -321,7 +321,7 @@ published:
       - pack: hero
         icon: arrow-top-right-on-square
         label: doi
-        url: "#"
+        url: "https://doi.org/10.1039/d6mh00630b"
       - pack: hero
         icon: document-arrow-down
         label: pdf
