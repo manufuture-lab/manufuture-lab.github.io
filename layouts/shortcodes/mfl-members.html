@@ -43,19 +43,23 @@
           <div class="mfl-member-row-links" aria-label="{{ $m.name }} links">
             {{- range . -}}
               {{- $url := .url | default "" -}}
+              {{- $data_pack := .pack | default "" -}}
+              {{- $icon_pack := $data_pack -}}
+
+              {{- if eq $data_pack "fab" -}}
+                {{- $icon_pack = "brands" -}}
+              {{- else if eq $data_pack "ai" -}}
+                {{- $icon_pack = "academicons" -}}
+              {{- end -}}
+
               {{- if $url -}}
-                {{- $data_pack := .pack | default "" -}}
-                {{- $icon_pack := $data_pack -}}
-
-                {{- if eq $data_pack "fab" -}}
-                  {{- $icon_pack = "brands" -}}
-                {{- else if eq $data_pack "ai" -}}
-                  {{- $icon_pack = "academicons" -}}
-                {{- end -}}
-
                 <a href="{{ $url }}" class="mfl-member-row-link" aria-label="{{ .label }}" title="{{ .label }}" target="_blank" rel="noopener">
                   {{- partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-member-icon\"") -}}
                 </a>
+              {{- else -}}
+                <span class="mfl-member-row-link" role="link" aria-disabled="true" aria-label="{{ .label }} (not available)" title="{{ .label }} (not available)">
+                  {{- partial "functions/get_icon" (dict "name" .icon "pack" $icon_pack "attributes" "class=\"mfl-member-icon\"") -}}
+                </span>
               {{- end -}}
             {{- end -}}
           </div>

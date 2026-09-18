@@ -598,6 +598,15 @@ section#alumni .prose {
   background-color: rgba(3, 83, 164, 0.08) !important;
 }
 
+/* Keep unavailable member links visible without interactive styling. */
+.mfl-member-row-link[aria-disabled="true"],
+.mfl-member-row-link[aria-disabled="true"]:hover {
+  color: #94a3b8 !important;
+  background-color: transparent !important;
+  transform: none;
+  cursor: default;
+}
+
 /* Make SVG icons follow the link color */
 .mfl-member-row-link svg,
 .mfl-member-row-link svg * {
