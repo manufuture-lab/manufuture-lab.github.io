@@ -35,12 +35,46 @@ members:
 
   - category: undergraduate
     order: 1
-    name: "Suchan Kim"
+    name: "Suchan Kim (김수찬)"
     role: "Undergraduate Researcher"
     bio: |
       B.S. student in Mechanical Engineering, Hanyang University ERICA
       kscconan[at]hanyang.ac.kr
     photo: "media/members/Suchan-Kim.jpeg"
+    links:
+      - pack: fab
+        icon: linkedin
+        label: LinkedIn
+        url: ""
+
+      - pack: ai
+        icon: google-scholar
+        label: Google Scholar
+        url: ""
+
+      - pack: fab
+        icon: researchgate
+        label: ResearchGate
+        url: ""
+
+      - pack: fab
+        icon: orcid
+        label: ORCID
+        url: ""
+
+      - pack: ai
+        icon: cv
+        label: CV
+        url: ""
+
+  - category: undergraduate
+    order: 2
+    name: "Seongjung Heo (허성중)"
+    role: "Undergraduate Researcher"
+    bio: |
+      B.S. student in Mechanical Engineering, Hanyang University ERICA
+      gjtjdwnd03[at]hanyang.ac.kr
+    photo: "media/members/Seongjung-Heo.png"
     links:
       - pack: fab
         icon: linkedin
