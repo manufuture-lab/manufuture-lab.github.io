@@ -316,6 +316,7 @@ published:
   - order: 20
     title: "Data-free physics-informed inverse programming of bistable kirigami energy landscapes"
     image: "media/publications/20. Kang-MatHori-2026.png"
+    cover_image: "media/publications/20. Kang-MatHori-2026-cover.png"
     authors: "Sukheon Kang, **Sukkyung Kang**, Sanha Kim, Seunghwa Ryu"
     journal: "Materials Horizons"
     details: "accepted"
