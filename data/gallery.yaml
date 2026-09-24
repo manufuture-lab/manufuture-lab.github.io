@@ -1,13 +1,13 @@
 albums:
   - slug: "2026-09-lab-room"
-    title: "쓸쓸함한잔주시오🥃"
+    title: "쓸쓸함 한 잔 주시오🥃"
     date: "2026-09"
     cover: "media/gallery/2026/2026-09-lab-room/01-img-1234.jpg"
     category: ""
     photos:
       - image: "media/gallery/2026/2026-09-lab-room/01-img-1234.jpg"
-        caption: "내가 사라져볼께 하나둘셋 얍!"
+        caption: "#학생연구실 #대학원생모집"
       - image: "media/gallery/2026/2026-09-lab-room/02-img-1214.jpg"
-        caption: "내가 사라져볼께 하나둘셋 얍!"
+        caption: "#학생연구실 #대학원생모집"
       - image: "media/gallery/2026/2026-09-lab-room/03-feynman.png"
         caption: "#학생연구실 #대학원생모집"
