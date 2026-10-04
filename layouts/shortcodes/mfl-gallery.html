@@ -44,6 +44,7 @@
 
         {{- $payload = $payload | append (dict
           "title" ($album.title | default "")
+          "titleLines" ($album.title_lines | default slice)
           "date" $dateLabel
           "category" ($album.category | default "")
           "photos" $photoPayload
@@ -73,7 +74,15 @@
                 {{- end -}}
               </div>
 
-              <h3>{{ $album.title }}</h3>
+              <h3 aria-label="{{ $album.title }}">
+                {{- with $album.title_lines -}}
+                  {{- range . -}}
+                    <span class="mfl-gallery-title-line">{{ . }}</span>
+                  {{- end -}}
+                {{- else -}}
+                  {{- $album.title -}}
+                {{- end -}}
+              </h3>
 
               <div class="mfl-gallery-card-count">
                 {{ len $photos }} photos
@@ -161,7 +170,20 @@
         const photo = getCurrentPhoto();
         const total = album.photos ? album.photos.length : 0;
 
-        title.textContent = album.title || "";
+        const titleLines = Array.isArray(album.titleLines) ? album.titleLines : [];
+        modal.classList.toggle("has-title-lines", titleLines.length > 0);
+        title.replaceChildren();
+        title.setAttribute("aria-label", album.title || "");
+        if (titleLines.length) {
+          titleLines.forEach((line) => {
+            const span = document.createElement("span");
+            span.className = "mfl-gallery-title-line";
+            span.textContent = line;
+            title.appendChild(span);
+          });
+        } else {
+          title.textContent = album.title || "";
+        }
         date.textContent = album.date || "";
         counter.textContent = total ? `${photoIndex + 1} / ${total}` : "";
 
