@@ -4182,6 +4182,20 @@ section#gallery h2,
   word-break: keep-all;
 }
 
+.mfl-gallery-title-line {
+  display: block;
+}
+
+.mfl-gallery-title-line + .mfl-gallery-title-line {
+  white-space: nowrap;
+}
+
+@media (max-width: 360px) {
+  .mfl-gallery-card h3:has(.mfl-gallery-title-line) {
+    font-size: 1.2rem !important;
+  }
+}
+
 .mfl-gallery-empty {
   color: #64748b;
   font-style: italic;
@@ -4762,6 +4776,25 @@ section#sponsors h2,
     right: 0.7rem !important;
   }
 }
+/* Give explicit title lines room above the counter on small screens. */
+@media (max-width: 767px) {
+  .mfl-gallery-modal.has-title-lines .mfl-gallery-modal-header {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+
+  .mfl-gallery-modal.has-title-lines .mfl-gallery-modal-header > div:first-child,
+  .mfl-gallery-modal.has-title-lines .mfl-gallery-modal-title {
+    padding-right: 0 !important;
+  }
+
+  .mfl-gallery-modal.has-title-lines .mfl-gallery-modal-counter {
+    min-width: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+}
+
 /* ==========================================================================
    Home Latest News: Research Area-style carousel
    ========================================================================== */
