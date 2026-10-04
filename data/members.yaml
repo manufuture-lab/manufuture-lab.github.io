@@ -169,3 +169,38 @@ members:
         icon: cv
         label: CV
         url: ""
+
+  - category: undergraduate
+    order: 5
+    name: "Seungki Min (민승기)"
+    role: "Undergraduate Researcher"
+    bio: |
+      Incoming M.S. Student (Mar. 2028)
+      B.S. student in Mechanical Engineering, Hanyang University ERICA
+      max030802[at]hanyang.ac.kr
+    photo: "media/members/Seungki-Min.png"
+    links:
+      - pack: fab
+        icon: linkedin
+        label: LinkedIn
+        url: ""
+
+      - pack: ai
+        icon: google-scholar
+        label: Google Scholar
+        url: ""
+
+      - pack: fab
+        icon: researchgate
+        label: ResearchGate
+        url: ""
+
+      - pack: fab
+        icon: orcid
+        label: ORCID
+        url: ""
+
+      - pack: ai
+        icon: cv
+        label: CV
+        url: ""
