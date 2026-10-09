@@ -205,3 +205,38 @@ members:
         icon: cv
         label: CV
         url: ""
+
+  - category: undergraduate
+    order: 6
+    name: "Sukyoung Jeoung (정석영)"
+    role: "Undergraduate Researcher"
+    bio: |
+      Incoming M.S. Student (Mar. 2027)
+      B.S. student in Mechanical Engineering, Hanyang University ERICA
+      jsy011227[at]gmail.com
+    photo: "media/members/Sukyoung-Jeoung.jpeg"
+    links:
+      - pack: fab
+        icon: linkedin
+        label: LinkedIn
+        url: ""
+
+      - pack: ai
+        icon: google-scholar
+        label: Google Scholar
+        url: ""
+
+      - pack: fab
+        icon: researchgate
+        label: ResearchGate
+        url: ""
+
+      - pack: fab
+        icon: orcid
+        label: ORCID
+        url: ""
+
+      - pack: ai
+        icon: cv
+        label: CV
+        url: ""
