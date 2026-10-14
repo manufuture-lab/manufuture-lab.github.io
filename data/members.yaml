@@ -240,3 +240,38 @@ members:
         icon: cv
         label: CV
         url: ""
+
+  - category: undergraduate
+    order: 7
+    name: "Junghyun Lee (이정현)"
+    role: "Undergraduate Researcher"
+    bio: |
+      Incoming Graduate Student (Mar. 2030)
+      B.S. student in Mechanical Engineering, Hanyang University ERICA
+      zustfancake[at]hanyang.ac.kr
+    photo: "media/members/Junghyun-Lee.jpg"
+    links:
+      - pack: fab
+        icon: linkedin
+        label: LinkedIn
+        url: ""
+
+      - pack: ai
+        icon: google-scholar
+        label: Google Scholar
+        url: ""
+
+      - pack: fab
+        icon: researchgate
+        label: ResearchGate
+        url: ""
+
+      - pack: fab
+        icon: orcid
+        label: ORCID
+        url: ""
+
+      - pack: ai
+        icon: cv
+        label: CV
+        url: ""
