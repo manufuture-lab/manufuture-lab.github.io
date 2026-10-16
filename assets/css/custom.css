@@ -3556,6 +3556,15 @@ section#join h2,
   margin-top: 1.75em;
 }
 
+.mfl-guidebook main.prose .content .mfl-purchase-protocol {
+  color: #376FA3;
+  font-size: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
 .mfl-guidebook main.prose .content a {
   color: #376FA3;
   text-decoration: underline;
