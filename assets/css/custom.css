@@ -3496,6 +3496,30 @@ section#join h2,
 }
 
 /* Guidebook entry point */
+/* Keep the reading palette neutral and the chapter index uncluttered. */
+.mfl-guidebook main.prose {
+  --tw-prose-body: #303030;
+  --tw-prose-headings: #303030;
+  --tw-prose-links: #303030;
+  --tw-prose-bold: #303030;
+  --tw-prose-counters: #303030;
+  color: #303030;
+}
+
+.mfl-guidebook-index .content > ol a {
+  text-decoration: none;
+}
+
+.mfl-guidebook-index .content > ol a:hover {
+  color: var(--mfl-nav-accent, #1D2475);
+}
+
+.mfl-guidebook-index .content > ol a:focus-visible {
+  outline: 2px solid var(--mfl-nav-accent, #1D2475);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .mfl-guidebook-cta {
   margin: 0 auto 2rem;
   text-align: center;

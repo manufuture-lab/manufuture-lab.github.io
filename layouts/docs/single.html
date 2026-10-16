@@ -1,0 +1,9 @@
+{{- define "main" -}}
+  {{- if eq .Section "guidebook" -}}
+    <div class="mfl-guidebook">
+      {{ partial "docs_layout.html" . }}
+    </div>
+  {{- else -}}
+    {{ partial "docs_layout.html" . }}
+  {{- end -}}
+{{- end -}}
