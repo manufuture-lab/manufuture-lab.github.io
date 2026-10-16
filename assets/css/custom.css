@@ -3530,26 +3530,43 @@ section#join h2,
 .mfl-guidebook main.prose h2 {
   font-size: 1.65rem;
   line-height: 1.35;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.6rem;
 }
 
 .mfl-guidebook main.prose h3 {
   font-size: 1.25rem;
   line-height: 1.4;
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
 }
 
 .mfl-guidebook main.prose h4 {
   font-size: 1.05rem;
   line-height: 1.5;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.9rem;
+  margin-bottom: 0.25rem;
 }
 
 .mfl-guidebook main.prose p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.mfl-guidebook main.prose .content a {
+  color: #376FA3;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.mfl-guidebook main.prose .content a:hover {
+  color: #285680;
+}
+
+.mfl-guidebook main.prose .content a:focus-visible {
+  outline: 2px solid #376FA3;
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 @media (max-width: 767px) {
