@@ -3532,10 +3532,10 @@ section#join h2,
   gap: 0.75rem;
   max-width: 100%;
   padding: 0.9rem 1.4rem;
-  border: 1px solid var(--mfl-nav-accent, #1D2475);
+  border: 1px solid #E5D5BF;
   border-radius: 0.65rem;
-  background: var(--mfl-nav-accent, #1D2475);
-  color: #fff !important;
+  background: #F4EBDD;
+  color: #303030 !important;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5;
@@ -3544,11 +3544,11 @@ section#join h2,
 }
 
 .mfl-guidebook-link:hover {
-  background: #0353a4;
+  background: #EADBC5;
 }
 
 .mfl-guidebook-link:focus-visible {
-  outline: 3px solid #0353a4;
+  outline: 3px solid #96734F;
   outline-offset: 4px;
 }
 
