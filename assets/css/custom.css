@@ -3552,6 +3552,10 @@ section#join h2,
   margin-bottom: 0;
 }
 
+.mfl-guidebook main.prose p.mfl-undergraduate-academics {
+  margin-top: 1.75em;
+}
+
 .mfl-guidebook main.prose .content a {
   color: #376FA3;
   text-decoration: underline;
