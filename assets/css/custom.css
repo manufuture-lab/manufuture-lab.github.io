@@ -3497,6 +3497,16 @@ section#join h2,
 
 /* Guidebook entry point */
 /* Keep the reading palette neutral and the chapter index uncluttered. */
+.mfl-guidebook > .mx-auto {
+  width: 100%;
+  max-width: calc(1320px + 32rem);
+}
+
+/* The continuous reading page only needs the chapter navigation on the left. */
+.mfl-guidebook-index > .mx-auto {
+  max-width: calc(1320px + 16rem);
+}
+
 .mfl-guidebook main.prose {
   --tw-prose-body: #303030;
   --tw-prose-headings: #303030;
@@ -3504,6 +3514,58 @@ section#join h2,
   --tw-prose-bold: #303030;
   --tw-prose-counters: #303030;
   color: #303030;
+  max-width: none;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.mfl-guidebook main.prose h1 {
+  font-size: 2rem;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.mfl-guidebook main.prose h2 {
+  font-size: 1.65rem;
+  line-height: 1.35;
+  margin-bottom: 1.1rem;
+}
+
+.mfl-guidebook main.prose h3 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mfl-guidebook main.prose h4 {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.mfl-guidebook main.prose p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .mfl-guidebook main.prose {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .mfl-guidebook main.prose h1 {
+    font-size: 1.65rem;
+  }
+
+  .mfl-guidebook main.prose h2 {
+    font-size: 1.4rem;
+  }
 }
 
 .mfl-guidebook-chapter {
