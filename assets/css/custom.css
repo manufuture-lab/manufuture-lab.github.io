@@ -3506,17 +3506,27 @@ section#join h2,
   color: #303030;
 }
 
-.mfl-guidebook-index .content > ol a {
+.mfl-guidebook-chapter {
+  scroll-margin-top: calc(var(--navbar-height, 5rem) + 1.5rem);
+}
+
+.mfl-guidebook-chapter + .mfl-guidebook-chapter {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mfl-guidebook-chapter > h2 {
+  margin-top: 0;
+}
+
+.mfl-guidebook-index .hb-sidebar-custom-link {
   text-decoration: none;
 }
 
-.mfl-guidebook-index .content > ol a:hover {
-  color: var(--mfl-nav-accent, #1D2475);
-}
-
-.mfl-guidebook-index .content > ol a:focus-visible {
+.mfl-guidebook-index .hb-sidebar-custom-link:focus-visible {
   outline: 2px solid var(--mfl-nav-accent, #1D2475);
-  outline-offset: 4px;
+  outline-offset: 2px;
   border-radius: 2px;
 }
 

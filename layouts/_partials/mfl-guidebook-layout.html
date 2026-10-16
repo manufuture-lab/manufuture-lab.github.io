@@ -1,0 +1,46 @@
+{{- $chapters := .RegularPages.ByWeight -}}
+{{- $sidebar := partial "components/sidebar.html" (dict "context" . "no_sidebar" false) -}}
+{{- range $chapters -}}
+  {{- $sidebar = replace $sidebar (printf "href=\"%s\"" .RelPermalink) (printf "href=\"#%s\"" .File.ContentBaseName) -}}
+{{- end -}}
+
+<div class="mx-auto flex max-w-screen-xl">
+  {{ $sidebar | safeHTML }}
+  {{ partial "components/toc.html" . }}
+  <article class="flex w-full min-w-0 min-h-[calc(100vh-var(--navbar-height))] justify-center break-words pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    <main class="prose prose-slate lg:prose-xl dark:prose-invert w-full min-w-0 max-w-6xl px-6 pt-4 md:px-12">
+      {{ if (.Params.show_breadcrumb | default true) }}
+      <div class="mb-1">
+        {{ partial "components/breadcrumb.html" . }}
+      </div>
+      {{ end }}
+      <div class="content" data-pagefind-body>
+        <h1 data-pagefind-meta="title">{{ .Title }}</h1>
+        {{ .Content }}
+        {{ range $chapters }}
+          <section class="mfl-guidebook-chapter" id="{{ .File.ContentBaseName }}" aria-labelledby="{{ .File.ContentBaseName }}-title">
+            <h2 id="{{ .File.ContentBaseName }}-title">{{ .Title }}</h2>
+            {{/* Nest each chapter's Markdown headings below its section title. */}}
+            {{ $body := .Content }}
+            {{ range seq 5 -1 1 }}
+              {{ $body = replaceRE (printf "(<\\/?)h%d([ >])" .) (printf "${1}h%d${2}" (add . 1)) $body }}
+            {{ end }}
+            {{ $body | safeHTML }}
+          </section>
+        {{ end }}
+        <span data-pagefind-filter="type" style="display:none;">docs</span>
+      </div>
+    </main>
+  </article>
+</div>
+
+<script>
+  // Same-page chapter links must also close HugoBlox's mobile sidebar.
+  document.querySelector('.mfl-guidebook-index .hb-sidebar-container')?.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    const sidebar = event.currentTarget;
+    if (link && sidebar.classList.contains('max-lg:[transform:translate3d(0,0,0)]')) {
+      document.getElementById('nav-toggle')?.click();
+    }
+  });
+</script>
