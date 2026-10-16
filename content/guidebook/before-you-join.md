@@ -1,5 +1,5 @@
 ---
-title: "Before You Join"
+title: "Before You Join (학부연구생)"
 weight: 6
 ---
 
