@@ -15,6 +15,7 @@ sections:
         {{< mfl-getin-banner >}}
 
         <div class="mfl-guidebook-cta">
+          <p class="mfl-join-notice"><strong>학부 연구생 모집 안내</strong><br>현재 대학원 진학을 결심하고 연구를 이어가고자 하는 학생들만 학부 연구생으로 모집하고 있습니다.</p>
           <a href="/guidebook/" class="mfl-guidebook-link">Read Our Lab Guidebook <span aria-hidden="true">&rarr;</span></a>
         </div>
 

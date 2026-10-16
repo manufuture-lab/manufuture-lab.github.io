@@ -3614,6 +3614,13 @@ section#join h2,
   text-align: center;
 }
 
+.mfl-guidebook-cta .mfl-join-notice {
+  margin: 0 0 1rem;
+  color: #303030;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
 .mfl-guidebook-link {
   display: inline-flex;
   align-items: center;
