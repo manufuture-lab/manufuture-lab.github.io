@@ -64,6 +64,11 @@ main:
     url: /board/gallery/
     weight: 72
 
+  - parent: Board
+    name: Lab Guidebook
+    url: /guidebook/
+    weight: 73
+
   - name: Contact
     url: /contact/
     weight: 80

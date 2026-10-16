@@ -3495,6 +3495,39 @@ section#join h2,
   background: #f3f4f6;
 }
 
+/* Guidebook entry point */
+.mfl-guidebook-cta {
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.mfl-guidebook-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--mfl-nav-accent, #1D2475);
+  border-radius: 0.65rem;
+  background: var(--mfl-nav-accent, #1D2475);
+  color: #fff !important;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none !important;
+  transition: background-color 160ms ease;
+}
+
+.mfl-guidebook-link:hover {
+  background: #0353a4;
+}
+
+.mfl-guidebook-link:focus-visible {
+  outline: 3px solid #0353a4;
+  outline-offset: 4px;
+}
+
 /* Message text: similar width/tone to home intro */
 .mfl-join-message {
   max-width: 1320px !important;

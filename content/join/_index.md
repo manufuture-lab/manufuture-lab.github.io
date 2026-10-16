@@ -14,6 +14,10 @@ sections:
       text: |
         {{< mfl-getin-banner >}}
 
+        <div class="mfl-guidebook-cta">
+          <a href="/guidebook/" class="mfl-guidebook-link">Read Our Lab Guidebook <span aria-hidden="true">&rarr;</span></a>
+        </div>
+
         <div class="mfl-join-message">
           Thank you for your interest in our lab!<br>
           We are always looking for passionate and self-motivated graduate students, postdoctoral researchers, and undergraduate students to join our team. We welcome people from diverse academic backgrounds who are excited to work together and create new ideas through interdisciplinary collaboration.<br>
