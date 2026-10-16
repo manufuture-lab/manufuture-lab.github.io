@@ -3616,9 +3616,15 @@ section#join h2,
 
 .mfl-guidebook-cta .mfl-join-notice {
   margin: 0 0 1rem;
-  color: #303030;
-  font-size: 1.02rem;
+  color: #A64949;
+  font-size: 1.25rem;
   line-height: 1.75;
+  font-weight: 700;
+}
+
+.mfl-guidebook-cta .mfl-join-notice strong {
+  color: inherit;
+  font-weight: inherit;
 }
 
 .mfl-guidebook-link {
@@ -3672,6 +3678,7 @@ section#join h2,
     padding-right: 1rem !important;
   }
 
+  .mfl-guidebook-cta .mfl-join-notice,
   .mfl-join-message {
     font-size: 1rem !important;
     line-height: 1.7 !important;
