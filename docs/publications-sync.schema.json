@@ -144,28 +144,10 @@
       "title": "논문",
       "columns": [
         {
-          "key": "record_id",
-          "header": "관리 ID"
-        },
-        {
-          "key": "publication_status",
-          "header": "게시 상태"
-        },
-        {
-          "key": "progress_status",
-          "header": "진행 상태"
-        },
-        {
-          "key": "publication_date",
-          "header": "논문 날짜"
-        },
-        {
-          "key": "display_order",
-          "header": "논문 번호"
-        },
-        {
-          "key": "legacy_order",
-          "header": "기존 순서"
+          "key": "private_sequence",
+          "header": "순번",
+          "private": true,
+          "optional": true
         },
         {
           "key": "title",
@@ -173,27 +155,36 @@
         },
         {
           "key": "authors_md",
-          "header": "저자 (Markdown)"
+          "header": "저자",
+          "aliases": [
+            "저자 (Markdown)"
+          ]
         },
         {
           "key": "journal",
           "header": "저널명"
         },
         {
+          "key": "publication_date",
+          "header": "게재 날짜",
+          "aliases": [
+            "논문 날짜"
+          ]
+        },
+        {
           "key": "details",
           "header": "권호·쪽수·상태"
         },
         {
-          "key": "note_md",
-          "header": "추가 설명 (Markdown)"
-        },
-        {
-          "key": "image",
-          "header": "대표 이미지 경로"
-        },
-        {
-          "key": "cover_image",
-          "header": "표지 이미지 경로"
+          "key": "progress_status",
+          "header": "진행 상태",
+          "options": [
+            "투고",
+            "심사 중",
+            "수정 중",
+            "게재 승인",
+            "출판"
+          ]
         },
         {
           "key": "doi_url",
@@ -204,16 +195,73 @@
           "header": "PDF URL"
         },
         {
+          "key": "note_md",
+          "header": "추가 설명",
+          "aliases": [
+            "추가 설명 (Markdown)"
+          ]
+        },
+        {
+          "key": "acknowledgements",
+          "header": "사사",
+          "private": true,
+          "optional": true
+        },
+        {
+          "key": "grant_ids",
+          "header": "과제번호",
+          "private": true,
+          "optional": true
+        },
+        {
+          "key": "publication_status",
+          "header": "게시 상태",
+          "options": [
+            "게시 승인",
+            "검토 중",
+            "보류"
+          ],
+          "hidden": true
+        },
+        {
+          "key": "display_order",
+          "header": "논문 번호",
+          "hidden": true
+        },
+        {
+          "key": "image",
+          "header": "대표 이미지 경로",
+          "hidden": true
+        },
+        {
+          "key": "cover_image",
+          "header": "표지 이미지 경로",
+          "hidden": true
+        },
+        {
           "key": "links_extra_json",
-          "header": "기타 링크 JSON"
+          "header": "기타 링크 JSON",
+          "hidden": true
         },
         {
           "key": "evidence_url",
-          "header": "근거 URL"
+          "header": "근거 URL",
+          "hidden": true
+        },
+        {
+          "key": "record_id",
+          "header": "관리 ID",
+          "hidden": true
+        },
+        {
+          "key": "legacy_order",
+          "header": "기존 순서",
+          "hidden": true
         },
         {
           "key": "citation_raw",
-          "header": "기존 원문"
+          "header": "기존 원문",
+          "hidden": true
         }
       ]
     },
@@ -222,28 +270,8 @@
       "title": "특허",
       "columns": [
         {
-          "key": "record_id",
-          "header": "관리 ID"
-        },
-        {
-          "key": "publication_status",
-          "header": "게시 상태"
-        },
-        {
-          "key": "family_id",
-          "header": "특허 묶음 ID"
-        },
-        {
-          "key": "family_order",
-          "header": "묶음 순서"
-        },
-        {
-          "key": "filing_order",
-          "header": "묶음 내 순서"
-        },
-        {
-          "key": "progress_status",
-          "header": "진행 상태"
+          "key": "family_title",
+          "header": "발명 명칭 (묶음 첫 행)"
         },
         {
           "key": "jurisdiction",
@@ -254,28 +282,81 @@
           "header": "출원·등록 번호"
         },
         {
-          "key": "family_title",
-          "header": "발명 명칭 (묶음 첫 행)"
-        },
-        {
-          "key": "pct_reference",
-          "header": "PCT 연계번호 (묶음 첫 행)"
+          "key": "progress_status",
+          "header": "진행 상태",
+          "options": [
+            "출원",
+            "등록"
+          ]
         },
         {
           "key": "document_url",
           "header": "증서 URL"
         },
         {
+          "key": "pct_reference",
+          "header": "PCT 연계번호 (묶음 첫 행)"
+        },
+        {
           "key": "filing_note_md",
-          "header": "해당 건 설명 (Markdown)"
+          "header": "해당 건 설명",
+          "aliases": [
+            "해당 건 설명 (Markdown)"
+          ]
         },
         {
           "key": "family_note_md",
-          "header": "묶음 설명 (첫 행 Markdown)"
+          "header": "묶음 설명",
+          "aliases": [
+            "묶음 설명 (첫 행 Markdown)"
+          ]
+        },
+        {
+          "key": "acknowledgements",
+          "header": "사사",
+          "private": true,
+          "optional": true
+        },
+        {
+          "key": "grant_ids",
+          "header": "과제번호",
+          "private": true,
+          "optional": true
+        },
+        {
+          "key": "publication_status",
+          "header": "게시 상태",
+          "options": [
+            "게시 승인",
+            "검토 중",
+            "보류"
+          ],
+          "hidden": true
+        },
+        {
+          "key": "family_id",
+          "header": "특허 묶음 ID",
+          "hidden": true
+        },
+        {
+          "key": "family_order",
+          "header": "묶음 순서",
+          "hidden": true
+        },
+        {
+          "key": "filing_order",
+          "header": "묶음 내 순서",
+          "hidden": true
+        },
+        {
+          "key": "record_id",
+          "header": "관리 ID",
+          "hidden": true
         },
         {
           "key": "evidence_url",
-          "header": "근거 URL"
+          "header": "근거 URL",
+          "hidden": true
         }
       ]
     },

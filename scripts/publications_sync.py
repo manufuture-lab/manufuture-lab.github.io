@@ -209,7 +209,8 @@ def normalize(payload, spec):
         rows = payload["sheets"].get(key, payload["sheets"].get(title))
         check(isinstance(rows, list), "Missing sheet: " + key)
         columns = [c["key"] for c in sheet["columns"]]
-        mapping = {c["header"]: c["key"] for c in sheet["columns"]}
+        mapping = {name: c["key"] for c in sheet["columns"]
+                   for name in [c["header"], *c.get("aliases", [])]}
         converted = []
         for row in rows:
             check(isinstance(row, dict), "Rows must be objects")

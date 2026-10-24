@@ -277,6 +277,29 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(row["notes"], "2026. 10. 27")
         self.assertEqual(state["sheets"]["conferences"][0]["event_date"], self.payload["sheets"]["conferences"][0]["event_date"])
 
+    def test_journal_and_patent_private_fields_do_not_change_public_output(self):
+        for kind in ("journals", "patents"):
+            self.payload["sheets"][kind].reverse()
+            for i, row in enumerate(self.payload["sheets"][kind]):
+                row.update(acknowledgements="PRIVATE FUNDING", grant_ids="PRIVATE PROJECT")
+                if kind == "journals":
+                    row["private_sequence"] = i + 1
+        report, state = self.run_sync()
+        self.assertFalse(any(f["changed"] for f in report["files"]))
+        self.assertEqual(state["sheets"]["journals"][0]["acknowledgements"], "PRIVATE FUNDING")
+        for name in sync.FILES:
+            self.assertNotIn("PRIVATE", (self.stage / name).read_text(encoding="utf-8"))
+
+    def test_previous_korean_headers_still_normalize_and_duplicates_fail(self):
+        row = self.payload["sheets"]["journals"][0]
+        row["논문 날짜"] = row.pop("publication_date")
+        row["저자 (Markdown)"] = row.pop("authors_md")
+        report, _ = self.run_sync()
+        self.assertFalse(any(f["changed"] for f in report["files"]))
+        row["게재 날짜"] = row["논문 날짜"]
+        with self.assertRaisesRegex(sync.ValidationError, "duplicate translated field"):
+            self.run_sync()
+
     def test_ambiguous_and_invalid_schedule_dates_are_not_guessed(self):
         row = {"record_id": "native-date-event", "title": "Event", "start_date": "10/27/2026",
                "end_date": "", "progress_status": "예정", "remind_days": "", "related_record_id": ""}
