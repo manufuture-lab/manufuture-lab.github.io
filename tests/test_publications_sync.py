@@ -116,10 +116,18 @@ class SyncTests(unittest.TestCase):
         for key in ("acknowledgements", "acknowledgement_source", "grant_ids", "venue", "private_internal"):
             row[key] = "PRIVATE CANARY"
         self.payload["sheets"]["사사"] = [{"secret": "PRIVATE CANARY"}]
+        # Display sequence is deliberately unrelated to publication order. Both
+        # machine and Korean headers must be accepted without changing output.
+        for index, conference in enumerate(self.payload["sheets"]["conferences"]):
+            conference["순번" if index % 2 else "private_sequence"] = 1000 + index
+        self.payload["sheets"]["conferences"].reverse()
         report, _ = self.run_sync()
         self.assertEqual(report["ignored_sheets"], ["사사"])
+        self.assertFalse(any(item["changed"] for item in report["files"]))
+        self.assertEqual(report["conference_renumbered_ids"], [])
         for name in sync.FILES:
             self.assertNotIn("PRIVATE CANARY", (self.stage / name).read_text(encoding="utf-8"))
+            self.assertEqual((self.stage / name).read_bytes(), (self.repo / name).read_bytes())
 
     def test_korean_headers_and_keys_have_identical_result(self):
         schema = sync.read_json(ROOT / "docs/publications-sync.schema.json")

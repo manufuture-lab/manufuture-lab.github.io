@@ -42,6 +42,12 @@
       "title": "학회",
       "columns": [
         {
+          "key": "private_sequence",
+          "header": "순번",
+          "private": true,
+          "optional": true
+        },
+        {
           "key": "record_id",
           "header": "관리 ID"
         },
