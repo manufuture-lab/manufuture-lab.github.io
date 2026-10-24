@@ -1,0 +1,53 @@
+submitted:
+- Ethylene Glycol-Based Reductive Epoxy Dielectric Enables Low-Temperature Cu/polymer Hybrid Bonding via In situ Cu Oxide Reduction, submitted.
+- Crystallographically selective grain evolution in Cu-Cu bonding for semiconductor stacking, submitted.
+- Microstructural evolution of fine-grained Cu films with a high thermal stability during Cu-to-Cu bonding, submitted.
+- Precision multi-layer Terahertz measurement for semiconductor wafer back-grinding, under review.
+published:
+- order: 1
+  title: Mechanical abrasion by bi-layered pad micro-asperity in chemical mechanical polishing
+  image: media/publications/1. Ryu-CIRP-2021.jpg
+  authors: Hyun Jun Ryu, Dong Geun Kim, **Sukkyung Kang**, Ji-Hun Jeong, Sanha Kim
+  journal: CIRP Annals - Manufacturing Technology
+  details: 70, 1, 273-276, 2021
+  links:
+  - pack: hero
+    icon: arrow-top-right-on-square
+    label: doi
+    url: https://www.sciencedirect.com/science/article/pii/S0007850621000366
+  - pack: hero
+    icon: document-arrow-down
+    label: pdf
+    url: '#'
+- order: 3
+  title: Predictive Model for Bearing Torque in Bolt Fastening
+  image: media/publications/3. Kang-CIRP-2022.jpg
+  authors: '**Sukkyung Kang**#, Somin Shin#, Hyena Hwang, Sanha Kim'
+  journal: CIRP Annals - Manufacturing Technology
+  details: 71, 1, 489-492, 2022
+  links:
+  - pack: hero
+    icon: arrow-top-right-on-square
+    label: doi
+    url: https://www.sciencedirect.com/science/article/pii/S0007850622000798
+  - pack: hero
+    icon: document-arrow-down
+    label: pdf
+    url: '#'
+- order: 5
+  title: Nanotransfer Printing for Synthesis of Vertically Aligned Carbon Nanotubes with Enhanced Atomic Penetration
+  image: media/publications/5. Ha-AFM-2024.png
+  cover_image: media/publications/5. Ha-AFM-2024-cover.png
+  authors: Ji-Hwan Ha#, Inyeong Yang#, Junseong Ahn#, **Sukkyung Kang**, Zhi-Jun Zhao, Yongrok Jeong, Hyeongmin Je, Joono Cheong, Soon Hyoung Hwang, Sohee Jeon, Jun-Ho Jeong, Sanha Kim, Inkyu Park
+  journal: Advanced Functional Materials
+  details: 34, 42, 2315028, 2024
+  note: (* selected as front cover)
+  links:
+  - pack: hero
+    icon: arrow-top-right-on-square
+    label: doi
+    url: https://doi.org/10.1002/adfm.202315028
+  - pack: hero
+    icon: document-arrow-down
+    label: pdf
+    url: '#'

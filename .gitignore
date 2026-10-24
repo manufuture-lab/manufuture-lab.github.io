@@ -67,3 +67,15 @@ Desktop.ini
 
 *.log
 npm-debug.log*
+
+# Python and private publication-sync state (operational state belongs outside repo)
+__pycache__/
+*.py[cod]
+.publications-sync.lock
+*.publications-sync.tmp
+publications-registry/
+publications-staging/
+publications-state*.json
+publications-delivered*.json
+next-baseline.json
+docs/publications-sync.bootstrap.json

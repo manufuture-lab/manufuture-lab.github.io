@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "row_input": "rows are objects keyed by machine key OR exact Korean header; do not mix both names for one field",
+  "publication_status": [
+    "게시 승인",
+    "검토 중",
+    "보류"
+  ],
+  "conferences_progress": [
+    "기존 실적",
+    "발표 완료",
+    "프로그램·프로시딩 확인",
+    "예정",
+    "발표 여부 확인",
+    "취소"
+  ],
+  "journals_progress": [
+    "투고",
+    "심사 중",
+    "수정 중",
+    "게재 승인",
+    "출판"
+  ],
+  "patents_progress": [
+    "출원",
+    "등록"
+  ],
+  "schedule_progress": [
+    "예정",
+    "완료",
+    "취소",
+    "확인 필요"
+  ],
+  "date_formats": [
+    "YYYY",
+    "YYYY-MM",
+    "YYYY-MM-DD"
+  ],
+  "sheets": [
+    {
+      "key": "conferences",
+      "title": "학회",
+      "columns": [
+        {
+          "key": "record_id",
+          "header": "관리 ID"
+        },
+        {
+          "key": "publication_status",
+          "header": "게시 상태"
+        },
+        {
+          "key": "progress_status",
+          "header": "진행 상태"
+        },
+        {
+          "key": "event_date",
+          "header": "발표 날짜"
+        },
+        {
+          "key": "legacy_order",
+          "header": "기존 순서"
+        },
+        {
+          "key": "authors",
+          "header": "저자"
+        },
+        {
+          "key": "title",
+          "header": "발표 제목"
+        },
+        {
+          "key": "event_name",
+          "header": "학회명"
+        },
+        {
+          "key": "location",
+          "header": "도시·국가"
+        },
+        {
+          "key": "presentation_type",
+          "header": "발표 형식"
+        },
+        {
+          "key": "presenter",
+          "header": "발표자"
+        },
+        {
+          "key": "professor_role",
+          "header": "교수 역할"
+        },
+        {
+          "key": "evidence_url",
+          "header": "근거 URL"
+        },
+        {
+          "key": "citation_raw",
+          "header": "기존 원문"
+        },
+        {
+          "key": "format_mode",
+          "header": "생성 방식"
+        },
+        {
+          "key": "venue",
+          "header": "세부 장소",
+          "private": true
+        },
+        {
+          "key": "scope",
+          "header": "국제·국내 구분",
+          "private": true
+        },
+        {
+          "key": "acknowledgements",
+          "header": "사사 원문",
+          "private": true
+        },
+        {
+          "key": "acknowledgement_status",
+          "header": "사사 확인 상태",
+          "private": true
+        },
+        {
+          "key": "acknowledgement_source",
+          "header": "사사 근거 자료·쪽",
+          "private": true
+        },
+        {
+          "key": "grant_ids",
+          "header": "연계 과제 ID",
+          "private": true
+        }
+      ]
+    },
+    {
+      "key": "journals",
+      "title": "논문",
+      "columns": [
+        {
+          "key": "record_id",
+          "header": "관리 ID"
+        },
+        {
+          "key": "publication_status",
+          "header": "게시 상태"
+        },
+        {
+          "key": "progress_status",
+          "header": "진행 상태"
+        },
+        {
+          "key": "publication_date",
+          "header": "논문 날짜"
+        },
+        {
+          "key": "display_order",
+          "header": "논문 번호"
+        },
+        {
+          "key": "legacy_order",
+          "header": "기존 순서"
+        },
+        {
+          "key": "title",
+          "header": "논문 제목"
+        },
+        {
+          "key": "authors_md",
+          "header": "저자 (Markdown)"
+        },
+        {
+          "key": "journal",
+          "header": "저널명"
+        },
+        {
+          "key": "details",
+          "header": "권호·쪽수·상태"
+        },
+        {
+          "key": "note_md",
+          "header": "추가 설명 (Markdown)"
+        },
+        {
+          "key": "image",
+          "header": "대표 이미지 경로"
+        },
+        {
+          "key": "cover_image",
+          "header": "표지 이미지 경로"
+        },
+        {
+          "key": "doi_url",
+          "header": "DOI·논문 URL"
+        },
+        {
+          "key": "pdf_url",
+          "header": "PDF URL"
+        },
+        {
+          "key": "links_extra_json",
+          "header": "기타 링크 JSON"
+        },
+        {
+          "key": "evidence_url",
+          "header": "근거 URL"
+        },
+        {
+          "key": "citation_raw",
+          "header": "기존 원문"
+        }
+      ]
+    },
+    {
+      "key": "patents",
+      "title": "특허",
+      "columns": [
+        {
+          "key": "record_id",
+          "header": "관리 ID"
+        },
+        {
+          "key": "publication_status",
+          "header": "게시 상태"
+        },
+        {
+          "key": "family_id",
+          "header": "특허 묶음 ID"
+        },
+        {
+          "key": "family_order",
+          "header": "묶음 순서"
+        },
+        {
+          "key": "filing_order",
+          "header": "묶음 내 순서"
+        },
+        {
+          "key": "progress_status",
+          "header": "진행 상태"
+        },
+        {
+          "key": "jurisdiction",
+          "header": "국가"
+        },
+        {
+          "key": "number",
+          "header": "출원·등록 번호"
+        },
+        {
+          "key": "family_title",
+          "header": "발명 명칭 (묶음 첫 행)"
+        },
+        {
+          "key": "pct_reference",
+          "header": "PCT 연계번호 (묶음 첫 행)"
+        },
+        {
+          "key": "document_url",
+          "header": "증서 URL"
+        },
+        {
+          "key": "filing_note_md",
+          "header": "해당 건 설명 (Markdown)"
+        },
+        {
+          "key": "family_note_md",
+          "header": "묶음 설명 (첫 행 Markdown)"
+        },
+        {
+          "key": "evidence_url",
+          "header": "근거 URL"
+        }
+      ]
+    },
+    {
+      "key": "schedule",
+      "title": "예정일정",
+      "columns": [
+        {
+          "key": "record_id",
+          "header": "일정 ID"
+        },
+        {
+          "key": "related_record_id",
+          "header": "연결 실적 ID"
+        },
+        {
+          "key": "title",
+          "header": "일정명"
+        },
+        {
+          "key": "start_date",
+          "header": "시작일"
+        },
+        {
+          "key": "end_date",
+          "header": "종료일"
+        },
+        {
+          "key": "progress_status",
+          "header": "진행 상태"
+        },
+        {
+          "key": "remind_days",
+          "header": "알림 며칠 전"
+        },
+        {
+          "key": "notes",
+          "header": "메모"
+        },
+        {
+          "key": "evidence_url",
+          "header": "근거 URL"
+        }
+      ]
+    }
+  ],
+  "optional_ignored_sheets": [
+    "acknowledgements",
+    "사사"
+  ]
+}
