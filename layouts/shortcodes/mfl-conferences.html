@@ -9,7 +9,7 @@
 {{- if gt (len $presentations) 0 -}}
   <ol class="mfl-conference-list" start="{{ len $presentations }}" reversed>
     {{- range $presentations -}}
-      <li>{{ if findRE `(?i),\s+invited (oral( presentation)?|presentation|talk) in\s+` . 1 }}<strong>[Invited]</strong> {{ end }}{{ . | markdownify }}</li>
+      <li>{{ if findRE `(?i),\s+invited (oral( presentation)?|presentation|talk) in\s+` . 1 }}[Invited] {{ end }}{{ . | markdownify }}</li>
     {{- end -}}
   </ol>
 {{- else -}}
