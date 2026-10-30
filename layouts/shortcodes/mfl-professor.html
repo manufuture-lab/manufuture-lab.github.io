@@ -59,7 +59,7 @@
         {{- with $p.email -}}
           <div>
             <strong>Email:</strong>
-            <a href="mailto:{{ . }}">{{ . }}</a>
+            <a href="mailto:{{ replace . " [at] " "@" }}">{{ . }}</a>
           </div>
         {{- end -}}
 

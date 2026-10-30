@@ -81,7 +81,7 @@
                 <div class="mfl-journal-links">
                   {{- range . -}}
                     {{- $url := .url | default "" -}}
-                    {{- if $url -}}
+                    {{- if and $url (ne $url "#") -}}
                       {{- $icon_pack := .pack | default "hero" -}}
 
                       {{- if eq $icon_pack "fas" -}}

@@ -12,7 +12,7 @@ sections:
     content:
       title: "Patents"
       text: |
-        (Total: 21, Granted: KR 3 / JP 1, Applications: KR 7 / US 4 / EP 2 / JP 1 / CN 2 / TW 1)
+        (Total: 22, Granted: KR 3 / JP 1, Applications: KR 7 / US 4 / EP 2 / JP 2 / CN 2 / TW 1)
 
         - **[KR Patent 10-2539172](https://www.dropbox.com/scl/fi/ty8e099hna5n59hxqcdju/10-2539172.png?rlkey=785u03ticcknfc8pb6fmhjg9m&dl=0)**
         - **[JP Patent 7704355](https://www.dropbox.com/scl/fi/aqntrvaf34iuafztmuv9c/7704355.png?rlkey=42v4iwmznm1aemsserk3jhohe&dl=0)**
@@ -28,6 +28,7 @@ sections:
         - **US Patent Application 18/289,607**
         - **EP Patent Application 21964181.8**
         - **JP Patent Application 2023-571624**
+        - **JP Patent Application 2026-001707**
         - **CN Patent Application 202180099396.8**
         - **(PCT/KR2021/016562)**<br>
           Composite polishing pad including carbon nanotubes, and method for producing the same

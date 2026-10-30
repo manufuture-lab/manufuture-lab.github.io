@@ -32,7 +32,7 @@ areas:
   - order: 7
     title: "AI-Driven Manufacturing"
     image: "media/research/ai-driven-manufacturing.jpeg"
-    description: "Integrating AI and physics-informed neural networks (PINNs) frameworks for manufacturing process design. We develop predictive and inverse-design frameworks for manufacturing processes, complex structures, and material interfaces."
+    description: "Integrating AI and physics-informed neural networks (PINNs) for manufacturing process design. We develop predictive and inverse-design frameworks for manufacturing processes, complex structures, and material interfaces."
 
   - order: 8
     title: "Reliability Evaluation"
