@@ -4733,7 +4733,7 @@ html.mfl-gallery-modal-open {
   flex: 0 0 auto !important;
 
   min-height: auto !important;
-  max-height: 7.5rem !important;
+  max-height: 10rem !important;
   overflow-y: auto !important;
 
   padding: 0.9rem 1.25rem 1rem 1.25rem !important;
