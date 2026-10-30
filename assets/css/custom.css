@@ -4729,6 +4729,7 @@ html.mfl-gallery-modal-open {
 
 /* Caption area: always below image */
 .mfl-gallery-modal-caption {
+  white-space: pre-line;
   flex: 0 0 auto !important;
 
   min-height: auto !important;

@@ -1,4 +1,25 @@
 albums:
+  - slug: "2026-10-kts-fall"
+    title: "2026 KTS 추계학회 참가"
+    date: "2026-10"
+    cover: "media/gallery/2026/2026-10-kts-fall/01-invited-talk.png"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-10-kts-fall/01-invited-talk.png"
+        caption: "경주 소노캄에서 신진과학자 초청강연을 진행하였습니다."
+      - image: "media/gallery/2026/2026-10-kts-fall/02-program.png"
+        caption: "발표 제목: 첨단 반도체 패키징을 위한 정밀 연마와 트라이볼로지"
+      - image: "media/gallery/2026/2026-10-kts-fall/03-after-talk.png"
+        caption: "발표 후 기념사진 촬영"
+      - image: "media/gallery/2026/2026-10-kts-fall/04-young-scientist-award.png"
+        caption: "'눈부신' 젊은과학자상 (~~빔프로젝터때문아님~~)"
+      - image: "media/gallery/2026/2026-10-kts-fall/05-meteor-impact.png"
+        caption: 'Moments of Tribology 출품작 "운석 충돌(Meteor Impact)"'
+      - image: "media/gallery/2026/2026-10-kts-fall/06-moments-award.png"
+        caption: |-
+          Moments of Tribology 우수상 수상 기념사진
+          연구를 소개드리고 유익한 코멘트를 받는 것만으로도 뜻깊었는데, 상까지 받게 되어 더욱 감사하고 의미 있는 학회였습니다 :)
+
   - slug: "2026-09-lab-room"
     title: "여기, 쓸쓸함 한 잔 주시오. 온더락으로.🥃"
     title_lines:

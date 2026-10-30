@@ -26,7 +26,7 @@
 
         {{- $coverSrc := "" -}}
         {{- with resources.Get $coverPath -}}
-          {{- $coverProcessed := .Fill "900x900 Center" -}}
+          {{- $coverProcessed := .Fill "900x900 Center webp q85" -}}
           {{- $coverSrc = $coverProcessed.RelPermalink -}}
         {{- end -}}
 
@@ -34,7 +34,7 @@
         {{- range $photo := $photos -}}
           {{- $imgPath := $photo.image | default "" -}}
           {{- with resources.Get $imgPath -}}
-            {{- $full := .Fit "2000x1400" -}}
+            {{- $full := .Fit "2000x1400 webp q88" -}}
             {{- $photoPayload = $photoPayload | append (dict
               "src" $full.RelPermalink
               "caption" ($photo.caption | default "")
@@ -165,6 +165,21 @@
         return album.photos[photoIndex] || null;
       }
 
+      // Support strikethrough without interpreting captions as HTML.
+      function renderCaption(text) {
+        caption.replaceChildren();
+        const pattern = /~~([^~\n]+)~~/g;
+        let offset = 0;
+        for (const match of text.matchAll(pattern)) {
+          caption.append(document.createTextNode(text.slice(offset, match.index)));
+          const strike = document.createElement("s");
+          strike.textContent = match[1];
+          caption.append(strike);
+          offset = match.index + match[0].length;
+        }
+        caption.append(document.createTextNode(text.slice(offset)));
+      }
+
       function updateModal() {
         const album = getCurrentAlbum();
         const photo = getCurrentPhoto();
@@ -189,8 +204,8 @@
 
         if (photo) {
           image.src = photo.src;
-          image.alt = photo.caption || album.title || "Gallery photo";
-          caption.textContent = photo.caption || "";
+          image.alt = (photo.caption || album.title || "Gallery photo").replace(/~~/g, "");
+          renderCaption(photo.caption || "");
         } else {
           image.removeAttribute("src");
           image.alt = "";
