@@ -2376,6 +2376,11 @@ section#conference-presentations h2,
     font-size: 0.98rem !important;
   }
 }
+.mfl-conference-list .mfl-invited-label {
+  color: inherit;
+  font-weight: 700;
+}
+
 /* ==========================================================================
    Sponsors page
    ========================================================================== */
