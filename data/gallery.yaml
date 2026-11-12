@@ -1,4 +1,19 @@
 albums:
+  - slug: "2026-11-kism"
+    title: "2026 KISM 초청강연"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-kism/01-session-chair.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-kism/01-session-chair.jpg"
+        caption: "강석경 교수가 부산 파라다이스 호텔에서 개최된 국제 반도체디스플레이학회 (KISM 2026)에서 초청 발표를 진행하였습니다."
+      - image: "media/gallery/2026/2026-11-kism/02-invited-presentation.jpg"
+        caption: "강석경 교수가 부산 파라다이스 호텔에서 개최된 국제 반도체디스플레이학회 (KISM 2026)에서 초청 발표를 진행하였습니다."
+      - image: "media/gallery/2026/2026-11-kism/03-invited-speakers.jpg"
+        caption: "강석경 교수가 부산 파라다이스 호텔에서 개최된 국제 반도체디스플레이학회 (KISM 2026)에서 초청 발표를 진행하였습니다."
+      - image: "media/gallery/2026/2026-11-kism/04-busan-view.jpg"
+        caption: "강석경 교수가 부산 파라다이스 호텔에서 개최된 국제 반도체디스플레이학회 (KISM 2026)에서 초청 발표를 진행하였습니다."
+
   - slug: "2026-11-ismp"
     title: "2026 ISMP 참가"
     date: "2026-11"
