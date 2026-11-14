@@ -1,4 +1,15 @@
 albums:
+  - slug: "2026-11-manufacturing-manufuture-lab"
+    title: "Manufacturing ManuFuture Lab 🏗️"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-manufacturing-manufuture-lab/cover.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-manufacturing-manufuture-lab/01-before-after.jpg"
+        caption: "Manufacturing ManuFuture Lab 🏗️"
+      - image: "media/gallery/2026/2026-11-manufacturing-manufuture-lab/02-before-after.jpg"
+        caption: "Manufacturing ManuFuture Lab 🏗️"
+
   - slug: "2026-11-kism"
     title: "2026 KISM 초청강연"
     date: "2026-11"
