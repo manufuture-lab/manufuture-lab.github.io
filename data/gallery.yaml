@@ -6,9 +6,9 @@ albums:
     category: ""
     photos:
       - image: "media/gallery/2026/2026-11-manufacturing-manufuture-lab/01-before-after.jpg"
-        caption: "Manufacturing ManuFuture Lab 🏗️"
+        caption: "ManuFuture Lab 제조 중..."
       - image: "media/gallery/2026/2026-11-manufacturing-manufuture-lab/02-before-after.jpg"
-        caption: "Manufacturing ManuFuture Lab 🏗️"
+        caption: "ManuFuture Lab 제조 중..."
 
   - slug: "2026-11-kism"
     title: "2026 KISM 초청강연"
