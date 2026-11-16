@@ -1,4 +1,13 @@
 albums:
+  - slug: "2026-11-lab-dinner"
+    title: "연구실 회식"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-lab-dinner/01-lab-dinner.png"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-lab-dinner/01-lab-dinner.png"
+        caption: "저희 연구실은 제우스 법률에 따라 환대와 함께 음식을 제공해드리고 있습니다."
+
   - slug: "2026-11-manufacturing-manufuture-lab"
     title: "Manufacturing ManuFuture Lab 🏗️"
     date: "2026-11"
