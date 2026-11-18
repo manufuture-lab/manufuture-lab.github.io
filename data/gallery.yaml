@@ -1,4 +1,23 @@
 albums:
+  - slug: "2026-11-lab-sign"
+    title: "연구실 현판 부착 📌"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-lab-sign/01-lab-moments.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-lab-sign/01-lab-moments.jpg"
+        caption: "연구실에 새로 들인 3D 프린터로 ManuFuture Lab 로고 현판을 만들었습니다."
+      - image: "media/gallery/2026/2026-11-lab-sign/02-lab-moments.jpg"
+        caption: "현판 제작에 참여해 주신 정석영, 이정현 학생 고맙습니다!"
+      - image: "media/gallery/2026/2026-11-lab-sign/03-lab-moments.jpg"
+        caption: "현판 제작에 참여해 주신 정석영, 이정현 학생 고맙습니다!"
+      - image: "media/gallery/2026/2026-11-lab-sign/04-lab-moments.jpg"
+        caption: "🍌"
+      - image: "media/gallery/2026/2026-11-lab-sign/05-lab-moments.jpg"
+        caption: "연구실 로고 키링도 만들어보았습니다."
+      - image: "media/gallery/2026/2026-11-lab-sign/06-lab-moments.jpg"
+        caption: "연구실 로고 키링도 만들어보았습니다."
+
   - slug: "2026-11-lab-dinner"
     title: "연구실 회식 🍛"
     date: "2026-11"
