@@ -1,4 +1,21 @@
 albums:
+  - slug: "2026-11-friday-night"
+    title: "Friday Night at ManuFuture Lab 🔥"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-friday-night/01-friday-night.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-friday-night/01-friday-night.jpg"
+        caption: "Friday Night at ManuFuture Lab 🔥"
+      - image: "media/gallery/2026/2026-11-friday-night/02-friday-night.jpg"
+        caption: "Friday Night at ManuFuture Lab 🔥"
+      - image: "media/gallery/2026/2026-11-friday-night/03-friday-night.jpg"
+        caption: "Friday Night at ManuFuture Lab 🔥"
+      - image: "media/gallery/2026/2026-11-friday-night/04-friday-night.jpg"
+        caption: "Friday Night at ManuFuture Lab 🔥"
+      - image: "media/gallery/2026/2026-11-friday-night/05-friday-night.png"
+        caption: "Friday Night at ManuFuture Lab 🔥"
+
   - slug: "2026-11-lab-sign"
     title: "연구실 현판 부착 🍌"
     date: "2026-11"
