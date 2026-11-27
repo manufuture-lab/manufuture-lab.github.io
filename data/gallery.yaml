@@ -1,4 +1,15 @@
 albums:
+  - slug: "2026-11-kcs"
+    title: "2026 KCS 초청강연"
+    date: "2026-11"
+    cover: "media/gallery/2026/2026-11-kcs/01-img-2712-conference-signage.jpg"
+    category: ""
+    photos:
+      - image: "media/gallery/2026/2026-11-kcs/01-img-2712-conference-signage.jpg"
+        caption: "강석경 교수가 한국탄소학회 추계학술대회(광주 김대중컨벤션센터)에서 초청강연을 진행하였습니다."
+      - image: "media/gallery/2026/2026-11-kcs/02-img-2713-conference-program.jpg"
+        caption: "강석경 교수가 한국탄소학회 추계학술대회(광주 김대중컨벤션센터)에서 초청강연을 진행하였습니다."
+
   - slug: "2026-11-friday-night"
     title: "Friday Night at ManuFuture Lab 🔥"
     date: "2026-11"
